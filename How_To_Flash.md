@@ -1,11 +1,5 @@
 ### Build & Flash Your ESP32
 
-1: cd esp-idf
-
-2: ./install.sh
-
-3: . ./export.sh
-
 1. **Navigate to your project directory**  
    cd /path/to/your/project
 
