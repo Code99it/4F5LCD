@@ -1,0 +1,107 @@
+# Build artifacts to ignore
+/build/
+/sdkconfig
+/esp-idf-export.json
+
+# IDE configurations (optional)
+/.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux / Unix
+*~
+# Swap-Files
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log.[0-9]*
+
+# Runtime / Temp
+tmp/
+temp/
+.cache/
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+bower_components/
+vendor/
+
+# Build output
+dist/
+build/
+out/
+coverage/
+*.compiled.js
+
+# Environment / Secrets
+.env
+.env.*.local
+*.pem
+*.key
+*.csr
+*.p12
+id_rsa
+id_rsa.pub
+
+# IDEs and Editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+*.sw?
+*.kate-swp
+*.vim-swap
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+target/
+out/
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+log/
+tmp/
+coverage/
+
+# Go
+bin/
+*.exe
+*.test
+
+# Docker
+docker-compose.override.yml
+.env.docker
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Misc
+*.zip
+*.tar.gz
+*.rar
+*.7z
