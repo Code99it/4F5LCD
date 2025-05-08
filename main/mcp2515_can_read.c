@@ -41,9 +41,11 @@ static esp_err_t mcp2515_read_register(spi_device_handle_t handle, uint8_t addr,
     uint8_t rx[1];
 
     spi_transaction_t t = {
-        .length = 16,          // 2 Bytes senden (READ + ADDR)
+        // 2 Bytes senden (READ + ADDR)
+        .length = 16,          
         .tx_buffer = cmd,
-        .rxlength = 8,         // 1 Byte lesen
+        // 1 Byte lesen
+        .rxlength = 8,         
         .rx_buffer = rx
     };
 
@@ -87,9 +89,11 @@ esp_err_t read_can_frame_powertrain(can_frame_t *frame_out)
     uint8_t rx_data[13];
 
     spi_transaction_t t = {
-        .length = 8,              // 1 Byte senden (der Befehl 0x90)
+        // 1 Byte senden (der Befehl 0x90)
+        .length = 8,              
         .tx_buffer = &cmd,
-        .rxlength = 13 * 8,       // 13 Bytes zurücklesen
+        // 13 Bytes zurücklesen
+        .rxlength = 13 * 8,       
         .rx_buffer = rx_data,
     };
 
@@ -108,7 +112,8 @@ esp_err_t read_can_frame_powertrain(can_frame_t *frame_out)
 
     // Schritt 5: RX0IF-Flag manuell löschen, damit INT-Pin wieder freigegeben wird
     // Das passiert durch Schreiben von 0x01 in das CANINTF-Register (0x2C)
-    uint8_t clear_cmd[3] = { 0x02, 0x2C, 0x01 }; // WRITE-Befehl: Adresse 0x2C, Daten 0x01
+    // WRITE-Befehl: Adresse 0x2C, Daten 0x01
+    uint8_t clear_cmd[3] = { 0x02, 0x2C, 0x01 }; 
     spi_transaction_t clear_t = {
         .length = 3 * 8,
         .tx_buffer = clear_cmd,

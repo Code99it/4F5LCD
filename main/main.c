@@ -37,7 +37,7 @@ static const char *TAG = "MAIN";
 void app_main(void)
 {
     // Hinweis im Log, dass das System startet
-    ESP_LOGI(TAG, "System start");
+    ESP_LOGI(TAG, "4F5LCD READY.");
 
     // Initialisiert SPI-Bus und führt Hardware-Reset sowie Konfiguration für MCP2515 durch
     if (init_spi_and_reset_mcp2515() != ESP_OK) {
@@ -51,7 +51,7 @@ void app_main(void)
 
     // Endlosschleife – das System bleibt aktiv
     while (1) {
-        // Kurze Pause, damit das Hauptprogramm nicht durchläuft
+        // Kurze Pause, damit das Hauptprogramm nicht mit ununterbrochenem Dauerfeuer durchläuft
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
