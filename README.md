@@ -1,13 +1,13 @@
 # Installation und Nutzung  
 # Installation and Usage  
 
-**Dieses Projekt ersetzt beim Audi 4F C6 das kleine Display in der Mitte des Kombiinstruments durch eine spezielle Mikrocontroller-Lösung. Die Bedienung erfolgt über die linken Tasten am Lenkrad:**  
+**Dieses Projekt ersetzt bei Fahrzeugen der VAG-Gruppe mit Plattform 4F (C6) das kleine Display in der Mitte des Kombiinstruments durch eine spezielle Mikrocontroller-Lösung. Die Bedienung erfolgt über die linken Tasten am Lenkrad:**  
 - Drehen am Rad wählt einen Listeneintrag.  
 - Klicken auf das Drehrad aktiviert den gewählten Eintrag.  
 - Die MODE-Taste am Lenkrad wechselt zwischen den Menüseiten.  
 - Die Auf-Ab-Taste am Wischerhebel und die Bestätigungstaste auf der Hebel-Unterseite sind zunächst wirkungslos, die Funktion wird ggf. in späteren Projektversionen noch einmal aufgegriffen.
 
-**This project replaces in Audi 4F C6 the small display in the center of the instrument cluster with a custom microcontroller solution. Operation is via the left steering wheel controls:**  
+**This project replaces the small display in the center of the instrument cluster with a custom microcontroller solution for vehicles of the VAG group using platform 4F (C6). Operation is via the left steering wheel controls:**  
 - Rotating the knob selects a list item.  
 - Pressing the knob activates the selected item.  
 - The MODE button on the steering wheel switches between menu pages.  
@@ -22,7 +22,7 @@
 ## 1. Systemzugriff einrichten  
 ## 1. Set Up System Access  
 
-- Dieses System greift ausschließlich lesend auf die fahrzeuginternen Bussysteme (z. B. CAN-Bus) zu.  
+- Dieses System greift ausschließlich lesend auf die fahrzeuginternen Bussysteme (z. B. CAN-Bus) zu.  
 - Es werden nur Statusinformationen wie Temperatur, Drehzahl oder Komfortdaten erfasst.  
 - Kein Zugriff auf sicherheitskritische Systeme (Bremsen, Airbags, ESP, ABS, Antrieb).  
 - Eine Beeinflussung, Veränderung oder Steuerung dieser Systeme ist weder vorgesehen noch implementiert.  
@@ -62,8 +62,8 @@
 ## 5. Haftungsausschluss  
 ## 5. Disclaimer  
 
-- Nicht autorisiert, geprüft oder freigegeben von Audi AG; keine offizielle Verbindung zum Hersteller.  
+- Nicht autorisiert, geprüft oder freigegeben durch einen Fahrzeughersteller; keine offizielle Verbindung zu Herstellern der VAG-Gruppe.  
 - Jegliche Nutzung erfolgt auf eigene Verantwortung.  
 
-- Not authorized, tested, or approved by Audi AG; no official affiliation with the manufacturer.  
+- Not authorized, tested, or approved by any vehicle manufacturer; no official affiliation with any brand of the VAG group.  
 - Any use is at your own risk.  
