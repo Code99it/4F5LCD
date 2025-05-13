@@ -1,0 +1,193 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "7fadd558-eff1-416f-a3f5-8bfc84c7a5eb")
+	(paper "A4")
+	(lib_symbols)
+	(text "100: Power supply, 6...24V in, 3.3V out\n200: Microcontroller Board\n300: CAN Controllers and Transceivers\n400: Display"
+		(exclude_from_sim no)
+		(at 63.5 49.276 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9726ea3b-af13-452c-b4e8-dc92de715fef")
+	)
+	(sheet
+		(at 189.23 80.01)
+		(size 31.75 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "567332b7-208a-45c3-a56d-704aa008c32a")
+		(property "Sheetname" "400 Display"
+			(at 189.23 79.2984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "400lcd.kicad_sch"
+			(at 189.23 99.6446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 63.5 80.01)
+		(size 30.48 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6606a65e-ffea-4c9e-9184-5d5351bb8d09")
+		(property "Sheetname" "100 Power Supply"
+			(at 63.5 79.2984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "100powersupply.kicad_sch"
+			(at 63.5 100.9146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 104.14 80.01)
+		(size 30.48 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "692c076d-f57f-40af-a42c-5c59276da707")
+		(property "Sheetname" "200 MCU ESP32"
+			(at 104.14 79.2984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "200mcuesp32.kicad_sch"
+			(at 104.14 100.9146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 144.78 80.01)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ed671423-1065-4b86-899c-58ba6638d54c")
+		(property "Sheetname" "300 CAN Controllers and Transceivers"
+			(at 144.78 79.2984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "300can.kicad_sch"
+			(at 144.78 99.6446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

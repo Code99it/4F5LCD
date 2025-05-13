@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ESP32-S3-DEVKIT")(type "KiCad")(uri "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/board/User defined Symbols and Footprints/ESP32-S3-DEVKITC-1U-N8R2/ESP32-S3-DEVKIT.pretty")(options "")(descr ""))
+  (lib (name "TLS850")(type "KiCad")(uri "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/board/User defined Symbols and Footprints/TLS850C2TEV33/TLS850.pretty")(options "")(descr ""))
+)
