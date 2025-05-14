@@ -5,6 +5,39 @@
 	(uuid "7fadd558-eff1-416f-a3f5-8bfc84c7a5eb")
 	(paper "A4")
 	(lib_symbols)
+	(text "Wed May 14, 2025"
+		(exclude_from_sim no)
+		(at 206.6683 193.346 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "423add2b-be43-4c69-ba1e-8736e25f7d43")
+	)
+	(text "Code99\nGrafenauer Straße 22\nD-94078 Freyung\nwww.code99.it"
+		(exclude_from_sim no)
+		(at 178.054 173.736 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "803154de-68a8-4d85-a786-578487ab9072")
+	)
+	(text "4F5LCD"
+		(exclude_from_sim no)
+		(at 187.1344 189.8105 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "804807ac-c499-4223-8919-5483cf31839d")
+	)
 	(text "100: Power supply, 6...24V in, 3.3V out\n200: Microcontroller Board\n300: CAN Controllers and Transceivers\n400: Display"
 		(exclude_from_sim no)
 		(at 63.5 49.276 0)
@@ -15,6 +48,40 @@
 			(justify left)
 		)
 		(uuid "9726ea3b-af13-452c-b4e8-dc92de715fef")
+	)
+	(text "01-01-01"
+		(exclude_from_sim no)
+		(at 268.8055 193.346 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "a67140a1-63d4-4a45-8e03-f1c28be10268")
+	)
+	(text "Christian Wilhelm"
+		(exclude_from_sim no)
+		(at 283.718 169.164 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify right)
+		)
+		(uuid "b421a2d5-2668-4bf7-8da2-bf617c6bcce4")
+	)
+	(text "License Note:\nFree to use and modify for private or non-commercial purposes.\nCommercial use, resale, or redistribution is not permitted."
+		(exclude_from_sim no)
+		(at 219.71 176.022 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 117 0 1)
+			)
+			(justify left)
+		)
+		(uuid "ba7f8127-3569-43dc-8945-cd7c31d8b711")
 	)
 	(sheet
 		(at 189.23 80.01)

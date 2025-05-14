@@ -1810,6 +1810,73 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Wed May 14, 2025"
+		(exclude_from_sim no)
+		(at 206.4143 193.346 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "05d7d06d-13c0-4af8-a502-7f63163ef3bb")
+	)
+	(text "License Note:\nFree to use and modify for private or non-commercial purposes.\nCommercial use, resale, or redistribution is not permitted."
+		(exclude_from_sim no)
+		(at 219.202 176.022 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 117 0 1)
+			)
+			(justify left)
+		)
+		(uuid "597b9737-89c0-4574-8a3f-645453dc1b69")
+	)
+	(text "Code99\nGrafenauer Straße 22\nD-94078 Freyung\nwww.code99.it"
+		(exclude_from_sim no)
+		(at 177.8 173.736 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "71260834-0216-4684-8bed-c18492606d30")
+	)
+	(text "4F5LCD"
+		(exclude_from_sim no)
+		(at 186.8804 189.8105 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "8350ad88-ec0e-49b9-b402-e3a6a62d9b76")
+	)
+	(text "Christian Wilhelm"
+		(exclude_from_sim no)
+		(at 283.464 169.164 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify right)
+		)
+		(uuid "84d73a16-e972-4215-bf6b-a79cce8d0274")
+	)
+	(text "01-01-01"
+		(exclude_from_sim no)
+		(at 268.5515 193.346 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "fb7c9366-655f-435a-9d34-076e944212e7")
+	)
 	(junction
 		(at 71.12 15.24)
 		(diameter 0)
@@ -5927,7 +5994,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 190.5 76.1999 90)
 			(effects
 				(font
@@ -5994,7 +6061,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 153.67 22.8599 90)
 			(effects
 				(font
@@ -6060,7 +6127,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -6126,7 +6193,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 254 153.67 0)
 			(effects
 				(font
@@ -6328,7 +6395,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 58.42 69.85 0)
 			(effects
 				(font
@@ -6719,7 +6786,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 40.64 92.71 0)
 			(effects
 				(font
@@ -6785,7 +6852,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 209.55 133.35 0)
 			(effects
 				(font
@@ -7077,7 +7144,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 140.97 76.1999 90)
 			(effects
 				(font
@@ -7144,7 +7211,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 238.76 69.85 0)
 			(effects
 				(font
@@ -7277,7 +7344,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 40.64 86.3599 90)
 			(effects
 				(font
@@ -7413,7 +7480,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 240.03 86.3599 90)
 			(effects
 				(font
@@ -7705,7 +7772,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 190.5 86.3599 90)
 			(effects
 				(font
@@ -7772,7 +7839,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 189.23 69.85 0)
 			(effects
 				(font
@@ -7838,7 +7905,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 40.64 69.85 0)
 			(effects
 				(font
@@ -8247,7 +8314,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 45.72 144.78 0)
 			(effects
 				(font
@@ -8383,7 +8450,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 110.49 138.43 0)
 			(effects
 				(font
@@ -8515,7 +8582,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 157.48 69.85 0)
 			(effects
 				(font
@@ -8581,7 +8648,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 90.17 92.71 0)
 			(effects
 				(font
@@ -8717,7 +8784,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 104.14 22.8599 90)
 			(effects
 				(font
@@ -8784,7 +8851,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 91.44 86.3599 90)
 			(effects
 				(font
@@ -8851,7 +8918,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 189.23 92.71 0)
 			(effects
 				(font
@@ -8917,7 +8984,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 105.41 153.67 0)
 			(effects
 				(font
@@ -9053,7 +9120,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 257.81 69.85 0)
 			(effects
 				(font
@@ -9535,7 +9602,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 144.78 138.43 0)
 			(effects
 				(font
@@ -9601,7 +9668,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 204.47 148.59 0)
 			(effects
 				(font
@@ -9667,7 +9734,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 60.96 138.43 0)
 			(effects
 				(font
@@ -10324,7 +10391,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 240.03 76.1999 90)
 			(effects
 				(font
@@ -10527,7 +10594,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 95.25 144.78 0)
 			(effects
 				(font
@@ -10593,7 +10660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 139.7 69.85 0)
 			(effects
 				(font
@@ -10659,7 +10726,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 40.64 76.1999 90)
 			(effects
 				(font
@@ -10793,7 +10860,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 107.95 69.85 0)
 			(effects
 				(font
@@ -10859,7 +10926,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 252.73 22.8599 90)
 			(effects
 				(font
@@ -10993,7 +11060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 243.84 144.78 0)
 			(effects
 				(font
@@ -11126,7 +11193,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 259.08 138.43 0)
 			(effects
 				(font
@@ -11327,7 +11394,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 54.61 22.8599 90)
 			(effects
 				(font
@@ -11394,7 +11461,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 194.31 139.7 0)
 			(effects
 				(font
@@ -11460,7 +11527,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 91.44 76.1999 90)
 			(effects
 				(font
@@ -11597,7 +11664,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 140.97 86.3599 90)
 			(effects
 				(font
@@ -11664,7 +11731,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 160.02 129.54 0)
 			(effects
 				(font
@@ -11797,7 +11864,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 208.28 69.85 0)
 			(effects
 				(font
@@ -11951,7 +12018,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 139.7 92.71 0)
 			(effects
 				(font
@@ -12017,7 +12084,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 238.76 92.71 0)
 			(effects
 				(font
@@ -12083,7 +12150,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 203.2 22.8599 90)
 			(effects
 				(font
@@ -12216,7 +12283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 154.94 146.05 0)
 			(effects
 				(font
@@ -12697,7 +12764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
+		(property "Value" "GND_MCU"
 			(at 90.17 69.85 0)
 			(effects
 				(font
