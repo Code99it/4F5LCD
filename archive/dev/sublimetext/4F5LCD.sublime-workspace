@@ -1,0 +1,1044 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"err",
+				"error_reporting()"
+			],
+			[
+				"db",
+				"dbprefixvalue"
+			],
+			[
+				"dbpr",
+				"dbpresearch"
+			],
+			[
+				"uu",
+				"uuid_first_char"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"tran",
+				"translateY()"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"c",
+				"cover"
+			],
+			[
+				"b",
+				"background-image"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"g",
+				"getAllAvailGuiLanguages"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"HTT",
+				"HTTP_HOST"
+			],
+			[
+				"erro",
+				"error_log"
+			],
+			[
+				"P",
+				"PROJECT_PATH"
+			],
+			[
+				"PRO",
+				"PROJECT_PATH"
+			],
+			[
+				"re",
+				"require_once"
+			],
+			[
+				"error",
+				"error_log()"
+			],
+			[
+				"s",
+				"submitButton"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"St",
+				"StorageHelper"
+			],
+			[
+				"lo",
+				"loadPreviousStep"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"btn_",
+				"btn_previous"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"consol",
+				"consoleWelcomeMessages"
+			],
+			[
+				"gr",
+				"groupEnd"
+			],
+			[
+				"Grop",
+				"groupCollapsed"
+			],
+			[
+				"Code",
+				"Code99Database"
+			],
+			[
+				"a",
+				"available_plugins_ids"
+			],
+			[
+				"m",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"f",
+				"flex-direction"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"color",
+				"colormode_bright"
+			],
+			[
+				"--",
+				"--h1colorBright"
+			],
+			[
+				"icno",
+				"icon_undo"
+			],
+			[
+				"col",
+				"column-gap"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"_SE",
+				"$_SESSION\tSESSION['…']"
+			],
+			[
+				"code",
+				"code99_201111_functions_database"
+			],
+			[
+				"sele",
+				"selectionTo"
+			],
+			[
+				"selec",
+				"selectionFrom"
+			],
+			[
+				"isC",
+				"isCtrlPressed"
+			],
+			[
+				"light",
+				"lightskyblue"
+			],
+			[
+				"fle",
+				"flex-direction"
+			],
+			[
+				"o",
+				"outputStrCheckBox"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"fl",
+				"flex-start"
+			],
+			[
+				"refe",
+				"refererScript"
+			],
+			[
+				"ico",
+				"icon_undo_container"
+			],
+			[
+				"agr",
+				"arguments"
+			],
+			[
+				"sq",
+				"sqlTableName"
+			],
+			[
+				"c9de",
+				"code99_201111_database_access_data"
+			],
+			[
+				"code99",
+				"code99_201111_functions_database"
+			],
+			[
+				"grid-tem",
+				"grid-template-columns"
+			],
+			[
+				"ov",
+				"overflow-y"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"grid-r",
+				"grid-row-gap"
+			],
+			[
+				"sub",
+				"submenuItems"
+			],
+			[
+				"su",
+				"submenuTitle"
+			],
+			[
+				"border-bo",
+				"border-bottom-right-radius"
+			],
+			[
+				"border-botto",
+				"border-bottom-left-radius"
+			],
+			[
+				"border-top",
+				"border-top-left-radius"
+			],
+			[
+				"border-bott",
+				"border-bottom-right-radius"
+			],
+			[
+				"border-ra",
+				"border-top-right-radius"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"drop",
+				"dropdown-content"
+			],
+			[
+				"nav",
+				"nav_dropdown_content"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"na",
+				"nav_dropdown_button"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"-",
+				"--navTileWidth"
+			],
+			[
+				"flex-",
+				"flex-direction"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
+				"border-bottom-",
+				"border-bottom-right-radius"
+			],
+			[
+				"border-radius",
+				"border-top-left-radius"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"sess",
+				"session_start()"
+			],
+			[
+				"word-",
+				"word-wrap"
+			],
+			[
+				"alig",
+				"align-content"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"menu",
+				"menu_dropdown"
+			],
+			[
+				"n",
+				"nowrap"
+			],
+			[
+				"background-oi",
+				"background-position"
+			],
+			[
+				"backg",
+				"background-image"
+			],
+			[
+				"ele",
+				"elementsInnerHTML"
+			],
+			[
+				"elements",
+				"elementsToTranslate"
+			],
+			[
+				"code99_",
+				"code99_201111_database_access_data"
+			],
+			[
+				"json",
+				"json_encode()"
+			],
+			[
+				"quer",
+				"querySelectorAll"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"navbar",
+				"navbarTiny"
+			],
+			[
+				"navb",
+				"navbarTiny"
+			],
+			[
+				"--colo",
+				"--colormode_highcontrast_h1_color"
+			],
+			[
+				"blu",
+				"skyblue"
+			],
+			[
+				"aq",
+				"mediumaquamarine"
+			],
+			[
+				"wrap",
+				"text-wrap"
+			],
+			[
+				"wor",
+				"word-wrap"
+			],
+			[
+				"ex",
+				"extratext"
+			],
+			[
+				"colum",
+				"column-gap"
+			],
+			[
+				"purpl",
+				"rebeccapurple"
+			],
+			[
+				"colormode_protan",
+				"colormode_protanomalie"
+			],
+			[
+				"ali",
+				"align-items"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/README.md",
+			"settings":
+			{
+				"buffer_size": 4144,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					9,
+					1,
+					"paste",
+					null,
+					"AgAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAMBAAAAAAAAAwEAAAAAAAAMsPAAAjIEluc3RhbGxhdGlvbiB1bmQgTnV0enVuZyAgCiMgSW5zdGFsbGF0aW9uIGFuZCBVc2FnZSAgCgoqKkRpZXNlcyBQcm9qZWt0IGVyc2V0enQgYmVpbSBBdWRpIDRGIEM2IGRhcyBrbGVpbmUgRGlzcGxheSBpbiBkZXIgTWl0dGUgZGVzIEtvbWJpaW5zdHJ1bWVudHMgZHVyY2ggZWluZSBzcGV6aWVsbGUgTWlrcm9jb250cm9sbGVyLUzDtnN1bmcuIERpZSBCZWRpZW51bmcgZXJmb2xndCDDvGJlciBkaWUgbGlua2VuIFRhc3RlbiBhbSBMZW5rcmFkOioqICAKLSBEcmVoZW4gYW0gUmFkIHfDpGhsdCBlaW5lbiBMaXN0ZW5laW50cmFnLiAgCi0gS2xpY2tlbiBhdWYgZGFzIERyZWhyYWQgYWt0aXZpZXJ0IGRlbiBnZXfDpGhsdGVuIEVpbnRyYWcuICAKLSBEaWUgTU9ERS1UYXN0ZSBhbSBMZW5rcmFkIHdlY2hzZWx0IHp3aXNjaGVuIGRlbiBNZW7DvHNlaXRlbi4gIAotIERpZSBBdWYtQWItVGFzdGUgYW0gV2lzY2hlcmhlYmVsIHVuZCBkaWUgQmVzdMOkdGlndW5nc3Rhc3RlIGF1ZiBkZXIgSGViZWwtVW50ZXJzZWl0ZSBzaW5kIHp1bsOkY2hzdCB3aXJrdW5nc2xvcywgZGllIEZ1bmt0aW9uIHdpcmQgZ2dmLiBpbiBzcMOkdGVyZW4gUHJvamVrdHZlcnNpb25lbiBub2NoIGVpbm1hbCBhdWZnZWdyaWZmZW4uCgoqKlRoaXMgcHJvamVjdCByZXBsYWNlcyBpbiBBdWRpIDRGIEM2IHRoZSBzbWFsbCBkaXNwbGF5IGluIHRoZSBjZW50ZXIgb2YgdGhlIGluc3RydW1lbnQgY2x1c3RlciB3aXRoIGEgY3VzdG9tIG1pY3JvY29udHJvbGxlciBzb2x1dGlvbi4gT3BlcmF0aW9uIGlzIHZpYSB0aGUgbGVmdCBzdGVlcmluZyB3aGVlbCBjb250cm9sczoqKiAgCi0gUm90YXRpbmcgdGhlIGtub2Igc2VsZWN0cyBhIGxpc3QgaXRlbS4gIAotIFByZXNzaW5nIHRoZSBrbm9iIGFjdGl2YXRlcyB0aGUgc2VsZWN0ZWQgaXRlbS4gIAotIFRoZSBNT0RFIGJ1dHRvbiBvbiB0aGUgc3RlZXJpbmcgd2hlZWwgc3dpdGNoZXMgYmV0d2VlbiBtZW51IHBhZ2VzLiAgCi0gVGhlIHVwL2Rvd24gYnV0dG9uIG9uIHRoZSB3aXBlciBzdGFsayBhbmQgdGhlIGNvbmZpcm0gYnV0dG9uIG9uIHRoZSB1bmRlcnNpZGUgb2YgdGhlIHN0YWxrIGFyZSBpbml0aWFsbHkgbm9uLWZ1bmN0aW9uYWw7IHRoaXMgZmVhdHVyZSBtYXkgYmUgcmV2aXNpdGVkIGluIGEgZnV0dXJlIHByb2plY3QgdmVyc2lvbi4KCiMjIFdhcyBkaXIgZGllc2VzIFByb2pla3QgbsO8dHp0ICAKIyMgV2hhdCBUaGlzIFByb2plY3QgRG9lcyBmb3IgWW91ICAKCi0gRHUgZXJow6RsdHN0IHNjaG5lbGxlbiwgc2ljaGVyZW4gWnVncmlmZiBhdWYgZmFocnpldWdpbnRlcm5lIFN0YXR1c2RhdGVuLCB1bSBUZW1wZXJhdHVyLSwgRHJlaHphaGwtIG9kZXIgS29tZm9ydHBhcmFtZXRlciB6dSDDvGJlcndhY2hlbi4gIAotIFlvdSBnZXQgZmFzdCwgc2VjdXJlIGFjY2VzcyB0byBpbi12ZWhpY2xlIHN0YXR1cyBkYXRhIHRvIG1vbml0b3IgdGVtcGVyYXR1cmUsIFJQTSwgb3IgY29tZm9ydCBwYXJhbWV0ZXJzLiAgCgojIyAxLiBTeXN0ZW16dWdyaWZmIGVpbnJpY2h0ZW4gIAojIyAxLiBTZXQgVXAgU3lzdGVtIEFjY2VzcyAgCgotIERpZXNlcyBTeXN0ZW0gZ3JlaWZ0IGF1c3NjaGxpZcOfbGljaCBsZXNlbmQgYXVmIGRpZSBmYWhyemV1Z2ludGVybmVuIEJ1c3N5c3RlbWUgKHouIEIuIENBTi1CdXMpIHp1LiAgCi0gRXMgd2VyZGVuIG51ciBTdGF0dXNpbmZvcm1hdGlvbmVuIHdpZSBUZW1wZXJhdHVyLCBEcmVoemFobCBvZGVyIEtvbWZvcnRkYXRlbiBlcmZhc3N0LiAgCi0gS2VpbiBadWdyaWZmIGF1ZiBzaWNoZXJoZWl0c2tyaXRpc2NoZSBTeXN0ZW1lIChCcmVtc2VuLCBBaXJiYWdzLCBFU1AsIEFCUywgQW50cmllYikuICAKLSBFaW5lIEJlZWluZmx1c3N1bmcsIFZlcsOkbmRlcnVuZyBvZGVyIFN0ZXVlcnVuZyBkaWVzZXIgU3lzdGVtZSBpc3Qgd2VkZXIgdm9yZ2VzZWhlbiBub2NoIGltcGxlbWVudGllcnQuICAKCi0gTm8gYWNjZXNzIHRvIHNhZmV0eS1jcml0aWNhbCBzeXN0ZW1zIChicmFrZXMsIGFpcmJhZ3MsIEVTUCwgQUJTLCBkcml2ZXRyYWluKS4gIAotIE9ubHkgc3RhdHVzIGluZm9ybWF0aW9uIHN1Y2ggYXMgdGVtcGVyYXR1cmUsIFJQTSBvciBjb21mb3J0IGRhdGEgaXMgY29sbGVjdGVkLiAgCi0gVGhpcyBzeXN0ZW0gdXNlcyByZWFkLW9ubHkgYWNjZXNzIHRvIHRoZSB2ZWhpY2xl4oCZcyBpbnRlcm5hbCBidXMgc3lzdGVtcyAoZS5nLiBDQU4gYnVzKS4gIAotIEFueSBtYW5pcHVsYXRpb24sIGFsdGVyYXRpb24gb3IgY29udHJvbCBvZiB0aGVzZSBzeXN0ZW1zIGlzIG5laXRoZXIgaW50ZW5kZWQgbm9yIGltcGxlbWVudGVkLiAgCgojIyAyLiBJbmZvdGFpbm1lbnQtRnVua3Rpb25lbiBha3RpdmllcmVuICAKIyMgMi4gRW5hYmxlIEluZm90YWlubWVudCBGdW5jdGlvbnMgIAoKLSBGw7xyIE1lbsO8YXVzd2FobCB1bmQgRGlzcGxheWFuemVpZ2Ugd2lyZCBzY2hyZWliZW5kZXIgWnVncmlmZiBhdWYgbmljaHQgc2ljaGVyaGVpdHNyZWxldmFudGUgU3RldWVyZ2Vyw6R0ZSB2ZXJ3ZW5kZXQuICAKLSBEaWVzZXIgWnVncmlmZiBpc3QgZnVua3Rpb25hbCBiZWdyZW56dCB1bmQgYmVlaW5mbHVzc3Qgd2VkZXIgRmFocnZlcmhhbHRlbiBub2NoIEZhaHJzaWNoZXJoZWl0LiAgCgotIFdyaXRlIGFjY2VzcyB0byBub24tc2FmZXR5LWNyaXRpY2FsIGNvbnRyb2wgdW5pdHMgaXMgdXNlZCBmb3IgbWVudSBzZWxlY3Rpb24gYW5kIGRpc3BsYXkgb3V0cHV0LiAgCi0gVGhpcyBhY2Nlc3MgaXMgZnVuY3Rpb25hbGx5IGxpbWl0ZWQgYW5kIGRvZXMgbm90IGFmZmVjdCBkcml2aW5nIGJlaGF2aW9yIG9yIHNhZmV0eS4gIAoKIyMgMy4gQ0FOLUJ1cy1BbmFseXNlIGR1cmNoZsO8aHJlbiAgCiMjIDMuIFBlcmZvcm0gQ0FOLUJ1cyBBbmFseXNpcyAgCgotIFNuaWZmaW5nIGltIFJhaG1lbiBkZXMgZ2VzZXR6bGljaCB6dWzDpHNzaWdlbiBSZXZlcnNlIEVuZ2luZWVyaW5nICjCpyA2OWUgVXJoRykgenVyIEludGVyb3BlcmFiaWxpdMOkdC4gIAotIEVzIHdpcmQga2VpbmUgT3JpZ2luYWwtU29mdHdhcmUgZXh0cmFoaWVydCwga29waWVydCBvZGVyIHZlcsOkbmRlcnQg4oCTIG51ciBkYXMgRGF0ZW52ZXJoYWx0ZW4gZG9rdW1lbnRpZXJ0LiAgCgotIFNuaWZmaW5nIHVuZGVyIHRoZSBsZWdhbGx5IHBlcm1pdHRlZCByZXZlcnNlIGVuZ2luZWVyaW5nICjCpyA2OWUgVXJoRykgZm9yIGludGVyb3BlcmFiaWxpdHkuICAKLSBObyBvcmlnaW5hbCBzb2Z0d2FyZSBpcyBleHRyYWN0ZWQsIGNvcGllZCwgb3IgbW9kaWZpZWQg4oCTIG9ubHkgZGF0YSBiZWhhdmlvciBpcyBkb2N1bWVudGVkLiAgCgojIyA0LiBOdXR6dW5nc2hpbndlaXNlICAKIyMgNC4gVXNhZ2UgTm90ZXMgIAoKLSBEdSBudXR6dCBkYXMgU3lzdGVtIGF1c3NjaGxpZcOfbGljaCB6dSBUZXN0LSwgRW50d2lja2x1bmdzLSBvZGVyIEZvcnNjaHVuZ3N6d2Vja2VuLiAgCi0gRGF1ZXJiZXRyaWViIGltIMO2ZmZlbnRsaWNoZW4gU3RyYcOfZW52ZXJrZWhyIGVyZm9yZGVydCBFaW56ZWxhYm5haG1lICjCpyAyMSBTdFZaTykgYmVpIFTDnFYvREVLUkEgZXRjLiAgCgotIFVzZSBleGNsdXNpdmVseSBmb3IgdGVzdGluZywgZGV2ZWxvcG1lbnQsIG9yIHJlc2VhcmNoIHB1cnBvc2VzLiAgCi0gUGVybWFuZW50IHVzZSBvbiBwdWJsaWMgcm9hZHMgcmVxdWlyZXMgc2luZ2xlLXZlaGljbGUgYXBwcm92YWwgKMKnIDIxIFN0VlpPKSBmcm9tIFTDnFYvREVLUkEsIGV0Yy4gIAoKIyMgNS4gSGFmdHVuZ3NhdXNzY2hsdXNzICAKIyMgNS4gRGlzY2xhaW1lciAgCgotIE5pY2h0IGF1dG9yaXNpZXJ0LCBnZXByw7xmdCBvZGVyIGZyZWlnZWdlYmVuIHZvbiBBdWRpIEFHOyBrZWluZSBvZmZpemllbGxlIFZlcmJpbmR1bmcgenVtIEhlcnN0ZWxsZXIuICAKLSBKZWdsaWNoZSBOdXR6dW5nIGVyZm9sZ3QgYXVmIGVpZ2VuZSBWZXJhbnR3b3J0dW5nLiAgCgotIE5vdCBhdXRob3JpemVkLCB0ZXN0ZWQsIG9yIGFwcHJvdmVkIGJ5IEF1ZGkgQUc7IG5vIG9mZmljaWFsIGFmZmlsaWF0aW9uIHdpdGggdGhlIG1hbnVmYWN0dXJlci4gIAotIEFueSB1c2UgaXMgYXQgeW91ciBvd24gcmlzay4gIA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAACnDwAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_de_DE.md",
+			"settings":
+			{
+				"buffer_size": 1419,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					17,
+					1,
+					"paste",
+					null,
+					"AgAAAAAAAAAAAAAAiwUAAAAAAAAAAAAAiwUAAAAAAACLBQAAAAAAAB4FAAAjIEluc3RhbGxhdGlvbgoKRm9sZ2UgZGllc2VuIFNjaHJpdHRlbiwgYmFzaWVyZW5kIGF1ZiBkZW0gQXVkaSBBNiBDNiAoVHlwIDRGKToKCjEuICoqRnJvbnRibGVuZGUgbMO2c2VuKiogIAogICBEaWUgVmVycmllZ2VsdW5nZW4gYW4gZGVyIEZyb250YmxlbmRlIGRlcyBLb21iaWluc3RydW1lbnRzIGzDtnNlbiB1bmQgZGllIEJsZW5kZSB2b3JzaWNodGlnIGFiemllaGVuLgoKMi4gKipIYXVwdHNjaHJhdWJlbiBlbnRmZXJuZW4qKiAgCiAgIERpZSB2aWVyIGdyb8OfZW4gTWV0YWxsc2NocmF1YmVuIHJ1bmQgdW0gZGFzIEtvbWJpaW5zdHJ1bWVudCBoZXJhdXNzY2hyYXViZW4uCgozLiAqKktvbWJpaW5zdHJ1bWVudCBhdXNiYXVlbioqCiAgIERhcyBLb21iaWluc3RydW1lbnQgaGVyYXVzbmVobWVuIHVuZCB6ZXJsZWdlbi4KCjQuICoqT3JpZ2luYWwtRGlzcGxheSBhdXNiYXVlbioqICAKICAgRGFzIERpc3BsYXkgdm9yc2ljaHRpZyBhdXMgZGVtIEdlaMOkdXNlIGhlYmVuLgoKNS4gKipOZXVlcyBEaXNwbGF5IGVpbnNldHplbioqICAKICAgRXJzYXR6ZGlzcGxheSBlaW5iYXVlbi4gRGF6dWdlaMO2cmlnZSBQbGF0aW5lIG1pdCBNaWtyb2NvbnRyb2xsZXIgYW4gZ2VlaWduZXRlciBTdGVsbGUgdmVyYmF1ZW4uIAoKNi4gKipGcm9udGJsZW5kZSB1bmQgSGF1cHRzY2hyYXViZW4gbW9udGllcmVuKiogIAogICBLb21iaWluc3RydW1lbnQgd2llZGVyIGVpbmJhdWVuLCBhbGxlIEhhdXB0c2NocmF1YmVuIGZlc3R6aWVoZW4gdW5kIGRpZSBEZWtvci1CbGVuZGUgdmVyYXN0ZW4uCgo3LiAqKlktU3RlY2tlciBhbiBTdGV1ZXJnZXLDpHRlIEo1MjcgdW5kIEo1MzMgYW5icmluZ2VuKioKICAgLSBKNTI3IChMZW5rc8OkdWxlbmVsZWt0cm9uaWspOiBTdGV1ZXJnZXLDpHQgaW4gZGVyIExlbmtzw6R1bGUgaGludGVyIGRlbSBMZW5rcmFkLiBFbnRmZXJuZSBkaWUgQWJkZWNrdW5nIHVudGVyIGRlciBMZW5rc8OkdWxlIHVuZCBzdGVja2UgZGVuIFktU3RlY2tlciB6d2lzY2hlbiBkZW4gb3JpZ2luYWxlbiBTdGVja3ZlcmJpbmRlciB1bmQgZGFzIFN0ZXVlcmdlcsOkdC4KICAgLSBKNTMzIChHYXRld2F5L0RpYWdub3NlLUludGVyZmFjZSk6IEJlZmluZGV0IHNpY2ggYW4gZGVyIFN0cmViZSBvYmVyaGFsYiBkZXMgQnJlbXNwZWRhbHMgaGludGVyIGRlbSB1bnRlcmVuIEFybWF0dXJlbmJyZXR0IGF1ZiBkZXIgRmFocmVyc2VpdGUuIEVudGZlcm5lIGRhcyBVbnRlcnRlaWwgZGVyIFNjaGFsdHRhZmVsLCBmaW5kZSBkZW4gR2F0ZXdheS1TdGVja2VyIHVuZCBwbGF0emllcmUgZGVuIFktQWRhcHRlciBkYXp3aXNjaGVuLg",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAATBQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_en_US.md",
+			"settings":
+			{
+				"buffer_size": 1430,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"paste",
+					null,
+					"AgAAAAAAAAAAAAAAlgUAAAAAAAAAAAAAlgUAAAAAAACWBQAAAAAAABcFAAAjIEluc3RhbGxhdGlvbgoKRm9sbG93IHRoZXNlIHN0ZXBzLCBiYXNlZCBvbiB0aGUgQXVkaSBBNiBDNiAoVHlwZSA0Rik6CgoxLiAqKlJlbW92ZSBmcm9udCB0cmltKiogIAogICBSZWxlYXNlIHRoZSBjbGlwcyBob2xkaW5nIHRoZSBpbnN0cnVtZW50IGNsdXN0ZXLigJlzIGZyb250IHRyaW0gYW5kIGNhcmVmdWxseSBwdWxsIHRoZSB0cmltIGF3YXkuCgoyLiAqKlJlbW92ZSBtYWluIHNjcmV3cyoqICAKICAgVW5zY3JldyB0aGUgZm91ciBsYXJnZSBtZXRhbCBzY3Jld3MgYXJvdW5kIHRoZSBpbnN0cnVtZW50IGNsdXN0ZXIuCgozLiAqKlJlbW92ZSBpbnN0cnVtZW50IGNsdXN0ZXIqKiAgCiAgIFB1bGwgdGhlIGluc3RydW1lbnQgY2x1c3RlciBvdXQgb2YgaXRzIGhvdXNpbmcgYW5kIGRpc2Fzc2VtYmxlIGFzIG5lZWRlZC4KCjQuICoqUmVtb3ZlIG9yaWdpbmFsIGRpc3BsYXkqKiAgCiAgIEdlbnRseSBsaWZ0IHRoZSBmYWN0b3J5IGRpc3BsYXkgb3V0IG9mIGl0cyBlbmNsb3N1cmUuCgo1LiAqKkluc3RhbGwgbmV3IGRpc3BsYXkqKiAgCiAgIEluc2VydCB0aGUgcmVwbGFjZW1lbnQgZGlzcGxheS4gTW91bnQgdGhlIG1hdGNoaW5nIG1pY3JvY29udHJvbGxlciBib2FyZCBpbiBhIHN1aXRhYmxlIGxvY2F0aW9uLgoKNi4gKipSZWluc3RhbGwgZnJvbnQgdHJpbSBhbmQgbWFpbiBzY3Jld3MqKiAgCiAgIFNsaWRlIHRoZSBpbnN0cnVtZW50IGNsdXN0ZXIgYmFjayBpbnRvIHBsYWNlLCB0aWdodGVuIGFsbCBtYWluIHNjcmV3cywgYW5kIHNuYXAgdGhlIGRlY29yYXRpdmUgdHJpbSBiYWNrIG9uLgoKNy4gKipBdHRhY2ggWS1zcGxpdHRlcnMgdG8gY29udHJvbCB1bml0cyBKNTI3IGFuZCBKNTMzKiogIAogICAtICoqSjUyNyAoc3RlZXJpbmcgY29sdW1uIGVsZWN0cm9uaWNzKToqKiBMb2NhdGVkIGluIHRoZSBzdGVlcmluZyBjb2x1bW4gYmVoaW5kIHRoZSB3aGVlbC4gUmVtb3ZlIHRoZSBsb3dlciBzdGVlcmluZyBjb2x1bW4gY292ZXIgYW5kIGluc2VydCB5b3VyIFktc3BsaXR0ZXIgYmV0d2VlbiB0aGUgZmFjdG9yeSBjb25uZWN0b3IgYW5kIHRoZSBjb250cm9sIHVuaXQuICAKICAgLSAqKko1MzMgKGdhdGV3YXkvZGlhZ25vc3RpYyBpbnRlcmZhY2UpOioqIEZvdW5kIG9uIHRoZSBzdXBwb3J0IHN0cnV0IGFib3ZlIHRoZSBicmFrZSBwZWRhbCBiZWhpbmQgdGhlIGxvd2VyIGRhc2ggb24gdGhlIGRyaXZlcuKAmXMgc2lkZS4gUmVtb3ZlIHRoZSBsb3dlciBkYXNoIHBhbmVsLCBsb2NhdGUgdGhlIGdhdGV3YXkgY29ubmVjdG9yLCBhbmQgaW5zZXJ0IHlvdXIgWS1hZGFwdGVyIGluIGxpbmUuICAK",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAATBQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Legal.md",
+			"settings":
+			{
+				"buffer_size": 1373,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "# LEGAL NOTICE"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAXQUAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"GitSavvy:",
+				"GitSavvy: help"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install",
+				"Package Control: Install Package"
+			],
+			[
+				"LSP: show",
+				"LSP: Show Call Hierarchy"
+			],
+			[
+				"LSP: toll",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Color SChe",
+				"UI: Customize Color Scheme"
+			],
+			[
+				"UI",
+				"UI: Select Color Scheme"
+			],
+			[
+				"Install Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Auto close tag",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"Package Col",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/dev",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/dev/sublimetext",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main"
+	],
+	"file_history":
+	[
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/README.md",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/mcp2515_init.c",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/mcp2515_init.h",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/mcp2515_can_read.c",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/mcp2515_can_read.h",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/main.c",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/gpio_defines.h",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/How_To_Flash.md",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/.gitignore",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_de_DE.md",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_en_US.md",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/sdkconfig.defaults",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/LICENSE",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/main/LICENSE",
+		"/Users/christianwilhelm/C99NC/ESP32/4F5LCD/create_empty_project_structure.sh",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/main/main.c",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/main/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/components/ili9486/ili9486.c",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/components/ili9486/include/ili9486.h",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/components/ili9486/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/sdkconfig.defaults",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/main/components/ili9486/src/ili9486.c",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/main/components/ili9486/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/C99CustomDisplay/main/components/ili9486/include/ili9486.h",
+		"/Users/christianwilhelm/Library/Application Support/Sublime Text/Packages/User/ESP32.sublime-build",
+		"/Users/christianwilhelm/C99NC/ESP32/blink/main/main.c",
+		"/Users/christianwilhelm/C99NC/ESP32/blink/main/ble50_sec_gatts_demo.h",
+		"/Users/christianwilhelm/C99NC/ESP32/blink/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/blink/main/CMakeLists.txt",
+		"/Users/christianwilhelm/C99NC/ESP32/blink/main/bluetooth.c",
+		"/Users/christianwilhelm/C99NC/ESP32/blink/main/blink.c",
+		"/Users/christianwilhelm/mnt-helsinki/opt/code99/mail/docker-compose.yml",
+		"/opt/homebrew/var/phpincludes/Code99/201113/top_secret_database_access_data.php",
+		"/Users/christianwilhelm/git-local/201113/src/Database/Connection.php",
+		"/Users/christianwilhelm/git-local/201113/public/index.php",
+		"/Users/christianwilhelm/git-local/201113/boot/bootstrap.php",
+		"/Users/christianwilhelm/git-local/201113/file_watch_and_upload.sh",
+		"/Users/christianwilhelm/git-local/201112/boot/bootstrap.php",
+		"/Users/christianwilhelm/git-local/201112/src/Database/DatabaseManager.php",
+		"/Users/christianwilhelm/git-local/201112/src/User/AddUser.php",
+		"/Users/christianwilhelm/git-local/201112/src/Config/GlobalConfig.php",
+		"/opt/homebrew/var/phpincludes/Code99/201112/top_secret_database_access_data.php",
+		"/Users/christianwilhelm/git-local/201112/public/index.php",
+		"/Users/christianwilhelm/git-local/201112/public/config/bothJavaScriptAndPhp.php",
+		"/Users/christianwilhelm/git-local/201112/public/css/pages/login.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/base/typography.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/components/form.css",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/HTMLSelects.php",
+		"/Users/christianwilhelm/git-local/201112/public/css/layout/header.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/components/select.css",
+		"/Users/christianwilhelm/git-local/201112/public/db.php",
+		"/Users/christianwilhelm/git-local/201112/.gitignore",
+		"/Users/christianwilhelm/git-local/201112/public/css/base/variables.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/components/button.css",
+		"/Users/christianwilhelm/git-local/201112/src/ImageHelper/Svg.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/Logo.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/HTMLForms.php",
+		"/Users/christianwilhelm/git-local/201112/public/js/modules/renderThemeButtons.js",
+		"/Users/christianwilhelm/git-local/201112/public/js/modules/themeSwitcher.js",
+		"/Users/christianwilhelm/git-local/201112/src/Database/CreateNewUserDB.php",
+		"/Users/christianwilhelm/git-local/201112/src/Themes/Themes.php",
+		"/Users/christianwilhelm/git-local/201112/public/js/modules/fetchController.js",
+		"/Users/christianwilhelm/git-local/201112/public/api/routes.php",
+		"/Users/christianwilhelm/git-local/201112/public/api/api.php",
+		"/Users/christianwilhelm/git-local/201112/public/js/fetch/fetchController.js",
+		"/Users/christianwilhelm/git-local/201112/public/css/styles.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/themes/theme-bright.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/themes/theme-dark.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/themes/theme-high-contrast.css",
+		"/Users/christianwilhelm/git-local/201112/public/css/base/reset.css",
+		"/Users/christianwilhelm/git-local/201112/src/User/Login.php",
+		"/Users/christianwilhelm/git-local/201112/src/Language/Language.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/HTMLStrings.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/Strings.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/Forms.php",
+		"/Users/christianwilhelm/git-local/201112/features.txt",
+		"/Users/christianwilhelm/git-local/201112/public/api/v1/Translator.php",
+		"/Users/christianwilhelm/git-local/201112/src/Translator/Translator.php",
+		"/Users/christianwilhelm/git-local/201112/bootstrap.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/GuiBuilder.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/ErrorPageRenderer.php",
+		"/Users/christianwilhelm/git-local/201112/composer.json",
+		"/Users/christianwilhelm/git-local/201112/public/config/javaScriptOnly.js",
+		"/Users/christianwilhelm/git-local/201112/public/config/phpOnly.php",
+		"/Users/christianwilhelm/git-local/201112/vendor/autoload.php",
+		"/Users/christianwilhelm/git-local/201112/src/GuiBuilder/TestClass.php",
+		"/Users/christianwilhelm/git-local/201112/public/admin/index.php",
+		"/Users/christianwilhelm/git-local/201112/public/admin/.htaccess",
+		"/Users/christianwilhelm/git-local/201112/public/admin/.htpasswd",
+		"/Users/christianwilhelm/git-local/201112/public/admin.php",
+		"/Users/christianwilhelm/git-local/201112/public/robots.txt",
+		"/Users/christianwilhelm/git-local/201112/css/style.css",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/index.php",
+		"/opt/homebrew/var/phpincludes/Code99/201111/bootstrap.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/log/phplog.json",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/api/api.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/js/lang/TranslatePage.js",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/js/config/CONFIG.js",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Database/Connector.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/phperrors.log",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/api/phperrors.log",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Lang/Lang.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/bootstrap.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Config/Config.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/api/apiRoutes_v2.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/test.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/Plugins/Mail/addimapaccount_step_10_check_mail_address.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/Plugins/Mail/addimapaccount_step_20_password.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/Plugins/Mail/addimapaccount_step_30_trytologin.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Mail/ImapClient.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Mail/MailAccount.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Mail/MailAccountRepository.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Mail/MailMessage.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Mail/MailPasswordCrypto.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/Plugins/Mail/accounts.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/Plugins/Mail/addimapaccount_step_00_start.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Core/Log.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Mail/SmtpClient.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/Security/Security.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/main.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/js/controllers/FetchController.js",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/js/forms/FormDataGrabber.js",
+		"/Users/christianwilhelm/git-local/201111/Web-app/src/Code99/GuiBuilder/GuiBuilder.php",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/js/main.js",
+		"/Users/christianwilhelm/git-local/201111/Web-app/public/js/core/Logger.js"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4144,
+								4144
+							]
+						],
+						"settings":
+						{
+							"lsp_uri": "file:///Users/christianwilhelm/C99NC/ESP32/4F5LCD/README.md",
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 332.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_de_DE.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1419,
+								1419
+							]
+						],
+						"settings":
+						{
+							"lsp_uri": "file:///Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_de_DE.md",
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_en_US.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1430,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1430,
+								1430
+							]
+						],
+						"settings":
+						{
+							"lsp_uri": "file:///Users/christianwilhelm/C99NC/ESP32/4F5LCD/Installation_en_US.md",
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/christianwilhelm/C99NC/ESP32/4F5LCD/Legal.md",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1373,
+								1373
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								}
+							],
+							"auto_name": "# LEGAL NOTICE",
+							"lsp_uri": "file:///Users/christianwilhelm/C99NC/ESP32/4F5LCD/Legal.md",
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GitSavvy":
+	{
+		"height": 120.0
+	},
+	"output.LSP Log Panel":
+	{
+		"height": 120.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 30.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/ESP32.sublime-build",
+	"project": "4F5LCD.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 121.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 265.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

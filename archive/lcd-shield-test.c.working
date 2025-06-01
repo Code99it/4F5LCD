@@ -1,0 +1,232 @@
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+#include "esp_rom_sys.h"
+#include "esp_system.h"
+#include "esp_random.h"
+#include "esp_private/esp_clk.h"
+
+// LCD Data wires
+// --------------
+#define LCD_DATA_0 GPIO_NUM_10
+#define LCD_DATA_1 GPIO_NUM_11
+#define LCD_DATA_2 GPIO_NUM_12
+#define LCD_DATA_3 GPIO_NUM_13
+#define LCD_DATA_4 GPIO_NUM_14
+#define LCD_DATA_5 GPIO_NUM_15
+#define LCD_DATA_6 GPIO_NUM_16
+#define LCD_DATA_7 GPIO_NUM_17
+
+// LCD Command wires
+// -----------------
+#define LCD_RD GPIO_NUM_35
+#define LCD_WR GPIO_NUM_36
+#define LCD_RS GPIO_NUM_37
+#define LCD_CS GPIO_NUM_38
+#define LCD_RST GPIO_NUM_39
+
+#define HIGH true
+#define LOW false
+
+// Configure a GPIO as input or output
+// -----------------------------------
+void gpioConf(gpio_num_t gpio, gpio_mode_t mode)
+{
+    gpio_config_t io_conf = {
+        .pin_bit_mask = 1ULL << gpio,
+        .mode = mode,
+        .pull_up_en = (mode == GPIO_MODE_INPUT) ? GPIO_PULLUP_ENABLE : GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE
+    };
+    gpio_config(&io_conf);
+}
+
+// Set a GPIO high or low
+// ----------------------
+void gpioSet(gpio_num_t gpio, bool level)
+{
+	gpio_set_level(gpio, level);
+}
+
+void lcd_write_bus(uint8_t data)
+{
+    gpio_set_level(LCD_DATA_0, (data >> 0) & 1);
+    gpio_set_level(LCD_DATA_1, (data >> 1) & 1);
+    gpio_set_level(LCD_DATA_2, (data >> 2) & 1);
+    gpio_set_level(LCD_DATA_3, (data >> 3) & 1);
+    gpio_set_level(LCD_DATA_4, (data >> 4) & 1);
+    gpio_set_level(LCD_DATA_5, (data >> 5) & 1);
+    gpio_set_level(LCD_DATA_6, (data >> 6) & 1);
+    gpio_set_level(LCD_DATA_7, (data >> 7) & 1);
+}
+
+void lcd_write_command(uint8_t cmd)
+{
+    gpio_set_level(LCD_RS, LOW);
+    gpio_set_level(LCD_CS, LOW);
+    lcd_write_bus(cmd);
+    gpio_set_level(LCD_WR, LOW);
+    // esp_rom_delay_us(1);  // 1 µs Delay reicht meistens
+    gpio_set_level(LCD_WR, HIGH);
+    gpio_set_level(LCD_CS, HIGH);
+}
+
+void lcd_write_data(uint8_t data)
+{
+    gpio_set_level(LCD_RS, HIGH);  // Daten
+    gpio_set_level(LCD_CS, LOW);
+    lcd_write_bus(data);
+    gpio_set_level(LCD_WR, LOW);
+    // esp_rom_delay_us(1);  // 1 µs Delay reicht meistens
+    gpio_set_level(LCD_WR, HIGH);
+    gpio_set_level(LCD_CS, HIGH);
+}
+
+void lcd_write_data16(uint16_t data)
+{
+    lcd_write_data(data >> 8);
+    lcd_write_data(data & 0xFF);
+}
+
+void lcd_reset(void)
+{
+    gpio_set_level(LCD_RST, LOW);
+    vTaskDelay(pdMS_TO_TICKS(20));
+    gpio_set_level(LCD_RST, HIGH);
+    vTaskDelay(pdMS_TO_TICKS(120));
+}
+
+void lcd_init(void)
+{
+    lcd_reset();
+
+    lcd_write_command(0x11); // Sleep out
+    vTaskDelay(pdMS_TO_TICKS(120));
+
+    lcd_write_command(0x3A); // Interface Pixel Format
+    lcd_write_data(0x55);    // 16 Bit/Pixel
+
+    lcd_write_command(0x36); // Memory Access Control
+    lcd_write_data(0xC0);    // MX, BGR (je nach Ausrichtung)
+
+    lcd_write_command(0x29); // Display ON
+    vTaskDelay(pdMS_TO_TICKS(20));
+}
+
+void lcd_fill_screen(uint16_t color)
+{
+    lcd_write_command(0x2A); // Column addr set
+    lcd_write_data(0x00);
+    lcd_write_data(0x00);    // XSTART = 0
+    lcd_write_data(0x01);
+    lcd_write_data(0x3F);    // XEND = 319
+
+    lcd_write_command(0x2B); // Row addr set
+    lcd_write_data(0x00);
+    lcd_write_data(0x00);    // YSTART = 0
+    lcd_write_data(0x01);
+    lcd_write_data(0xDF);    // YEND = 479
+
+    lcd_write_command(0x2C); // Memory Write
+
+    for (int i = 0; i < 320 * 480; i++) {
+        lcd_write_data16(color);
+    }
+}
+
+void lcd_fill_rect(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color)
+{
+    // Begrenzungen setzen
+    lcd_write_command(0x2A); // Column address set
+    lcd_write_data(x0 >> 8);
+    lcd_write_data(x0 & 0xFF);
+    lcd_write_data(x1 >> 8);
+    lcd_write_data(x1 & 0xFF);
+
+    lcd_write_command(0x2B); // Row address set
+    lcd_write_data(y0 >> 8);
+    lcd_write_data(y0 & 0xFF);
+    lcd_write_data(y1 >> 8);
+    lcd_write_data(y1 & 0xFF);
+
+    lcd_write_command(0x2C); // Memory Write
+
+    // Bereich ausfüllen
+    uint32_t pixel_count = (x1 - x0 + 1) * (y1 - y0 + 1);
+    for (uint32_t i = 0; i < pixel_count; i++) {
+        lcd_write_data16(color);
+    }
+}
+
+void lcd_draw_random_rect(void)
+{
+    const uint16_t max_x = 319;
+    const uint16_t max_y = 479;
+
+    // Zufällige Breite und Höhe: 50–150 Pixel
+    uint16_t w = 50 + (esp_random() % 101);  // 50 bis 150
+    uint16_t h = 50 + (esp_random() % 101);  // 50 bis 150
+
+    // Zufällige linke obere Ecke, sodass das Rechteck nicht aus dem Bildschirm ragt
+    uint16_t x0 = esp_random() % (max_x - w + 1);
+    uint16_t y0 = esp_random() % (max_y - h + 1);
+    uint16_t x1 = x0 + w - 1;
+    uint16_t y1 = y0 + h - 1;
+
+    // Zufallsfarbe
+    uint16_t color = esp_random() & 0xFFFF;
+
+    // Rechteck zeichnen
+    lcd_fill_rect(x0, y0, x1, y1, color);
+}
+
+// Main
+// ----
+void app_main(void)
+{
+	// Configs
+	// -------
+	printf("Configuring output pins\n");
+	gpioConf(LCD_DATA_0, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_1, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_2, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_3, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_4, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_5, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_6, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_DATA_7, GPIO_MODE_OUTPUT);
+
+	gpioConf(LCD_RD, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_WR, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_RS, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_CS, GPIO_MODE_OUTPUT);
+	gpioConf(LCD_RST, GPIO_MODE_OUTPUT);
+
+	gpioSet(LCD_RD, HIGH);
+	gpioSet(LCD_WR, HIGH);
+	gpioSet(LCD_CS, HIGH);
+	gpioSet(LCD_RST, HIGH);  // nur sicherheitshalber
+
+	// Start
+	// -----
+	printf("CPU-Frequenz: %d MHz\n", esp_clk_cpu_freq() / 1000000);
+
+	printf("LCD init\n");
+    lcd_init();
+
+    printf("LCD fill\n");
+    lcd_fill_screen(0x0000); 
+
+    printf("LCD rect 50,50 to 150,150\n");
+    lcd_fill_rect(50, 50, 150, 150, 0x07E0);
+
+    // Main loop
+    // ---------
+    printf("Main loop\n");
+    while (1) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    	lcd_draw_random_rect();
+    }
+}

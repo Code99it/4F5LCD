@@ -1,0 +1,102 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x42008881
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1488
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d98
+entry 0x403c9914
+[0;32mI (26) boot: ESP-IDF v5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun  1 2025 11:50:07[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (33) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=18fd4h (102356) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=00028ffc vaddr=3fc93b00 size=02fe0h ( 12256) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0002bfe4 vaddr=40374000 size=04034h ( 16436) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=1dd54h (122196) map[0m
+[0;32mI (136) esp_image: segment 4: paddr=0004dd7c vaddr=40378034 size=0ba2ch ( 47660) load[0m
+[0;32mI (154) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (154) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (164) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (164) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (164) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (168) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (173) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (177) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (181) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (186) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (191) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (195) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (201) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (206) MSPI Timing: PSRAM timing tuning index: 5[0m
+[0;32mI (209) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (213) esp_psram: Speed: 80MHz[0m
+[0;32mI (668) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (677) cpu_start: Pro cpu start user code[0m
+[0;32mI (677) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (678) cpu_start: Application information:[0m
+[0;32mI (678) cpu_start: Project name:     lcd_dma_test[0m
+[0;32mI (682) cpu_start: App version:      1[0m
+[0;32mI (685) cpu_start: Compile time:     Jun  1 2025 11:50:01[0m
+[0;32mI (691) cpu_start: ELF file SHA256:  bf3d68647...[0m
+[0;32mI (695) cpu_start: ESP-IDF:          v5.2[0m
+[0;32mI (699) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (703) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (706) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (710) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (717) heap_init: At 3FC97438 len 000522D8 (328 KiB): RAM[0m
+[0;32mI (722) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (727) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (732) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (737) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (745) spi_flash: detected chip: gd[0m
+[0;32mI (747) spi_flash: flash io: dio[0m
+[0;33mW (750) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (762) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (768) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (774) main_task: Started on CPU0[0m
+[0;32mI (784) esp_psram: Reserving pool of 64K of internal memory for DMA/internal allocations[0m
+[0;32mI (784) main_task: Calling app_main()[0m
+🔍 Available Heap (internal):    377999 Bytes
+🔍 Available Heap (SPIRAM):      8384916 Bytes
+🔍 Total Heap (all caps):        8698184 Bytes
+[0;32mI (804) gpio: GPIO[11]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Configuring output pins
+[0;32mI (944) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (944) gpio: GPIO[3]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (944) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (954) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (964) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (974) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (984) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (984) gpio: GPIO[16]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (994) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1004) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1014) gpio: GPIO[9]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1024) gpio: GPIO[10]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1034) gpio: GPIO[11]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+GUI: Drawing header separator line...
+GUI: Drawing footer separator line...
+To quit monitor: press Control + Option + 6 (or Ctrl + ])
+GUI: Footer-Titel wird geschrieben, Start x=127, y=434, Breite=67 Pixel, Text="Home"
+GUI: Footer-Titel wird geschrieben, Start x=118, y=434, Breite=84 Pixel, Text="Setup"
+GUI: Footer-Titel wird geschrieben, Start x=118, y=434, Breite=84 Pixel, Text="Radio"
+GUI: Footer-Titel wird geschrieben, Start x=118, y=434, Breite=84 Pixel, Text="Media"
+GUI: Footer-Titel wird geschrieben, Start x=127, y=434, Breite=67 Pixel, Text="Race"
+GUI: Footer-Titel wird geschrieben, Start x=84, y=434, Breite=152 Pixel, Text="Bluetooth"
+GUI: Footer-Titel wird geschrieben, Start x=135, y=434, Breite=50 Pixel, Text="DPF"
+GUI: Footer-Titel wird geschrieben, Start x=144, y=434, Breite=33 Pixel, Text="CD"

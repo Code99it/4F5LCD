@@ -1,0 +1,501 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "7fadd558-eff1-416f-a3f5-8bfc84c7a5eb")
+	(paper "A4")
+	(lib_symbols)
+	(text "Wed May 14, 2025"
+		(exclude_from_sim no)
+		(at 206.6683 193.346 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "423add2b-be43-4c69-ba1e-8736e25f7d43")
+	)
+	(text "Code99\nGrafenauer Straße 22\nD-94078 Freyung\nwww.code99.it"
+		(exclude_from_sim no)
+		(at 178.054 173.736 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "803154de-68a8-4d85-a786-578487ab9072")
+	)
+	(text "4F5LCD"
+		(exclude_from_sim no)
+		(at 187.1344 189.8105 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "804807ac-c499-4223-8919-5483cf31839d")
+	)
+	(text "01-01-01"
+		(exclude_from_sim no)
+		(at 268.8055 193.346 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify left)
+		)
+		(uuid "a67140a1-63d4-4a45-8e03-f1c28be10268")
+	)
+	(text "Christian Wilhelm"
+		(exclude_from_sim no)
+		(at 283.718 169.164 0)
+		(effects
+			(font
+				(size 1.8288 1.8288)
+			)
+			(justify right)
+		)
+		(uuid "b421a2d5-2668-4bf7-8da2-bf617c6bcce4")
+	)
+	(text "License Note:\nFree to use and modify for private or non-commercial purposes.\nCommercial use, resale, or redistribution is not permitted."
+		(exclude_from_sim no)
+		(at 219.71 176.022 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 117 0 1)
+			)
+			(justify left)
+		)
+		(uuid "ba7f8127-3569-43dc-8945-cd7c31d8b711")
+	)
+	(sheet
+		(at 132.08 58.42)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "1e39d2a2-114d-4d28-8097-d6c0cea1902c")
+		(property "Sheetname" "304 CAN IN"
+			(at 132.08 57.7084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CANin.kicad_sch"
+			(at 132.08 78.0546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "304")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 166.37 27.94)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "24d00e87-b4d4-433c-8108-3c96538cbe19")
+		(property "Sheetname" "301 CAN Antrieb"
+			(at 166.37 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CANpowertrain.kicad_sch"
+			(at 166.37 47.5746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "301")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 24.13 78.74)
+		(size 31.75 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "567332b7-208a-45c3-a56d-704aa008c32a")
+		(property "Sheetname" "400 Display"
+			(at 24.13 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "400lcd.kicad_sch"
+			(at 24.13 98.3746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "400")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 166.37 58.42)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6561f60e-d890-4137-8844-af0cc31fccce")
+		(property "Sheetname" "305 CAN OUT"
+			(at 166.37 57.7084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CANout.kicad_sch"
+			(at 166.37 78.0546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "305")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 24.13 27.94)
+		(size 30.48 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6606a65e-ffea-4c9e-9184-5d5351bb8d09")
+		(property "Sheetname" "100 Power Supply"
+			(at 24.13 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "100powersupply.kicad_sch"
+			(at 24.13 48.8446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "100")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 64.77 27.94)
+		(size 30.48 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "692c076d-f57f-40af-a42c-5c59276da707")
+		(property "Sheetname" "200 MCU ESP32"
+			(at 64.77 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "200mcuesp32.kicad_sch"
+			(at 64.77 48.8446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "200")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 24.13 127)
+		(size 30.48 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "796b627f-f544-41c6-b07b-13ee421d0845")
+		(property "Sheetname" "900 Stecker"
+			(at 24.13 126.2884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "310connector.kicad_sch"
+			(at 24.13 147.9046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "900")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 234.95 27.94)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8f8a59ce-aa99-4a60-bd37-aa6201cb354a")
+		(property "Sheetname" "303 CAN Infotainment"
+			(at 234.95 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CANinfo.kicad_sch"
+			(at 234.95 47.5746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "303")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 200.66 27.94)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b01a5110-f06c-4c41-a467-be270f4bb763")
+		(property "Sheetname" "302 CAN Komfort"
+			(at 200.66 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CANcomfort.kicad_sch"
+			(at 200.66 47.5746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "302")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 132.08 27.94)
+		(size 30.48 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ed671423-1065-4b86-899c-58ba6638d54c")
+		(property "Sheetname" "300 CAN Connector"
+			(at 132.08 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "300can.kicad_sch"
+			(at 132.08 47.5746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "4F5LCD"
+				(path "/7fadd558-eff1-416f-a3f5-8bfc84c7a5eb"
+					(page "300")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

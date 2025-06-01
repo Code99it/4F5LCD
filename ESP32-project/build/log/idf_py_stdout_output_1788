@@ -1,0 +1,49 @@
+-- IDF_TARGET is not set, guessed 'esp32s3' from sdkconfig '/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/sdkconfig'
+-- Found Git: /usr/bin/git (found version "2.39.5 (Apple Git-154)")
+-- Component directory /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/components/ili9486_panel does not contain a CMakeLists.txt file. No component will be added
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /Users/christianwilhelm/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Users/christianwilhelm/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Users/christianwilhelm/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Processing 1 dependencies:
+NOTICE: [1/1] idf (5.2.0)
+-- Project sdkconfig file /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python (found version "3.13.3") found components: Interpreter
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "lcd_dma_test" version: 1
+-- Adding linker script /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/esp_system/ld/esp32s3/sections.ld.in
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /Users/christianwilhelm/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /Users/christianwilhelm/esp/esp-idf/components/app_trace /Users/christianwilhelm/esp/esp-idf/components/app_update /Users/christianwilhelm/esp/esp-idf/components/bootloader /Users/christianwilhelm/esp/esp-idf/components/bootloader_support /Users/christianwilhelm/esp/esp-idf/components/bt /Users/christianwilhelm/esp/esp-idf/components/cmock /Users/christianwilhelm/esp/esp-idf/components/console /Users/christianwilhelm/esp/esp-idf/components/cxx /Users/christianwilhelm/esp/esp-idf/components/driver /Users/christianwilhelm/esp/esp-idf/components/efuse /Users/christianwilhelm/esp/esp-idf/components/esp-tls /Users/christianwilhelm/esp/esp-idf/components/esp_adc /Users/christianwilhelm/esp/esp-idf/components/esp_app_format /Users/christianwilhelm/esp/esp-idf/components/esp_bootloader_format /Users/christianwilhelm/esp/esp-idf/components/esp_coex /Users/christianwilhelm/esp/esp-idf/components/esp_common /Users/christianwilhelm/esp/esp-idf/components/esp_eth /Users/christianwilhelm/esp/esp-idf/components/esp_event /Users/christianwilhelm/esp/esp-idf/components/esp_gdbstub /Users/christianwilhelm/esp/esp-idf/components/esp_hid /Users/christianwilhelm/esp/esp-idf/components/esp_http_client /Users/christianwilhelm/esp/esp-idf/components/esp_http_server /Users/christianwilhelm/esp/esp-idf/components/esp_https_ota /Users/christianwilhelm/esp/esp-idf/components/esp_https_server /Users/christianwilhelm/esp/esp-idf/components/esp_hw_support /Users/christianwilhelm/esp/esp-idf/components/esp_lcd /Users/christianwilhelm/esp/esp-idf/components/esp_local_ctrl /Users/christianwilhelm/esp/esp-idf/components/esp_mm /Users/christianwilhelm/esp/esp-idf/components/esp_netif /Users/christianwilhelm/esp/esp-idf/components/esp_netif_stack /Users/christianwilhelm/esp/esp-idf/components/esp_partition /Users/christianwilhelm/esp/esp-idf/components/esp_phy /Users/christianwilhelm/esp/esp-idf/components/esp_pm /Users/christianwilhelm/esp/esp-idf/components/esp_psram /Users/christianwilhelm/esp/esp-idf/components/esp_ringbuf /Users/christianwilhelm/esp/esp-idf/components/esp_rom /Users/christianwilhelm/esp/esp-idf/components/esp_system /Users/christianwilhelm/esp/esp-idf/components/esp_timer /Users/christianwilhelm/esp/esp-idf/components/esp_wifi /Users/christianwilhelm/esp/esp-idf/components/espcoredump /Users/christianwilhelm/esp/esp-idf/components/esptool_py /Users/christianwilhelm/esp/esp-idf/components/fatfs /Users/christianwilhelm/esp/esp-idf/components/freertos /Users/christianwilhelm/esp/esp-idf/components/hal /Users/christianwilhelm/esp/esp-idf/components/heap /Users/christianwilhelm/esp/esp-idf/components/http_parser /Users/christianwilhelm/esp/esp-idf/components/idf_test /Users/christianwilhelm/esp/esp-idf/components/ieee802154 /Users/christianwilhelm/esp/esp-idf/components/json /Users/christianwilhelm/esp/esp-idf/components/log /Users/christianwilhelm/esp/esp-idf/components/lwip /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main /Users/christianwilhelm/esp/esp-idf/components/mbedtls /Users/christianwilhelm/esp/esp-idf/components/mqtt /Users/christianwilhelm/esp/esp-idf/components/newlib /Users/christianwilhelm/esp/esp-idf/components/nvs_flash /Users/christianwilhelm/esp/esp-idf/components/nvs_sec_provider /Users/christianwilhelm/esp/esp-idf/components/openthread /Users/christianwilhelm/esp/esp-idf/components/partition_table /Users/christianwilhelm/esp/esp-idf/components/perfmon /Users/christianwilhelm/esp/esp-idf/components/protobuf-c /Users/christianwilhelm/esp/esp-idf/components/protocomm /Users/christianwilhelm/esp/esp-idf/components/pthread /Users/christianwilhelm/esp/esp-idf/components/sdmmc /Users/christianwilhelm/esp/esp-idf/components/soc /Users/christianwilhelm/esp/esp-idf/components/spi_flash /Users/christianwilhelm/esp/esp-idf/components/spiffs /Users/christianwilhelm/esp/esp-idf/components/tcp_transport /Users/christianwilhelm/esp/esp-idf/components/touch_element /Users/christianwilhelm/esp/esp-idf/components/ulp /Users/christianwilhelm/esp/esp-idf/components/unity /Users/christianwilhelm/esp/esp-idf/components/usb /Users/christianwilhelm/esp/esp-idf/components/vfs /Users/christianwilhelm/esp/esp-idf/components/wear_levelling /Users/christianwilhelm/esp/esp-idf/components/wifi_provisioning /Users/christianwilhelm/esp/esp-idf/components/wpa_supplicant /Users/christianwilhelm/esp/esp-idf/components/xtensa
+-- Configuring done (2.7s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build

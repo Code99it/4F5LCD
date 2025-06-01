@@ -1,0 +1,58 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/bootloader.bin
+Bootloader binary size 0x4f40 bytes. 0x30c0 bytes (38%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[4/10] Completed 'bootloader'
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable lcd_dma_test.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/lcd_dma_test.bin
+[9/10] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/partition_table/partition-table.bin /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/lcd_dma_test.bin
+lcd_dma_test.bin binary size 0x3dcb0 bytes. Smallest app partition is 0x100000 bytes. 0xc2350 bytes (76%) free.
+[9/10] cd /Users/christianwilhelm/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/christianwilhelm/esp/esp-idf -D "SERIAL_TOOL=/Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python;;/Users/christianwilhelm/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build -P /Users/christianwilhelm/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/cu.usbmodem11101 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 lcd_dma_test.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/cu.usbmodem11101
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: 80:65:99:a5:0f:ec
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00004fff...
+Flash will be erased from 0x00010000 to 0x0004dfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20288 bytes to 12997...
+Writing at 0x00000000... (100 %)
+Wrote 20288 bytes (12997 compressed) at 0x00000000 in 0.3 seconds (effective 601.1 kbit/s)...
+Hash of data verified.
+Compressed 253104 bytes to 130504...
+Writing at 0x00010000... (12 %)
+Writing at 0x0001bdfa... (25 %)
+Writing at 0x00025230... (37 %)
+Writing at 0x0002b47f... (50 %)
+Writing at 0x00031a4f... (62 %)
+Writing at 0x0003aad4... (75 %)
+Writing at 0x00041239... (87 %)
+Writing at 0x000472f1... (100 %)
+Wrote 253104 bytes (130504 compressed) at 0x00010000 in 1.9 seconds (effective 1043.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 597.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
