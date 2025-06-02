@@ -11,7 +11,7 @@
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/flash.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/encrypted-flash.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/_project_elf_src.dir
-/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/lcd_dma_test.elf.dir
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/ESP32-project.elf.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/size.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/size-files.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/size-components.dir
@@ -497,7 +497,6 @@
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_https_server/CMakeFiles/install.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_https_server/CMakeFiles/install/local.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_https_server/CMakeFiles/install/strip.dir
-/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_psram/CMakeFiles/__idf_esp_psram.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_psram/CMakeFiles/edit_cache.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_psram/CMakeFiles/rebuild_cache.dir
 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_psram/CMakeFiles/list_install_components.dir

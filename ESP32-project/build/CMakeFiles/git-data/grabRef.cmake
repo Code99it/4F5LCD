@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "/Users/christianwilhelm/esp/esp-idf/.git")
+set(GIT_DIR "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)

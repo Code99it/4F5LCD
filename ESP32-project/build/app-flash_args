@@ -1,2 +1,2 @@
 --flash_mode dio --flash_freq 80m --flash_size 2MB
-0x10000 lcd_dma_test.bin
+0x10000 ESP32-project.bin

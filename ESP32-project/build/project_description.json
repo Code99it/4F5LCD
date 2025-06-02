@@ -1,15 +1,15 @@
 {
     "version":            "1.1",
-    "project_name":       "lcd_dma_test",
-    "project_version":    "1",
+    "project_name":       "ESP32-project",
+    "project_version":    "1599a6b-dirty",
     "project_path":       "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project",
     "idf_path":           "/Users/christianwilhelm/esp/esp-idf",
     "build_dir":          "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build",
     "config_file":        "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/sdkconfig",
     "config_defaults":    "",
     "bootloader_elf":     "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/bootloader.elf",
-    "app_elf":            "lcd_dma_test.elf",
-    "app_bin":            "lcd_dma_test.bin",
+    "app_elf":            "ESP32-project.elf",
+    "app_bin":            "ESP32-project.bin",
     "build_type":         "flash_app",
     "git_revision":       "v5.2",
     "target":             "esp32s3",
@@ -528,14 +528,14 @@
             "target": "___idf_esp_psram",
             "prefix": "idf",
             "dir": "/Users/christianwilhelm/esp/esp-idf/components/esp_psram",
-            "type": "LIBRARY",
+            "type": "CONFIG_ONLY",
             "lib": "__idf_esp_psram",
             "reqs": [],
             "priv_reqs": [ "heap", "spi_flash", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esp_psram/libesp_psram.a",
-            "sources": [ "/Users/christianwilhelm/esp/esp-idf/components/esp_psram/esp_psram.c", "/Users/christianwilhelm/esp/esp-idf/components/esp_psram/mmu_psram_flash.c", "/Users/christianwilhelm/esp/esp-idf/components/esp_psram/esp32s3/esp_psram_impl_octal.c" ],
+            "file": "",
+            "sources": [],
             "include_dirs": [ "include" ]
         },
         "esp_ringbuf": {
@@ -805,8 +805,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/main.c", "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/menu.c", "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/lcd_driver_i80.c", "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_PT_Sans_24px_white.c" ],
-            "include_dirs": [ ".", "/Users/christianwilhelm/esp/esp-idf/components/esp_lcd/include" ]
+            "sources": [ "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/main.c", "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/lcd.c", "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/color.c" ],
+            "include_dirs": [ "." ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2131,7 +2131,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ ".", "/Users/christianwilhelm/esp/esp-idf/components/esp_lcd/include" ]
+            "include_dirs": [ "." ]
         }
     },
     "debug_prefix_map_gdbinit": ""
