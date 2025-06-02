@@ -7,6 +7,7 @@
 #include "soc/gpio_struct.h"
 #include "soc/gpio_reg.h"
 #include "esp_timer.h"
+#include "font.h"
 
 #define GPIO_RS (1 << LCD_RS)
 #define GPIO_WR (1 << LCD_WR)
@@ -195,8 +196,6 @@ void lcd_fill_rect(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t 
 void lcd_fill_rainbow(void) {
     const uint16_t band_height = LCD_PIXEL_HEIGHT / 10;
 
-    printf("Filling rainbow colors...\n");
-
     lcd_fill_rect(0, 0 * band_height, LCD_PIXEL_WIDTH - 1, 1 * band_height - 1, hex_to_rgb565(0xFF0000)); // Rot
     vTaskDelay(1);
     lcd_fill_rect(0, 1 * band_height, LCD_PIXEL_WIDTH - 1, 2 * band_height - 1, hex_to_rgb565(0xFF7F00)); // Orange
@@ -239,3 +238,108 @@ void lcd_test_fill_fps(void)
     printf("Elapsed time: %.2f s for %d frames\n", elapsed_s, test_frames);
     printf("FPS: %.2f\n", fps);
 }
+
+/**
+ * Zeichnet ein einzelnes Zeichen anhand des ASCII-Codes.
+ *
+ * @param c Das Zeichen (z.B. 'Q')
+ * @param x Startposition X
+ * @param y Startposition Y
+ *
+ * @return neue Cursor-X-Position (x + Zeichenbreite)
+ */
+uint16_t lcd_draw_char(char c, uint16_t x, uint16_t y, uint8_t px) {
+    const FontGlyph *glyph;
+
+    switch (px) {
+        case 29:
+            glyph = &outfit29_glyphs[(uint8_t)c];
+            break;
+        case 36:
+            glyph = &outfit36_glyphs[(uint8_t)c];
+            break;
+        default:
+            return x; // unbekannte Größe – Zeichen überspringen
+    }
+
+    if (!glyph->data) {
+        return x; // unbekanntes Zeichen – überspringen
+    }
+
+    lcd_set_address_window(x, y, x + glyph->width - 1, y + glyph->height - 1);
+
+    for (uint32_t i = 0; i < glyph->width * glyph->height; i++) {
+        uint16_t color = glyph->data[i];
+        lcd_write_data(color >> 8);
+        lcd_write_data(color & 0xFF);
+    }
+
+    return x + glyph->width;
+}
+
+uint16_t lcd_draw_string(const char *str, uint16_t x, uint16_t y, uint8_t px) {
+    while (*str) {
+        x = lcd_draw_char(*str, x, y, px);
+        str++;
+    }
+    return x; // neue Cursor-Position nach dem String
+}
+
+/**
+ * Zeichnet eine horizontale Linie auf dem Display.
+ *
+ * @param y         Y-Koordinate (Oberkante der Linie)
+ * @param width     Breite in Pixel (0 = volle Displaybreite)
+ * @param thickness Dicke der Linie (Höhe in Pixeln)
+ * @param color     RGB565-Farbe
+ */
+void lcd_draw_horizontal_line(uint16_t y, uint16_t width, uint16_t thickness, uint16_t color) {
+    if (width == 0) {
+        width = LCD_PIXEL_WIDTH;  // z. B. 320
+    }
+
+    uint16_t x0 = 0;
+    uint16_t x1 = x0 + width - 1;
+    uint16_t y0 = y;
+    uint16_t y1 = y + thickness - 1;
+
+    lcd_set_address_window(x0, y0, x1, y1);
+
+    uint8_t high = color >> 8;
+    uint8_t low = color & 0xFF;
+    uint32_t total_pixels = width * thickness;
+
+    for (uint32_t i = 0; i < total_pixels; i++) {
+        lcd_write_data(high);
+        lcd_write_data(low);
+    }
+}
+
+/**
+ * Misst die FPS beim Füllen eines bestimmten Bildschirmbereichs.
+ *
+ * @param x0 Linke X-Koordinate
+ * @param y0 Obere Y-Koordinate
+ * @param x1 Rechte X-Koordinate
+ * @param y1 Untere Y-Koordinate
+ * @param frames Anzahl Testdurchläufe
+ */
+void lcd_test_fill_area_fps(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t frames) {
+    int64_t start_time = esp_timer_get_time();  // µs
+
+    for (int i = 0; i < frames; i++) {
+        uint32_t color = (i % 2 == 0) ? 0x0000FF : 0x00FF00;
+        lcd_fill_rect(x0, y0, x1, y1, hex_to_rgb565(color));
+    }
+
+    int64_t end_time = esp_timer_get_time();
+    int64_t elapsed_us = end_time - start_time;
+
+    float elapsed_s = elapsed_us / 1000000.0f;
+    float fps = frames / elapsed_s;
+
+    printf("Filled area (%u,%u)-(%u,%u) for %u frames\n", x0, y0, x1, y1, frames);
+    printf("Elapsed time: %.2f s, FPS: %.2f\n", elapsed_s, fps);
+}
+
+

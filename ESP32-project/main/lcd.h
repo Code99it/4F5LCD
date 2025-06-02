@@ -52,4 +52,12 @@ void lcd_fill_rainbow(void);
 
 void lcd_test_fill_fps(void);
 
+uint16_t lcd_draw_char(char c, uint16_t x, uint16_t y, uint8_t px);
+
+uint16_t lcd_draw_string(const char *str, uint16_t x, uint16_t y, uint8_t px);
+
+void lcd_draw_horizontal_line(uint16_t y, uint16_t width, uint16_t thickness, uint16_t color);
+
+void lcd_test_fill_area_fps(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t frames);
+
 #endif

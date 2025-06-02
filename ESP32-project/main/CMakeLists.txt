@@ -3,4 +3,5 @@ SRCS
     "main.c"
     "lcd.c"
     "color.c"
+    "font_outfit_36px.c"
                     INCLUDE_DIRS ".")
