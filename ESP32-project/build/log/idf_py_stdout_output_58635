@@ -1,0 +1,7 @@
+[1/4] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/partition_table/partition-table.bin /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/ESP32-project.bin
+ESP32-project.bin binary size 0x47690 bytes. Smallest app partition is 0x100000 bytes. 0xb8970 bytes (72%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'

@@ -239,6 +239,7 @@ void lcd_test_fill_fps(void)
     printf("FPS: %.2f\n", fps);
 }
 
+
 /**
  * Zeichnet ein einzelnes Zeichen anhand des ASCII-Codes.
  *
@@ -269,12 +270,68 @@ uint16_t lcd_draw_char(char c, uint16_t x, uint16_t y, uint8_t px) {
     lcd_set_address_window(x, y, x + glyph->width - 1, y + glyph->height - 1);
 
     for (uint32_t i = 0; i < glyph->width * glyph->height; i++) {
-        uint16_t color = glyph->data[i];
-        lcd_write_data(color >> 8);
-        lcd_write_data(color & 0xFF);
+        uint16_t brightness = glyph->data[i]; // z. B. 0x0000–0xFFFF
+        uint16_t modulated = scale_color_rgb565(hex_to_rgb565(0x00AAFF), brightness);
+        lcd_write_data(modulated >> 8);
+        lcd_write_data(modulated & 0xFF);
     }
 
     return x + glyph->width;
+}
+
+uint16_t scale_color_rgb565(uint16_t base_color, uint16_t brightness) {
+    uint8_t r = (base_color >> 11) & 0x1F;
+    uint8_t g = (base_color >> 5) & 0x3F;
+    uint8_t b = base_color & 0x1F;
+
+    r = (r * brightness) >> 16;
+    g = (g * brightness) >> 16;
+    b = (b * brightness) >> 16;
+
+    return (r << 11) | (g << 5) | b;
+}
+
+/**
+ * Zeichnet ein Zeichen in Farbe mit Anti-Aliasing.
+ *
+ * @param c        Das Zeichen (z. B. 'Q')
+ * @param x        Startposition X
+ * @param y        Startposition Y
+ * @param px       Schriftgröße (z. B. 29 oder 36)
+ * @param hex_rgb  Wunschfarbe im Format 0xRRGGBB
+ *
+ * @return neue Cursor-X-Position (x + Zeichenbreite)
+ */
+uint16_t lcd_draw_colored_char(char c, uint16_t x, uint16_t y, uint8_t px, uint32_t hex_rgb) {
+    const FontGlyph *glyph;
+    switch (px) {
+        case 24:
+            glyph = &outfit24_glyphs[(uint8_t)c];
+            break;
+        case 29:
+            glyph = &outfit29_glyphs[(uint8_t)c];
+            break;
+        case 36:
+            glyph = &outfit36_glyphs[(uint8_t)c];
+            break;
+        default:
+            return x;
+    }
+
+    if (!glyph || !glyph->data)
+        return x;
+
+    uint16_t base_color = hex_to_rgb565(hex_rgb);
+    lcd_set_address_window(x, y, x + glyph->width - 1, y + glyph->height - 1);
+
+    for (uint32_t i = 0; i < glyph->width * glyph->height; i++) {
+        uint16_t brightness = glyph->data[i];  // Originale Graustufe
+        uint16_t modulated = scale_color_rgb565(base_color, brightness);
+        lcd_write_data(modulated >> 8);
+        lcd_write_data(modulated & 0xFF);
+    }
+
+    return x + glyph->width + FONT_LETTER_SPACING_PX;
 }
 
 uint16_t lcd_draw_string(const char *str, uint16_t x, uint16_t y, uint8_t px) {
@@ -284,6 +341,62 @@ uint16_t lcd_draw_string(const char *str, uint16_t x, uint16_t y, uint8_t px) {
     }
     return x; // neue Cursor-Position nach dem String
 }
+
+uint16_t lcd_draw_colored_string(const char *str, uint16_t x, uint16_t y, uint8_t px, uint32_t hex_rgb) {
+    while (*str) {
+        x = lcd_draw_colored_char(*str, x, y, px, hex_rgb);
+        str++;
+    }
+    return x;  // Neue Cursor-Position nach dem String
+}
+
+/**
+ * Zeichnet einen zentrierten, farbigen String mit Anti-Aliasing.
+ *
+ * @param str      Der String (z. B. "Hallo Welt")
+ * @param x_center Die horizontale Mitte, um die zentriert wird
+ * @param y        Y-Koordinate des Textes
+ * @param px       Schriftgröße (29 oder 36)
+ * @param hex_rgb  Farbe in 0xRRGGBB
+ */
+uint16_t lcd_draw_colored_string_centered(const char *str, uint16_t x_center, uint16_t y, uint8_t px, uint32_t hex_rgb) {
+    const FontGlyph *glyph;
+    uint16_t total_width = 0;
+    const char *ptr = str;
+
+    while (*ptr) {
+        switch (px) {
+            case 29:
+                glyph = &outfit29_glyphs[(uint8_t)*ptr];
+                break;
+            case 36:
+                glyph = &outfit36_glyphs[(uint8_t)*ptr];
+                break;
+            case 24:
+                glyph = &outfit24_glyphs[(uint8_t)*ptr];
+                break;
+            default:
+                glyph = NULL;
+                break;
+        }
+
+        if (glyph && glyph->data) {
+            total_width += glyph->width + FONT_LETTER_SPACING_PX;
+        }
+
+        ptr++;
+    }
+
+    if (total_width > 0) {
+        total_width -= FONT_LETTER_SPACING_PX;  // Letztes Spacing entfernen
+    }
+
+    int16_t start_x = x_center - total_width / 2;
+    if (start_x < 0) start_x = 0;
+
+    return lcd_draw_colored_string(str, (uint16_t)start_x, y, px, hex_rgb);
+}
+
 
 /**
  * Zeichnet eine horizontale Linie auf dem Display.

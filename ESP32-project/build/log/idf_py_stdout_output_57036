@@ -1,0 +1,644 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[5/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/font_outfit_24px.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/font_outfit_24px.c.obj 
+/Users/christianwilhelm/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.2\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/config -I/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main -I/Users/christianwilhelm/esp/esp-idf/components/newlib/platform_include -I/Users/christianwilhelm/esp/esp-idf/components/freertos/config/include -I/Users/christianwilhelm/esp/esp-idf/components/freertos/config/include/freertos -I/Users/christianwilhelm/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/christianwilhelm/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/christianwilhelm/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/christianwilhelm/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/christianwilhelm/esp/esp-idf/components/freertos/esp_additions/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_hw_support/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/christianwilhelm/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/Users/christianwilhelm/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/Users/christianwilhelm/esp/esp-idf/components/heap/include -I/Users/christianwilhelm/esp/esp-idf/components/log/include -I/Users/christianwilhelm/esp/esp-idf/components/soc/include -I/Users/christianwilhelm/esp/esp-idf/components/soc/esp32s3 -I/Users/christianwilhelm/esp/esp-idf/components/soc/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/hal/platform_port/include -I/Users/christianwilhelm/esp/esp-idf/components/hal/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/hal/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_rom/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_rom/include/esp32s3 -I/Users/christianwilhelm/esp/esp-idf/components/esp_rom/esp32s3 -I/Users/christianwilhelm/esp/esp-idf/components/esp_common/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_system/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_system/port/soc -I/Users/christianwilhelm/esp/esp-idf/components/esp_system/port/include/private -I/Users/christianwilhelm/esp/esp-idf/components/xtensa/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/xtensa/include -I/Users/christianwilhelm/esp/esp-idf/components/xtensa/deprecated_include -I/Users/christianwilhelm/esp/esp-idf/components/lwip/include -I/Users/christianwilhelm/esp/esp-idf/components/lwip/include/apps -I/Users/christianwilhelm/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/christianwilhelm/esp/esp-idf/components/lwip/lwip/src/include -I/Users/christianwilhelm/esp/esp-idf/components/lwip/port/include -I/Users/christianwilhelm/esp/esp-idf/components/lwip/port/freertos/include -I/Users/christianwilhelm/esp/esp-idf/components/lwip/port/esp32xx/include -I/Users/christianwilhelm/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/christianwilhelm/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/Users/christianwilhelm/esp/esp-idf/components/esp_ringbuf/include -I/Users/christianwilhelm/esp/esp-idf/components/efuse/include -I/Users/christianwilhelm/esp/esp-idf/components/efuse/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_mm/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/deprecated -I/Users/christianwilhelm/esp/esp-idf/components/driver/analog_comparator/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/dac/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/gpio/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/gptimer/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/i2c/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/i2s/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/ledc/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/mcpwm/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/parlio/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/pcnt/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/rmt/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/sdio_slave/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/sdmmc/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/sigma_delta/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/spi/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/touch_sensor/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/twai/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/uart/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/christianwilhelm/esp/esp-idf/components/driver/touch_sensor/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_pm/include -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/port/include -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/mbedtls/include -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/mbedtls/library -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/Users/christianwilhelm/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/Users/christianwilhelm/esp/esp-idf/components/esp_bootloader_format/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_app_format/include -I/Users/christianwilhelm/esp/esp-idf/components/bootloader_support/include -I/Users/christianwilhelm/esp/esp-idf/components/bootloader_support/bootloader_flash/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_partition/include -I/Users/christianwilhelm/esp/esp-idf/components/app_update/include -I/Users/christianwilhelm/esp/esp-idf/components/spi_flash/include -I/Users/christianwilhelm/esp/esp-idf/components/pthread/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_timer/include -I/Users/christianwilhelm/esp/esp-idf/components/app_trace/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_event/include -I/Users/christianwilhelm/esp/esp-idf/components/nvs_flash/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_phy/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_phy/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/vfs/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_netif/include -I/Users/christianwilhelm/esp/esp-idf/components/wpa_supplicant/include -I/Users/christianwilhelm/esp/esp-idf/components/wpa_supplicant/port/include -I/Users/christianwilhelm/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_coex/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_wifi/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/Users/christianwilhelm/esp/esp-idf/components/unity/include -I/Users/christianwilhelm/esp/esp-idf/components/unity/unity/src -I/Users/christianwilhelm/esp/esp-idf/components/cmock/CMock/src -I/Users/christianwilhelm/esp/esp-idf/components/console -I/Users/christianwilhelm/esp/esp-idf/components/http_parser -I/Users/christianwilhelm/esp/esp-idf/components/esp-tls -I/Users/christianwilhelm/esp/esp-idf/components/esp-tls/esp-tls-crypto -I/Users/christianwilhelm/esp/esp-idf/components/esp_adc/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_adc/interface -I/Users/christianwilhelm/esp/esp-idf/components/esp_adc/esp32s3/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_adc/deprecated/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_eth/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_gdbstub/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_hid/include -I/Users/christianwilhelm/esp/esp-idf/components/tcp_transport/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_http_client/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_http_server/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_https_ota/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_psram/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_lcd/include -I/Users/christianwilhelm/esp/esp-idf/components/esp_lcd/interface -I/Users/christianwilhelm/esp/esp-idf/components/protobuf-c/protobuf-c -I/Users/christianwilhelm/esp/esp-idf/components/protocomm/include/common -I/Users/christianwilhelm/esp/esp-idf/components/protocomm/include/security -I/Users/christianwilhelm/esp/esp-idf/components/protocomm/include/transports -I/Users/christianwilhelm/esp/esp-idf/components/protocomm/include/crypto/srp6a -I/Users/christianwilhelm/esp/esp-idf/components/esp_local_ctrl/include -I/Users/christianwilhelm/esp/esp-idf/components/espcoredump/include -I/Users/christianwilhelm/esp/esp-idf/components/espcoredump/include/port/xtensa -I/Users/christianwilhelm/esp/esp-idf/components/wear_levelling/include -I/Users/christianwilhelm/esp/esp-idf/components/sdmmc/include -I/Users/christianwilhelm/esp/esp-idf/components/fatfs/diskio -I/Users/christianwilhelm/esp/esp-idf/components/fatfs/src -I/Users/christianwilhelm/esp/esp-idf/components/fatfs/vfs -I/Users/christianwilhelm/esp/esp-idf/components/idf_test/include -I/Users/christianwilhelm/esp/esp-idf/components/idf_test/include/esp32s3 -I/Users/christianwilhelm/esp/esp-idf/components/ieee802154/include -I/Users/christianwilhelm/esp/esp-idf/components/json/cJSON -I/Users/christianwilhelm/esp/esp-idf/components/mqtt/esp-mqtt/include -I/Users/christianwilhelm/esp/esp-idf/components/nvs_sec_provider/include -I/Users/christianwilhelm/esp/esp-idf/components/perfmon/include -I/Users/christianwilhelm/esp/esp-idf/components/spiffs/include -I/Users/christianwilhelm/esp/esp-idf/components/touch_element/include -I/Users/christianwilhelm/esp/esp-idf/components/usb/include -I/Users/christianwilhelm/esp/esp-idf/components/wifi_provisioning/include -mlongcalls  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project=. -fmacro-prefix-map=/Users/christianwilhelm/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/font_outfit_24px.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/font_outfit_24px.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/font_outfit_24px.c.obj -c /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1816: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_A_WIDTH" redefined
+ 1816 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_A_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:568: note: this is the location of the previous definition
+  568 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_A_WIDTH 18
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1819:16: error: redefinition of 'font_outfit24_light300_A'
+ 1819 | const uint16_t font_outfit24_light300_A[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:571:16: note: previous definition of 'font_outfit24_light300_A' with type 'const uint16_t[522]' {aka 'const short unsigned int[522]'}
+  571 | const uint16_t font_outfit24_light300_A[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1856: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_AE_WIDTH" redefined
+ 1856 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_AE_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:617: note: this is the location of the previous definition
+  617 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_AE_WIDTH 18
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1859:16: error: redefinition of 'font_outfit24_light300_AE'
+ 1859 | const uint16_t font_outfit24_light300_AE[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:620:16: note: previous definition of 'font_outfit24_light300_AE' with type 'const uint16_t[522]' {aka 'const short unsigned int[522]'}
+  620 | const uint16_t font_outfit24_light300_AE[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1899:16: error: redefinition of 'font_outfit24_light300_B'
+ 1899 | const uint16_t font_outfit24_light300_B[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:669:16: note: previous definition of 'font_outfit24_light300_B' with type 'const uint16_t[406]' {aka 'const short unsigned int[406]'}
+  669 | const uint16_t font_outfit24_light300_B[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1936: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_C_WIDTH" redefined
+ 1936 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_C_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:706: note: this is the location of the previous definition
+  706 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_C_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1939:16: error: redefinition of 'font_outfit24_light300_C'
+ 1939 | const uint16_t font_outfit24_light300_C[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:709:16: note: previous definition of 'font_outfit24_light300_C' with type 'const uint16_t[493]' {aka 'const short unsigned int[493]'}
+  709 | const uint16_t font_outfit24_light300_C[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1973: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH" redefined
+ 1973 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:752: note: this is the location of the previous definition
+  752 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1976:16: error: redefinition of 'font_outfit24_light300_D'
+ 1976 | const uint16_t font_outfit24_light300_D[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:755:16: note: previous definition of 'font_outfit24_light300_D' with type 'const uint16_t[493]' {aka 'const short unsigned int[493]'}
+  755 | const uint16_t font_outfit24_light300_D[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2013: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_E_WIDTH" redefined
+ 2013 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_E_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:798: note: this is the location of the previous definition
+  798 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_E_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2016:16: error: redefinition of 'font_outfit24_light300_E'
+ 2016 | const uint16_t font_outfit24_light300_E[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:801:16: note: previous definition of 'font_outfit24_light300_E' with type 'const uint16_t[377]' {aka 'const short unsigned int[377]'}
+  801 | const uint16_t font_outfit24_light300_E[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2053: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_F_WIDTH" redefined
+ 2053 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_F_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:835: note: this is the location of the previous definition
+  835 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_F_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2056:16: error: redefinition of 'font_outfit24_light300_F'
+ 2056 | const uint16_t font_outfit24_light300_F[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:838:16: note: previous definition of 'font_outfit24_light300_F' with type 'const uint16_t[377]' {aka 'const short unsigned int[377]'}
+  838 | const uint16_t font_outfit24_light300_F[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2088: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_G_WIDTH" redefined
+ 2088 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_G_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:872: note: this is the location of the previous definition
+  872 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_G_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2091:16: error: redefinition of 'font_outfit24_light300_G'
+ 2091 | const uint16_t font_outfit24_light300_G[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:875:16: note: previous definition of 'font_outfit24_light300_G' with type 'const uint16_t[551]' {aka 'const short unsigned int[551]'}
+  875 | const uint16_t font_outfit24_light300_G[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2128: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_H_WIDTH" redefined
+ 2128 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_H_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:923: note: this is the location of the previous definition
+  923 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_H_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2131:16: error: redefinition of 'font_outfit24_light300_H'
+ 2131 | const uint16_t font_outfit24_light300_H[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:926:16: note: previous definition of 'font_outfit24_light300_H' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+  926 | const uint16_t font_outfit24_light300_H[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2163: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_I_WIDTH" redefined
+ 2163 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_I_WIDTH 4
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:965: note: this is the location of the previous definition
+  965 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_I_WIDTH 3
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2166:16: error: redefinition of 'font_outfit24_light300_I'
+ 2166 | const uint16_t font_outfit24_light300_I[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:968:16: note: previous definition of 'font_outfit24_light300_I' with type 'const uint16_t[87]' {aka 'const short unsigned int[87]'}
+  968 | const uint16_t font_outfit24_light300_I[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2180: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_J_WIDTH" redefined
+ 2180 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_J_WIDTH 9
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:980: note: this is the location of the previous definition
+  980 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_J_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2183:16: error: redefinition of 'font_outfit24_light300_J'
+ 2183 | const uint16_t font_outfit24_light300_J[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:983:16: note: previous definition of 'font_outfit24_light300_J' with type 'const uint16_t[319]' {aka 'const short unsigned int[319]'}
+  983 | const uint16_t font_outfit24_light300_J[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2209: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_K_WIDTH" redefined
+ 2209 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_K_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1013: note: this is the location of the previous definition
+ 1013 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_K_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2212:16: error: redefinition of 'font_outfit24_light300_K'
+ 2212 | const uint16_t font_outfit24_light300_K[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1016:16: note: previous definition of 'font_outfit24_light300_K' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 1016 | const uint16_t font_outfit24_light300_K[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2242: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_L_WIDTH" redefined
+ 2242 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_L_WIDTH 3
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1055: note: this is the location of the previous definition
+ 1055 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_L_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2245:16: error: redefinition of 'font_outfit24_light300_L'
+ 2245 | const uint16_t font_outfit24_light300_L[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1058:16: note: previous definition of 'font_outfit24_light300_L' with type 'const uint16_t[348]' {aka 'const short unsigned int[348]'}
+ 1058 | const uint16_t font_outfit24_light300_L[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2257: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_M_WIDTH" redefined
+ 2257 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_M_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1090: note: this is the location of the previous definition
+ 1090 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_M_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2260:16: error: redefinition of 'font_outfit24_light300_M'
+ 2260 | const uint16_t font_outfit24_light300_M[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1093:16: note: previous definition of 'font_outfit24_light300_M' with type 'const uint16_t[551]' {aka 'const short unsigned int[551]'}
+ 1093 | const uint16_t font_outfit24_light300_M[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2310: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_N_WIDTH" redefined
+ 2310 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_N_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1141: note: this is the location of the previous definition
+ 1141 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_N_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2313:16: error: redefinition of 'font_outfit24_light300_N'
+ 2313 | const uint16_t font_outfit24_light300_N[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1144:16: note: previous definition of 'font_outfit24_light300_N' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 1144 | const uint16_t font_outfit24_light300_N[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2345: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_O_WIDTH" redefined
+ 2345 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_O_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1183: note: this is the location of the previous definition
+ 1183 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_O_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2348:16: error: redefinition of 'font_outfit24_light300_O'
+ 2348 | const uint16_t font_outfit24_light300_O[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1186:16: note: previous definition of 'font_outfit24_light300_O' with type 'const uint16_t[551]' {aka 'const short unsigned int[551]'}
+ 1186 | const uint16_t font_outfit24_light300_O[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2385: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_OE_WIDTH" redefined
+ 2385 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_OE_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1234: note: this is the location of the previous definition
+ 1234 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_OE_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2388:16: error: redefinition of 'font_outfit24_light300_OE'
+ 2388 | const uint16_t font_outfit24_light300_OE[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1237:16: note: previous definition of 'font_outfit24_light300_OE' with type 'const uint16_t[580]' {aka 'const short unsigned int[580]'}
+ 1237 | const uint16_t font_outfit24_light300_OE[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2430:16: error: redefinition of 'font_outfit24_light300_P'
+ 2430 | const uint16_t font_outfit24_light300_P[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1290:16: note: previous definition of 'font_outfit24_light300_P' with type 'const uint16_t[377]' {aka 'const short unsigned int[377]'}
+ 1290 | const uint16_t font_outfit24_light300_P[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2464: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH" redefined
+ 2464 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1324: note: this is the location of the previous definition
+ 1324 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2467:16: error: redefinition of 'font_outfit24_light300_Q'
+ 2467 | const uint16_t font_outfit24_light300_Q[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1327:16: note: previous definition of 'font_outfit24_light300_Q' with type 'const uint16_t[580]' {aka 'const short unsigned int[580]'}
+ 1327 | const uint16_t font_outfit24_light300_Q[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2504: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_R_WIDTH" redefined
+ 2504 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_R_WIDTH 9
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1377: note: this is the location of the previous definition
+ 1377 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_R_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2507:16: error: redefinition of 'font_outfit24_light300_R'
+ 2507 | const uint16_t font_outfit24_light300_R[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1380:16: note: previous definition of 'font_outfit24_light300_R' with type 'const uint16_t[406]' {aka 'const short unsigned int[406]'}
+ 1380 | const uint16_t font_outfit24_light300_R[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2533: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_S_WIDTH" redefined
+ 2533 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_S_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1417: note: this is the location of the previous definition
+ 1417 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_S_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2536:16: error: redefinition of 'font_outfit24_light300_S'
+ 2536 | const uint16_t font_outfit24_light300_S[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1420:16: note: previous definition of 'font_outfit24_light300_S' with type 'const uint16_t[377]' {aka 'const short unsigned int[377]'}
+ 1420 | const uint16_t font_outfit24_light300_S[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2606: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_T_WIDTH" redefined
+ 2606 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_T_WIDTH 9
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1454: note: this is the location of the previous definition
+ 1454 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_T_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2609:16: error: redefinition of 'font_outfit24_light300_T'
+ 2609 | const uint16_t font_outfit24_light300_T[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1457:16: note: previous definition of 'font_outfit24_light300_T' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 1457 | const uint16_t font_outfit24_light300_T[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2635: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_U_WIDTH" redefined
+ 2635 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_U_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1496: note: this is the location of the previous definition
+ 1496 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_U_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2638:16: error: redefinition of 'font_outfit24_light300_U'
+ 2638 | const uint16_t font_outfit24_light300_U[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1499:16: note: previous definition of 'font_outfit24_light300_U' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 1499 | const uint16_t font_outfit24_light300_U[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2670: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_UE_WIDTH" redefined
+ 2670 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_UE_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1538: note: this is the location of the previous definition
+ 1538 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_UE_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2673:16: error: redefinition of 'font_outfit24_light300_UE'
+ 2673 | const uint16_t font_outfit24_light300_UE[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1541:16: note: previous definition of 'font_outfit24_light300_UE' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 1541 | const uint16_t font_outfit24_light300_UE[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2705: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_V_WIDTH" redefined
+ 2705 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_V_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1580: note: this is the location of the previous definition
+ 1580 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_V_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2708:16: error: redefinition of 'font_outfit24_light300_V'
+ 2708 | const uint16_t font_outfit24_light300_V[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1583:16: note: previous definition of 'font_outfit24_light300_V' with type 'const uint16_t[493]' {aka 'const short unsigned int[493]'}
+ 1583 | const uint16_t font_outfit24_light300_V[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2745: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_W_WIDTH" redefined
+ 2745 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_W_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1626: note: this is the location of the previous definition
+ 1626 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_W_WIDTH 24
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2748:16: error: redefinition of 'font_outfit24_light300_W'
+ 2748 | const uint16_t font_outfit24_light300_W[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1629:16: note: previous definition of 'font_outfit24_light300_W' with type 'const uint16_t[696]' {aka 'const short unsigned int[696]'}
+ 1629 | const uint16_t font_outfit24_light300_W[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2798: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_X_WIDTH" redefined
+ 2798 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_X_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1688: note: this is the location of the previous definition
+ 1688 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_X_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2801:16: error: redefinition of 'font_outfit24_light300_X'
+ 2801 | const uint16_t font_outfit24_light300_X[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1691:16: note: previous definition of 'font_outfit24_light300_X' with type 'const uint16_t[493]' {aka 'const short unsigned int[493]'}
+ 1691 | const uint16_t font_outfit24_light300_X[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2838: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Y_WIDTH" redefined
+ 2838 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Y_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1734: note: this is the location of the previous definition
+ 1734 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Y_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2841:16: error: redefinition of 'font_outfit24_light300_Y'
+ 2841 | const uint16_t font_outfit24_light300_Y[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1737:16: note: previous definition of 'font_outfit24_light300_Y' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 1737 | const uint16_t font_outfit24_light300_Y[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2875: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Z_WIDTH" redefined
+ 2875 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Z_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1776: note: this is the location of the previous definition
+ 1776 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Z_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2878:16: error: redefinition of 'font_outfit24_light300_Z'
+ 2878 | const uint16_t font_outfit24_light300_Z[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1779:16: note: previous definition of 'font_outfit24_light300_Z' with type 'const uint16_t[406]' {aka 'const short unsigned int[406]'}
+ 1779 | const uint16_t font_outfit24_light300_Z[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3281: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH" redefined
+ 3281 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH 22
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1973: note: this is the location of the previous definition
+ 1973 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3284:16: error: redefinition of 'font_outfit24_light300_D'
+ 3284 | const uint16_t font_outfit24_light300_D[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:755:16: note: previous definition of 'font_outfit24_light300_D' with type 'const uint16_t[406]' {aka 'const short unsigned int[406]'}
+  755 | const uint16_t font_outfit24_light300_D[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3339: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH" redefined
+ 3339 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 27
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2464: note: this is the location of the previous definition
+ 2464 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3342:16: error: redefinition of 'font_outfit24_light300_Q'
+ 3342 | const uint16_t font_outfit24_light300_Q[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1327:16: note: previous definition of 'font_outfit24_light300_Q' with type 'const uint16_t[406]' {aka 'const short unsigned int[406]'}
+ 1327 | const uint16_t font_outfit24_light300_Q[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3408: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_4_WIDTH" redefined
+ 3408 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_4_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3048: note: this is the location of the previous definition
+ 3048 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_4_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3411:16: error: redefinition of 'font_outfit24_light300_4'
+ 3411 | const uint16_t font_outfit24_light300_4[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3051:16: note: previous definition of 'font_outfit24_light300_4' with type 'const uint16_t[435]' {aka 'const short unsigned int[435]'}
+ 3051 | const uint16_t font_outfit24_light300_4[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3459: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH" redefined
+ 3459 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 32
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3339: note: this is the location of the previous definition
+ 3339 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 27
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3462:16: error: redefinition of 'font_outfit24_light300_Q'
+ 3462 | const uint16_t font_outfit24_light300_Q[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1327:16: note: previous definition of 'font_outfit24_light300_Q' with type 'const uint16_t[783]' {aka 'const short unsigned int[783]'}
+ 1327 | const uint16_t font_outfit24_light300_Q[] = {
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3540:17: error: 'font_outfit24_light300_At' undeclared here (not in a function); did you mean 'font_outfit24_light300_AT'?
+ 3540 |         .data = font_outfit24_light300_At,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_AT
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3545:17: error: 'font_outfit24_light300_Colon' undeclared here (not in a function); did you mean 'font_outfit24_light300_COLON'?
+ 3545 |         .data = font_outfit24_light300_Colon,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_COLON
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3550:17: error: 'font_outfit24_light300_Comma' undeclared here (not in a function); did you mean 'font_outfit24_light300_COMMA'?
+ 3550 |         .data = font_outfit24_light300_Comma,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_COMMA
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3555:17: error: 'font_outfit24_light300_Dash' undeclared here (not in a function); did you mean 'font_outfit24_light300_DASH'?
+ 3555 |         .data = font_outfit24_light300_Dash,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_DASH
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3559:18: error: expected expression before ']' token
+ 3559 |     [/* Degree */] = {
+      |                  ^
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3559:18: error: array index in initializer not of integer type
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3559:18: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3560:17: error: 'font_outfit24_light300_Degree' undeclared here (not in a function); did you mean 'font_outfit24_light300_DEGREE'?
+ 3560 |         .data = font_outfit24_light300_Degree,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_DEGREE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3564:18: error: expected expression before ']' token
+ 3564 |     [/* Dollar */] = {
+      |                  ^
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3564:18: error: array index in initializer not of integer type
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3564:18: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3565:17: error: 'font_outfit24_light300_Dollar' undeclared here (not in a function); did you mean 'font_outfit24_light300_DOLLAR'?
+ 3565 |         .data = font_outfit24_light300_Dollar,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_DOLLAR
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3570:17: error: 'font_outfit24_light300_Dot' undeclared here (not in a function); did you mean 'font_outfit24_light300_DOT'?
+ 3570 |         .data = font_outfit24_light300_Dot,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_DOT
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3575:17: error: 'font_outfit24_light300_quote' undeclared here (not in a function); did you mean 'font_outfit24_light300_QUOTE'?
+ 3575 |         .data = font_outfit24_light300_quote,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_QUOTE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3579:6: warning: multi-character character constant [-Wmultichar]
+ 3579 |     ['€'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3579:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3579:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3585:17: error: 'font_outfit24_light300_Equals' undeclared here (not in a function); did you mean 'font_outfit24_light300_EQUALS'?
+ 3585 |         .data = font_outfit24_light300_Equals,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_EQUALS
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3590:17: error: 'font_outfit24_light300_Exclamation' undeclared here (not in a function); did you mean 'font_outfit24_light300_EXCLAMATION'?
+ 3590 |         .data = font_outfit24_light300_Exclamation,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_EXCLAMATION
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3595:17: error: 'font_outfit24_light300_Hash' undeclared here (not in a function); did you mean 'font_outfit24_light300_HASH'?
+ 3595 |         .data = font_outfit24_light300_Hash,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_HASH
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3600:17: error: 'font_outfit24_light300_lp' undeclared here (not in a function); did you mean 'font_outfit24_light300_LP'?
+ 3600 |         .data = font_outfit24_light300_lp,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_LP
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3605:17: error: 'font_outfit24_light300_Percent' undeclared here (not in a function); did you mean 'font_outfit24_light300_PERCENT'?
+ 3605 |         .data = font_outfit24_light300_Percent,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_PERCENT
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3610:17: error: 'font_outfit24_light300_Plus' undeclared here (not in a function); did you mean 'font_outfit24_light300_PLUS'?
+ 3610 |         .data = font_outfit24_light300_Plus,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_PLUS
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3615:17: error: 'font_outfit24_light300_Question' undeclared here (not in a function); did you mean 'font_outfit24_light300_QUESTION'?
+ 3615 |         .data = font_outfit24_light300_Question,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_QUESTION
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3620:17: error: 'font_outfit24_light300_rp' undeclared here (not in a function); did you mean 'font_outfit24_light300_RP'?
+ 3620 |         .data = font_outfit24_light300_rp,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_RP
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3625:17: error: 'font_outfit24_light300_Slash' undeclared here (not in a function); did you mean 'font_outfit24_light300_SLASH'?
+ 3625 |         .data = font_outfit24_light300_Slash,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_SLASH
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3634:6: warning: multi-character character constant [-Wmultichar]
+ 3634 |     ['Ä'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3634:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3634:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3635:17: error: 'font_outfit24_light300_Ae' undeclared here (not in a function); did you mean 'font_outfit24_light300_AE'?
+ 3635 |         .data = font_outfit24_light300_Ae,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_AE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3709:6: warning: multi-character character constant [-Wmultichar]
+ 3709 |     ['Ö'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3709:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3709:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3710:17: error: 'font_outfit24_light300_Oe' undeclared here (not in a function); did you mean 'font_outfit24_light300_OE'?
+ 3710 |         .data = font_outfit24_light300_Oe,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_OE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3744:6: warning: multi-character character constant [-Wmultichar]
+ 3744 |     ['Ü'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3744:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3744:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3745:17: error: 'font_outfit24_light300_Ue' undeclared here (not in a function); did you mean 'font_outfit24_light300_UE'?
+ 3745 |         .data = font_outfit24_light300_Ue,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_UE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3775:17: error: 'font_outfit24_light300_a' undeclared here (not in a function); did you mean 'font_outfit24_light300_A'?
+ 3775 |         .data = font_outfit24_light300_a,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_A
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3779:6: warning: multi-character character constant [-Wmultichar]
+ 3779 |     ['ä'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3779:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3779:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3780:17: error: 'font_outfit24_light300_ae' undeclared here (not in a function); did you mean 'font_outfit24_light300_AE'?
+ 3780 |         .data = font_outfit24_light300_ae,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_AE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3785:17: error: 'font_outfit24_light300_b' undeclared here (not in a function); did you mean 'font_outfit24_light300_B'?
+ 3785 |         .data = font_outfit24_light300_b,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_B
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3790:17: error: 'font_outfit24_light300_c' undeclared here (not in a function); did you mean 'font_outfit24_light300_C'?
+ 3790 |         .data = font_outfit24_light300_c,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_C
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3795:17: error: 'font_outfit24_light300_d' undeclared here (not in a function); did you mean 'font_outfit24_light300_D'?
+ 3795 |         .data = font_outfit24_light300_d,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_D
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3800:17: error: 'font_outfit24_light300_e' undeclared here (not in a function); did you mean 'font_outfit24_light300_E'?
+ 3800 |         .data = font_outfit24_light300_e,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_E
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3805:17: error: 'font_outfit24_light300_f' undeclared here (not in a function); did you mean 'font_outfit24_light300_F'?
+ 3805 |         .data = font_outfit24_light300_f,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_F
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3810:17: error: 'font_outfit24_light300_g' undeclared here (not in a function); did you mean 'font_outfit24_light300_G'?
+ 3810 |         .data = font_outfit24_light300_g,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_G
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3815:17: error: 'font_outfit24_light300_h' undeclared here (not in a function); did you mean 'font_outfit24_light300_H'?
+ 3815 |         .data = font_outfit24_light300_h,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_H
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3820:17: error: 'font_outfit24_light300_i' undeclared here (not in a function); did you mean 'font_outfit24_light300_I'?
+ 3820 |         .data = font_outfit24_light300_i,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_I
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3825:17: error: 'font_outfit24_light300_j' undeclared here (not in a function); did you mean 'font_outfit24_light300_J'?
+ 3825 |         .data = font_outfit24_light300_j,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_J
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3830:17: error: 'font_outfit24_light300_k' undeclared here (not in a function); did you mean 'font_outfit24_light300_K'?
+ 3830 |         .data = font_outfit24_light300_k,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_K
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3835:17: error: 'font_outfit24_light300_l' undeclared here (not in a function); did you mean 'font_outfit24_light300_L'?
+ 3835 |         .data = font_outfit24_light300_l,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_L
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3840:17: error: 'font_outfit24_light300_m' undeclared here (not in a function); did you mean 'font_outfit24_light300_M'?
+ 3840 |         .data = font_outfit24_light300_m,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_M
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3845:17: error: 'font_outfit24_light300_n' undeclared here (not in a function); did you mean 'font_outfit24_light300_N'?
+ 3845 |         .data = font_outfit24_light300_n,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_N
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3850:17: error: 'font_outfit24_light300_o' undeclared here (not in a function); did you mean 'font_outfit24_light300_O'?
+ 3850 |         .data = font_outfit24_light300_o,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_O
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3854:6: warning: multi-character character constant [-Wmultichar]
+ 3854 |     ['ö'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3854:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3854:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3855:17: error: 'font_outfit24_light300_oe' undeclared here (not in a function); did you mean 'font_outfit24_light300_OE'?
+ 3855 |         .data = font_outfit24_light300_oe,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_OE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3860:17: error: 'font_outfit24_light300_p' undeclared here (not in a function); did you mean 'font_outfit24_light300_P'?
+ 3860 |         .data = font_outfit24_light300_p,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_P
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3865:17: error: 'font_outfit24_light300_q' undeclared here (not in a function); did you mean 'font_outfit24_light300_Q'?
+ 3865 |         .data = font_outfit24_light300_q,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_Q
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3870:17: error: 'font_outfit24_light300_r' undeclared here (not in a function); did you mean 'font_outfit24_light300_R'?
+ 3870 |         .data = font_outfit24_light300_r,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_R
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3875:17: error: 'font_outfit24_light300_s' undeclared here (not in a function); did you mean 'font_outfit24_light300_S'?
+ 3875 |         .data = font_outfit24_light300_s,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_S
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3879:6: warning: multi-character character constant [-Wmultichar]
+ 3879 |     ['ß'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3879:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3879:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3880:17: error: 'font_outfit24_light300_ss' undeclared here (not in a function); did you mean 'font_outfit24_light300_SS'?
+ 3880 |         .data = font_outfit24_light300_ss,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_SS
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3885:17: error: 'font_outfit24_light300_t' undeclared here (not in a function); did you mean 'font_outfit24_light300_T'?
+ 3885 |         .data = font_outfit24_light300_t,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_T
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3890:17: error: 'font_outfit24_light300_u' undeclared here (not in a function); did you mean 'font_outfit24_light300_U'?
+ 3890 |         .data = font_outfit24_light300_u,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_U
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3894:6: warning: multi-character character constant [-Wmultichar]
+ 3894 |     ['ü'] = {
+      |      ^~~
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3894:6: error: array index in initializer exceeds array bounds
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3894:6: note: (near initialization for 'outfit24_glyphs')
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3895:17: error: 'font_outfit24_light300_ue' undeclared here (not in a function); did you mean 'font_outfit24_light300_UE'?
+ 3895 |         .data = font_outfit24_light300_ue,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_UE
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3900:17: error: 'font_outfit24_light300_v' undeclared here (not in a function); did you mean 'font_outfit24_light300_V'?
+ 3900 |         .data = font_outfit24_light300_v,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_V
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3905:17: error: 'font_outfit24_light300_w' undeclared here (not in a function); did you mean 'font_outfit24_light300_W'?
+ 3905 |         .data = font_outfit24_light300_w,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_W
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3910:17: error: 'font_outfit24_light300_x' undeclared here (not in a function); did you mean 'font_outfit24_light300_X'?
+ 3910 |         .data = font_outfit24_light300_x,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_X
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3915:17: error: 'font_outfit24_light300_y' undeclared here (not in a function); did you mean 'font_outfit24_light300_Y'?
+ 3915 |         .data = font_outfit24_light300_y,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_Y
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:3920:17: error: 'font_outfit24_light300_z' undeclared here (not in a function); did you mean 'font_outfit24_light300_Z'?
+ 3920 |         .data = font_outfit24_light300_z,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                 font_outfit24_light300_Z
+ninja: build stopped: subcommand failed.

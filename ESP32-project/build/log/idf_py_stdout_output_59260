@@ -1,0 +1,179 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/font_outfit_24px.c.obj
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1742: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_A_WIDTH" redefined
+ 1742 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_A_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:669: note: this is the location of the previous definition
+  669 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_A_WIDTH 18
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1779: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_AE_WIDTH" redefined
+ 1779 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_AE_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:706: note: this is the location of the previous definition
+  706 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_AE_WIDTH 18
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1853: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_C_WIDTH" redefined
+ 1853 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_C_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:780: note: this is the location of the previous definition
+  780 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_C_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1890: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH" redefined
+ 1890 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:817: note: this is the location of the previous definition
+  817 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_D_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1927: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_E_WIDTH" redefined
+ 1927 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_E_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:854: note: this is the location of the previous definition
+  854 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_E_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1964: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_F_WIDTH" redefined
+ 1964 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_F_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:891: note: this is the location of the previous definition
+  891 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_F_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2001: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_G_WIDTH" redefined
+ 2001 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_G_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:928: note: this is the location of the previous definition
+  928 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_G_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2038: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_H_WIDTH" redefined
+ 2038 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_H_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:965: note: this is the location of the previous definition
+  965 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_H_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2075: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_I_WIDTH" redefined
+ 2075 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_I_WIDTH 4
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1002: note: this is the location of the previous definition
+ 1002 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_I_WIDTH 3
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2112: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_J_WIDTH" redefined
+ 2112 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_J_WIDTH 9
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1039: note: this is the location of the previous definition
+ 1039 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_J_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2149: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_K_WIDTH" redefined
+ 2149 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_K_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1076: note: this is the location of the previous definition
+ 1076 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_K_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2186: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_L_WIDTH" redefined
+ 2186 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_L_WIDTH 3
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1113: note: this is the location of the previous definition
+ 1113 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_L_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2223: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_M_WIDTH" redefined
+ 2223 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_M_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1150: note: this is the location of the previous definition
+ 1150 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_M_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2260: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_N_WIDTH" redefined
+ 2260 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_N_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1187: note: this is the location of the previous definition
+ 1187 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_N_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2297: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_O_WIDTH" redefined
+ 2297 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_O_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1224: note: this is the location of the previous definition
+ 1224 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_O_WIDTH 19
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2334: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_OE_WIDTH" redefined
+ 2334 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_OE_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1261: note: this is the location of the previous definition
+ 1261 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_OE_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2408: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH" redefined
+ 2408 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1335: note: this is the location of the previous definition
+ 1335 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Q_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2445: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_R_WIDTH" redefined
+ 2445 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_R_WIDTH 9
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1372: note: this is the location of the previous definition
+ 1372 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_R_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2482: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_S_WIDTH" redefined
+ 2482 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_S_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1409: note: this is the location of the previous definition
+ 1409 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_S_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2556: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_T_WIDTH" redefined
+ 2556 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_T_WIDTH 9
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1446: note: this is the location of the previous definition
+ 1446 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_T_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2593: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_U_WIDTH" redefined
+ 2593 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_U_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1483: note: this is the location of the previous definition
+ 1483 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_U_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2630: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_UE_WIDTH" redefined
+ 2630 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_UE_WIDTH 12
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1520: note: this is the location of the previous definition
+ 1520 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_UE_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2667: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_V_WIDTH" redefined
+ 2667 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_V_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1557: note: this is the location of the previous definition
+ 1557 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_V_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2704: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_W_WIDTH" redefined
+ 2704 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_W_WIDTH 20
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1594: note: this is the location of the previous definition
+ 1594 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_W_WIDTH 24
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2741: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_X_WIDTH" redefined
+ 2741 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_X_WIDTH 14
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1631: note: this is the location of the previous definition
+ 1631 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_X_WIDTH 17
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2778: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Y_WIDTH" redefined
+ 2778 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Y_WIDTH 13
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1668: note: this is the location of the previous definition
+ 1668 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Y_WIDTH 15
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:2815: warning: "OUTFIT_24PX_LIGHT_300_E3E3E3_Z_WIDTH" redefined
+ 2815 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Z_WIDTH 11
+      | 
+/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/main/font_outfit_24px.c:1705: note: this is the location of the previous definition
+ 1705 | #define OUTFIT_24PX_LIGHT_300_E3E3E3_Z_WIDTH 14
+      | 
+[3/9] No install step for 'bootloader'
+[4/9] Completed 'bootloader'
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable ESP32-project.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/ESP32-project.bin
+[9/9] cd /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/esp-idf/esptool_py && /Users/christianwilhelm/.espressif/python_env/idf5.2_py3.13_env/bin/python /Users/christianwilhelm/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/partition_table/partition-table.bin /Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/ESP32-project.bin
+ESP32-project.bin binary size 0x47690 bytes. Smallest app partition is 0x100000 bytes. 0xb8970 bytes (72%) free.

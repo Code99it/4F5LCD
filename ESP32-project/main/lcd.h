@@ -4,6 +4,8 @@
 #define LCD_PIXEL_WIDTH  320
 #define LCD_PIXEL_HEIGHT 480
 
+#define FONT_LETTER_SPACING_PX 1
+
 #include "driver/gpio.h"
 #include "stdbool.h"
 
@@ -52,9 +54,17 @@ void lcd_fill_rainbow(void);
 
 void lcd_test_fill_fps(void);
 
+uint16_t scale_color_rgb565(uint16_t base_color, uint16_t brightness);
+
 uint16_t lcd_draw_char(char c, uint16_t x, uint16_t y, uint8_t px);
 
+uint16_t lcd_draw_colored_char(char c, uint16_t x, uint16_t y, uint8_t px, uint32_t hex_rgb);
+
 uint16_t lcd_draw_string(const char *str, uint16_t x, uint16_t y, uint8_t px);
+
+uint16_t lcd_draw_colored_string(const char *str, uint16_t x, uint16_t y, uint8_t px, uint32_t hex_rgb);
+
+uint16_t lcd_draw_colored_string_centered(const char *str, uint16_t x_center, uint16_t y, uint8_t px, uint32_t hex_rgb);
 
 void lcd_draw_horizontal_line(uint16_t y, uint16_t width, uint16_t thickness, uint16_t color);
 

@@ -30,18 +30,45 @@ void app_main(void)
     //printf("Filling screen: rainbow colors (10)\n");
 	//lcd_fill_rainbow();
     
-	printf("Drawing Letter\n");
-	uint16_t next_x = lcd_draw_char('Q', 20, 120, 36);
+	uint16_t px_string_end;
 
-	printf("Drawing String\n");
-	uint16_t end_x = lcd_draw_string("QQQQQQQQQQ", 20, 170, 29);
-	
 	// lcd_draw_horizontal_line(uint16_t y, uint16_t width, uint16_t thickness, uint16_t color)
 	printf("Drawing line below the header\n");
-	lcd_draw_horizontal_line(55, 320, 2, hex_to_rgb565(0x990000));
+	lcd_draw_horizontal_line(61, 320, 2, hex_to_rgb565(0x990000));
 
 	printf("Drawing line above the footer\n");
-	lcd_draw_horizontal_line(420, 320, 2, hex_to_rgb565(0x990000));
+	lcd_draw_horizontal_line(414, 320, 2, hex_to_rgb565(0x990000));
+
+	printf("Drawing current page title, centered\n");
+	px_string_end = lcd_draw_colored_string_centered("Home", 160, 80, 24, 0x0000FF);
+	px_string_end = lcd_draw_colored_string("Setup", px_string_end + 13, 80, 24, 0x000078);
+	lcd_draw_colored_string("Trip", px_string_end + 13, 80, 24, 0x000042);
+
+	printf("Drawing gear\n");
+	px_string_end = lcd_draw_colored_string("D", 145, 430, 29, 0xFFFFFF);
+	lcd_draw_colored_string("4", px_string_end, 430, 29, 0X606060);
+
+	printf("Drawing some keys and values\n");
+	lcd_draw_colored_string("Outside Temp", 11, 150, 24, 0xa8a8a8);
+	lcd_draw_colored_string("Trip Time", 11, 200, 24, 0xa8a8a8);
+	lcd_draw_colored_string("Range", 11, 250, 24, 0xa8a8a8);
+	lcd_draw_colored_string("AVG Speed", 11, 300, 24, 0xa8a8a8);
+	lcd_draw_colored_string("AVG Cons.", 11, 350, 24, 0xa8a8a8);
+
+	lcd_draw_colored_string("+21", 190, 150, 24, 0xFFFFFF);
+	lcd_draw_colored_string("01:38", 190, 200, 24, 0xFFFFFF);
+	lcd_draw_colored_string("470", 190, 250, 24, 0xFFFFFF);
+	lcd_draw_colored_string("56", 190, 300, 24, 0xFFFFFF);
+	lcd_draw_colored_string("9,8", 190, 350, 24, 0xFFFFFF);
+
+	lcd_draw_colored_string("°C", 255, 150, 24, 0x404040);
+	lcd_draw_colored_string("h:m", 255, 200, 24, 0x404040);
+	lcd_draw_colored_string("km", 255, 250, 24, 0x404040);
+	lcd_draw_colored_string("km/h", 255, 300, 24, 0x404040);
+	lcd_draw_colored_string("l/100", 255, 350, 24, 0x404040);
+
+	printf("Drawing audio source\n");
+	lcd_draw_colored_string("Radio Gong 96.3", 11, 17, 24, 0xFF2E12);
 
     printf("Starting main loop\n");
     while (true)
