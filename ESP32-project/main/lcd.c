@@ -8,6 +8,10 @@
 #include "soc/gpio_reg.h"
 #include "esp_timer.h"
 #include "font.h"
+#include "color.h"
+#include <math.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 #define GPIO_RS (1 << LCD_RS)
 #define GPIO_WR (1 << LCD_WR)
@@ -353,7 +357,7 @@ uint16_t lcd_draw_colored_string(const char *str, uint16_t x, uint16_t y, uint8_
 /**
  * Zeichnet einen zentrierten, farbigen String mit Anti-Aliasing.
  *
- * @param str      Der String (z. B. "Hallo Welt")
+ * @param str      Der String (z.B. "Hallo Welt")
  * @param x_center Die horizontale Mitte, um die zentriert wird
  * @param y        Y-Koordinate des Textes
  * @param px       Schriftgröße (29 oder 36)
@@ -454,5 +458,194 @@ void lcd_test_fill_area_fps(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, 
     printf("Filled area (%u,%u)-(%u,%u) for %u frames\n", x0, y0, x1, y1, frames);
     printf("Elapsed time: %.2f s, FPS: %.2f\n", elapsed_s, fps);
 }
+
+
+// Mischfunktion für RGB565
+uint16_t blend_rgb565(uint16_t fg, uint16_t bg, uint8_t alpha) {
+    uint8_t fg_r = (fg >> 11) & 0x1F;
+    uint8_t fg_g = (fg >> 5) & 0x3F;
+    uint8_t fg_b = fg & 0x1F;
+
+    uint8_t bg_r = (bg >> 11) & 0x1F;
+    uint8_t bg_g = (bg >> 5) & 0x3F;
+    uint8_t bg_b = bg & 0x1F;
+
+    uint8_t r = (fg_r * alpha + bg_r * (255 - alpha)) / 255;
+    uint8_t g = (fg_g * alpha + bg_g * (255 - alpha)) / 255;
+    uint8_t b = (fg_b * alpha + bg_b * (255 - alpha)) / 255;
+
+    return (r << 11) | (g << 5) | b;
+}
+
+void lcd_draw_menu_select_point(
+    uint16_t *fb,
+    uint16_t fb_width,
+    uint16_t fb_height,
+    uint16_t x_offset,
+    uint16_t y_offset,
+    uint16_t ring_diameter,
+    uint16_t ring_thickness,
+    uint16_t center_diameter,
+    uint32_t hex_ring_color,
+    uint32_t hex_center_color,
+    uint32_t hex_line_color,
+    uint16_t line_length,
+    uint16_t line_thickness,
+    uint32_t hex_background_color
+) {
+    const float center_shift = 0.25f; // Nur der innere Kreis leicht nach links
+    const float outer_radius = ring_diameter / 2.0f;
+    const float inner_radius = outer_radius - ring_thickness;
+    const float center_radius = center_diameter / 2.0f;
+
+    const float center_x = x_offset + outer_radius;
+    const float center_y = y_offset + outer_radius;
+
+    uint16_t ring_color = hex_to_rgb565(hex_ring_color);
+    uint16_t center_color = hex_to_rgb565(hex_center_color);
+    uint16_t line_color = hex_to_rgb565(hex_line_color);
+    uint16_t bg_color = hex_to_rgb565(hex_background_color);
+
+    for (int y = 0; y < fb_height; y++) {
+        for (int x = 0; x < fb_width; x++) {
+            float dx = (float)x - center_x;
+            float dy = (float)y - center_y;
+            float dist = sqrtf(dx * dx + dy * dy);
+
+            int index = y * fb_width + x;
+
+            if (dist <= outer_radius && dist >= inner_radius) {
+                float alpha = 1.0f;
+                if (dist > outer_radius - 1.0f) {
+                    alpha = outer_radius - dist;
+                } else if (dist < inner_radius + 1.0f) {
+                    alpha = dist - inner_radius;
+                }
+                alpha = fminf(fmaxf(alpha, 0.0f), 1.0f);
+
+                uint32_t r = ((ring_color >> 11) & 0x1F) * alpha + ((bg_color >> 11) & 0x1F) * (1 - alpha);
+                uint32_t g = ((ring_color >> 5) & 0x3F) * alpha + ((bg_color >> 5) & 0x3F) * (1 - alpha);
+                uint32_t b = (ring_color & 0x1F) * alpha + (bg_color & 0x1F) * (1 - alpha);
+                fb[index] = (r << 11) | (g << 5) | b;
+
+            } else if (sqrtf((x - (center_x - center_shift)) * (x - (center_x - center_shift)) + dy * dy) < center_radius) {
+                float dist_inner = sqrtf((x - (center_x - center_shift)) * (x - (center_x - center_shift)) + dy * dy);
+                float alpha = fminf(1.0f, center_radius - dist_inner);
+                alpha = fminf(fmaxf(alpha, 0.0f), 1.0f);
+
+                uint32_t r = ((center_color >> 11) & 0x1F) * alpha + ((bg_color >> 11) & 0x1F) * (1 - alpha);
+                uint32_t g = ((center_color >> 5) & 0x3F) * alpha + ((bg_color >> 5) & 0x3F) * (1 - alpha);
+                uint32_t b = (center_color & 0x1F) * alpha + (bg_color & 0x1F) * (1 - alpha);
+                fb[index] = (r << 11) | (g << 5) | b;
+
+            } else {
+                fb[index] = bg_color;
+            }
+        }
+    }
+
+    // Linie rechts andocken, bleibt an originaler Position
+    int line_start_x = x_offset + ring_diameter - 1;
+    int line_start_y = (int)(center_y - line_thickness / 2);
+
+    for (int y = 0; y < line_thickness; y++) {
+        for (int x = 0; x < line_length; x++) {
+            int px = line_start_x + x;
+            int py = line_start_y + y;
+            if (px >= 0 && px < fb_width && py >= 0 && py < fb_height) {
+                fb[py * fb_width + px] = line_color;
+            }
+        }
+    }
+}
+
+
+
+
+
+void lcd_fill_framebuffer(uint16_t *fb, uint16_t fb_width, uint16_t fb_height, uint32_t hex_color) {
+    uint16_t color = hex_to_rgb565(hex_color);
+    for (int i = 0; i < fb_width * fb_height; ++i) {
+        fb[i] = color;
+    }
+}
+
+
+
+
+void lcd_blit_framebuffer(
+    uint16_t *fb,
+    uint16_t fb_width,
+    uint16_t fb_height,
+    uint16_t target_x,
+    uint16_t target_y
+) {
+    lcd_set_address_window(target_x, target_y, target_x + fb_width - 1, target_y + fb_height - 1);
+    for (int y = 0; y < fb_height; y++) {
+        for (int x = 0; x < fb_width; x++) {
+            uint16_t color = fb[y * fb_width + x];
+            lcd_write_data(color >> 8);
+            lcd_write_data(color & 0xFF);
+        }
+    }
+}
+
+/*void lcd_draw_menu_select_point(
+    uint16_t *fb,
+    uint16_t y_offset,
+    uint16_t outer_radius,
+    uint16_t ring_thickness,
+    uint32_t hex_ring_color,
+    uint32_t hex_center_color,
+    uint16_t center_gap,
+    uint32_t hex_line_color,
+    uint16_t line_length
+) {
+    const uint16_t cx = FB_WIDTH / 2;
+    const uint16_t cy = y_offset + outer_radius;
+    const uint16_t inner_radius = outer_radius - ring_thickness;
+    const uint16_t center_radius = inner_radius - center_gap;
+
+    const uint16_t col_ring   = hex_to_rgb565(hex_ring_color);
+    const uint16_t col_center = hex_to_rgb565(hex_center_color);
+    const uint16_t col_line   = hex_to_rgb565(hex_line_color);
+
+    // Ring mit einfacher Kantenweichzeichnung (AA light)
+    for (int16_t y = -outer_radius; y <= outer_radius; ++y) {
+        for (int16_t x = -outer_radius; x <= outer_radius; ++x) {
+            float dist = sqrtf(x * x + y * y);
+            if (dist >= inner_radius && dist <= outer_radius) {
+                int px = cx + x;
+                int py = cy + y;
+                if (px >= 0 && px < FB_WIDTH && py >= 0 && py < FB_HEIGHT) {
+                    fb[py * FB_WIDTH + px] = col_ring;
+                }
+            }
+        }
+    }
+
+    // Innenkreis füllen
+    for (int16_t y = -center_radius; y <= center_radius; ++y) {
+        for (int16_t x = -center_radius; x <= center_radius; ++x) {
+            if (x * x + y * y <= center_radius * center_radius) {
+                int px = cx + x;
+                int py = cy + y;
+                if (px >= 0 && px < FB_WIDTH && py >= 0 && py < FB_HEIGHT) {
+                    fb[py * FB_WIDTH + px] = col_center;
+                }
+            }
+        }
+    }
+
+    // Linie rechts vom Kreis
+    int line_y = cy;
+    int line_x0 = cx + outer_radius;
+    for (int i = 0; i < line_length; ++i) {
+        int px = line_x0 + i;
+        if (px >= 0 && px < FB_WIDTH && line_y >= 0 && line_y < FB_HEIGHT) {
+            fb[line_y * FB_WIDTH + px] = col_line;
+        }
+    }
+}*/
 
 

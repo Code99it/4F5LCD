@@ -6,8 +6,12 @@
 
 #define FONT_LETTER_SPACING_PX 1
 
+#define FB_WIDTH  80
+#define FB_HEIGHT 29
+
 #include "driver/gpio.h"
 #include "stdbool.h"
+#include "menu.h"
 
 /**
  * @brief Initialisiert alle GPIOs für das LCD im 8-Bit-Parallelbetrieb.
@@ -70,4 +74,34 @@ void lcd_draw_horizontal_line(uint16_t y, uint16_t width, uint16_t thickness, ui
 
 void lcd_test_fill_area_fps(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t frames);
 
+void lcd_set_address_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
+
+uint16_t blend_rgb565(uint16_t fg, uint16_t bg, uint8_t alpha);
+
+void lcd_draw_menu_select_point(
+    uint16_t *fb,
+    uint16_t fb_width,
+    uint16_t fb_height,
+    uint16_t x_offset,
+    uint16_t y_offset,
+    uint16_t ring_diameter,
+    uint16_t ring_thickness,
+    uint16_t center_diameter,
+    uint32_t hex_ring_color,
+    uint32_t hex_center_color,
+    uint32_t hex_line_color,
+    uint16_t line_length,
+    uint16_t line_thickness,
+    uint32_t hex_background_color
+);
+
+void lcd_fill_framebuffer(uint16_t *fb, uint16_t fb_width, uint16_t fb_height, uint32_t hex_color);
+
+void lcd_blit_framebuffer(
+    uint16_t *fb,
+    uint16_t fb_width,
+    uint16_t fb_height,
+    uint16_t target_x,
+    uint16_t target_y
+);
 #endif
