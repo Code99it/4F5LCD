@@ -7,6 +7,7 @@ typedef struct {
     uint8_t height;
 } FontGlyph;
 
+extern const FontGlyph outfit13_glyphs[128];
 extern const FontGlyph outfit24_glyphs[128];
 extern const FontGlyph outfit29_glyphs[128];
 extern const FontGlyph outfit36_glyphs[128];

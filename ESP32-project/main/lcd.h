@@ -5,6 +5,7 @@
 #define LCD_PIXEL_HEIGHT 480
 
 #define FONT_LETTER_SPACING_PX 1
+#define MENU_ITEM_SPACING_PX 19
 
 #define FB_WIDTH  80
 #define FB_HEIGHT 29
@@ -104,4 +105,73 @@ void lcd_blit_framebuffer(
     uint16_t target_x,
     uint16_t target_y
 );
+
+uint16_t lcd_draw_colored_string_to_frmbuf(
+    uint16_t *fb,
+    uint16_t fb_width,
+    const char *str,
+    uint16_t x,
+    uint16_t y,
+    uint8_t px,
+    uint32_t hex_rgb
+);
+
+void lcd_draw_framebuffer(uint16_t *buffer, uint16_t width, uint16_t height, uint16_t x, uint16_t y);
+
+void lcd_draw_framebuffer_region(uint16_t *fb, int fb_width, int x_offset, int y_offset, int width, int height, int lcd_x, int lcd_y);
+
+uint16_t lcd_draw_colored_string_centered_at_x_to_frmbuf(
+    uint16_t *fb,              // Framebuffer-Pointer
+    uint16_t fb_width,         // Framebuffer-Breite in Pixeln
+    const char *str,           // Textstring
+    uint16_t center_x,         // Mittelpunkt für horizontale Zentrierung
+    uint16_t y,                // Y-Position im Framebuffer
+    uint8_t px,                // Schriftgröße in px
+    uint32_t hex_rgb           // RGB-Farbe in 0xRRGGBB
+);
+
+// Zeichnet einen gerundeten Rahmen direkt auf das LCD, zentriert um ein Wort
+void lcd_draw_centered_rounded_frame(
+    const char *str,
+    uint16_t center_x,
+    uint16_t y,
+    uint8_t font_px,
+    uint8_t padding,
+    uint8_t border_thickness,
+    uint8_t corner_radius,
+    uint32_t hex_rgb
+);
+
+// Zeichnet einen Kreisviertel mit Antialiasing direkt auf das LCD
+void draw_circle_quarter_aa(
+    int cx,
+    int cy,
+    int r,
+    uint16_t color,
+    uint8_t quadrant_mask
+);
+
+// Mischt eine RGB565-Farbe mit Schwarz für Antialiasing
+uint16_t blend_rgb565_with_black(
+    uint16_t color,
+    float factor
+);
+
+void lcd_draw_pixel(uint16_t x, uint16_t y, uint16_t color);
+void lcd_draw_hline(uint16_t x0, uint16_t x1, uint16_t y, uint16_t color);
+void lcd_draw_vline(uint16_t x, uint16_t y0, uint16_t y1, uint16_t color);
+
+void lcd_delete_centered_rounded_frame(
+    const char *text,
+    uint16_t center_x,
+    uint16_t top_y,
+    uint8_t px,
+    uint8_t padding,
+    uint8_t border_thickness,
+    uint8_t corner_radius,
+    uint32_t background_color_hex
+); 
+
+
+
 #endif

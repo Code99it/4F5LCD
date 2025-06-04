@@ -46,35 +46,190 @@ void app_main(void)
 	px_string_end = lcd_draw_colored_string("D", 145, 430, 29, 0xFFFFFF);
 	lcd_draw_colored_string("4", px_string_end, 430, 29, 0X606060);
 
-	printf("Drawing some keys and values\n");
-	lcd_draw_colored_string("Out Temp", 55, 150, 24, 0xa8a8a8);
-	lcd_draw_colored_string("Trip Time", 55, 190, 24, 0xa8a8a8);
-	lcd_draw_colored_string("Range", 55, 230, 24, 0xa8a8a8);
-	lcd_draw_colored_string("AVG Spd", 55, 270, 24, 0xa8a8a8);
-	lcd_draw_colored_string("AVG Cons", 55, 310, 24, 0xa8a8a8);
-	lcd_draw_colored_string("Oil Temp", 55, 350, 24, 0xa8a8a8);
-
-	lcd_draw_colored_string("+21", 190, 150, 24, 0xFFFFFF);
-	lcd_draw_colored_string("01:38", 190, 190, 24, 0xFFFFFF);
-	lcd_draw_colored_string("470", 190, 230, 24, 0xFFFFFF);
-	lcd_draw_colored_string("56", 190, 270, 24, 0xFFFFFF);
-	lcd_draw_colored_string("9,8", 190, 310, 24, 0xFFFFFF);
-	lcd_draw_colored_string("61", 190, 350, 24, 0xFFFFFF);
-
-	lcd_draw_colored_string("°C", 255, 150, 24, 0x404040);
-	lcd_draw_colored_string("h:m", 255, 190, 24, 0x404040);
-	lcd_draw_colored_string("km", 255, 230, 24, 0x404040);
-	lcd_draw_colored_string("km/h", 255, 270, 24, 0x404040);
-	lcd_draw_colored_string("l/100", 255, 310, 24, 0x404040);
-	lcd_draw_colored_string("°C", 255, 350, 24, 0x404040);
-
 	printf("Drawing audio source\n");
 	px_string_end = lcd_draw_colored_string("CD1", 11, 17, 24, 0xFF2E12);
 	lcd_draw_colored_string("Thank You For The Music", px_string_end + 7, 17, 24, 0x505050);
 
 
 
-	//menu_init();
+
+	char *menu_items[] = {
+		"BC1",
+		"BC2",
+		"BC3",
+		"Luftfahrwerk",
+		"Automatikgetriebe",
+		"Kontakte",
+		"Radio",
+		"Check"
+	};
+
+
+	int framebuffer_width = LCD_PIXEL_WIDTH * 2;
+	int framebuffer_height = 24;
+
+	size_t framebuffer_size = framebuffer_width * framebuffer_height * sizeof(uint16_t);
+
+	uint16_t *frmbuf_menubar = malloc(framebuffer_size);
+	if (!frmbuf_menubar) {
+	    printf("Fehler: Nicht genügend RAM für Framebuffer menubar\n");
+	} else {
+	    printf("Framebuffer für die gesamte Menübar, size=%d Bytes\n", (int)framebuffer_size);
+	    printf("Framebuffer, width=%d Bytes\n", (int)framebuffer_width);
+	    printf("Framebuffer, height=%d Bytes\n", (int)framebuffer_height);
+	}
+
+	// Framebuffer komplett mit Farbe auffüllen
+	for (int i = 0; i < framebuffer_width * framebuffer_height; i++) {
+		frmbuf_menubar[i] = hex_to_rgb565(0x000000); // Schwarz
+	}
+
+
+
+	// Menüpunkt 0 zentriert anzeigen
+	uint16_t centered_menu_item_end_x = lcd_draw_colored_string_centered_at_x_to_frmbuf(
+	    frmbuf_menubar,
+	    framebuffer_width,
+	    menu_items[3],  
+	    LCD_PIXEL_WIDTH / 2,       
+	    0,
+	    13,
+	    0x3232FF   
+	);
+    printf("Endpunkt des Mittigen Strings = %d px\n", (int)centered_menu_item_end_x);
+
+	// Menüpunkt 1 direkt rechts daneben (nicht zentriert!)
+	uint16_t second_menu_item_end_x = lcd_draw_colored_string_to_frmbuf(
+	    frmbuf_menubar,
+	    framebuffer_width,
+	    menu_items[4],    
+	    centered_menu_item_end_x + MENU_ITEM_SPACING_PX,  // Mit kleinem Abstand anschließen
+	    0,
+	    13,
+	    0x404040
+	);	
+
+	uint16_t third_menu_item_end_x = lcd_draw_colored_string_to_frmbuf(
+	    frmbuf_menubar,
+	    framebuffer_width,
+	    menu_items[5],    
+	    second_menu_item_end_x + MENU_ITEM_SPACING_PX,  // Mit kleinem Abstand anschließen
+	    0,
+	    13,
+	    0x404040
+	);
+	
+	lcd_draw_colored_string_to_frmbuf(
+	    frmbuf_menubar,
+	    framebuffer_width,
+	    menu_items[6],    
+	    third_menu_item_end_x + MENU_ITEM_SPACING_PX,  // Mit kleinem Abstand anschließen
+	    0,
+	    13,
+	    0x404040
+	);
+
+
+
+	lcd_draw_framebuffer_region(   
+	    frmbuf_menubar,        // Zeiger auf den vollständigen Framebuffer (doppelte LCD-Breite)  
+	    framebuffer_width,     // Tatsächliche Breite des Framebuffers in Pixeln (z. B. LCD_PIXEL_WIDTH * 2)  
+	    0,                     // X-Versatz im Framebuffer: beginnt bei 0, also linke Seite anzeigen  
+	    0,                     // Y-Versatz im Framebuffer: beginnt bei oberster Zeile  
+	    LCD_PIXEL_WIDTH,       // Breite des anzuzeigenden Ausschnitts (exakt LCD-Breite)  
+	    framebuffer_height,    // Höhe des Ausschnitts in Pixeln (z. B. 24px für Menübar)  
+	    0,                     // X-Position auf dem LCD, an der der Ausschnitt dargestellt wird  
+	    96                     // Y-Position auf dem LCD (z. B. vertikal unterhalb eines Headers)  
+	);
+
+
+
+
+	lcd_draw_centered_rounded_frame(
+	    menu_items[3],      // Textstring (z. B. "BC1"), um den der Rahmen gezeichnet wird
+	    160,                // Mittelpunkt auf dem LCD in X-Richtung (horizontal zentriert)
+	    95,                  // Y-Position des oberen Rahmens (Startpunkt vertikal)
+	    13,                 // Schriftgröße in Pixelhöhe (z. B. 13px)
+	    5,                  // Innenabstand (Padding) zwischen Text und Rahmen in Pixeln
+	    2,                  // Rahmenbreite (Thickness) in Pixeln
+	    5,                  // Radius der gerundeten Ecken in Pixeln
+	    0x2424FF            // Rahmenfarbe in Hex 
+	);
+
+
+	vTaskDelay(pdMS_TO_TICKS(3000));
+
+	// Rahmen entfernen
+	lcd_delete_centered_rounded_frame(
+	    menu_items[3],      // Textinhalt
+	    160,                // Zentrierung X
+	    95,                 // Position Y
+	    13,                 // Schriftgröße
+	    5,                  // Padding
+	    2,                  // Rahmenbreite
+	    5,                  // Eckenradius
+	    0x000000            // Hintergrundfarbe
+	);
+
+	// Entfärbten aktuellen Menüpunkt zeigen
+	// Menüpunkt 0 zentriert anzeigen
+	lcd_draw_colored_string_centered_at_x_to_frmbuf(
+	    frmbuf_menubar,
+	    framebuffer_width,
+	    menu_items[3],  
+	    LCD_PIXEL_WIDTH / 2,       
+	    0,
+	    13,
+	    0x404040   
+	);
+
+	// in einer schleife zum nächsten menüpunkt gehen
+	// framebuffer immer wieder neu zeichnen
+	for (uint8_t left_cut=0; left_cut<180; left_cut++) {
+		lcd_draw_framebuffer_region(   
+		    frmbuf_menubar,        // Zeiger auf den vollständigen Framebuffer (doppelte LCD-Breite)  
+		    framebuffer_width,     // Tatsächliche Breite des Framebuffers in Pixeln (z. B. LCD_PIXEL_WIDTH * 2)  
+		    left_cut,              // X-Versatz im Framebuffer: beginnt bei 0, also linke Seite anzeigen  
+		    0,                     // Y-Versatz im Framebuffer: beginnt bei oberster Zeile  
+		    LCD_PIXEL_WIDTH,       // Breite des anzuzeigenden Ausschnitts (exakt LCD-Breite)  
+		    framebuffer_height,    // Höhe des Ausschnitts in Pixeln (z. B. 24px für Menübar)  
+		    0,                     // X-Position auf dem LCD, an der der Ausschnitt dargestellt wird  
+		    96                     // Y-Position auf dem LCD (z. B. vertikal unterhalb eines Headers)  
+		);
+		//vTaskDelay(pdMS_TO_TICKS(2));
+	}
+
+	lcd_draw_centered_rounded_frame(
+	    menu_items[4],      // Textstring (z.B. "BC1"), um den der Rahmen gezeichnet wird
+	    160,                // Mittelpunkt auf dem LCD in X-Richtung (horizontal zentriert)
+	    95,                  // Y-Position des oberen Rahmens (Startpunkt vertikal)
+	    13,                 // Schriftgröße in Pixelhöhe (z. B. 13px)
+	    5,                  // Innenabstand (Padding) zwischen Text und Rahmen in Pixeln
+	    2,                  // Rahmenbreite (Thickness) in Pixeln
+	    5,                  // Radius der gerundeten Ecken in Pixeln
+	    0x2424FF            // Rahmenfarbe in Hex 
+	);
+
+
+	printf("Drawing some keys and values\n");
+	lcd_draw_colored_string("D: Schaltpunkt +", 51, 150, 24, 0xa8a8a8);
+	lcd_draw_colored_string("D: Schaltpunkt -", 51, 190, 24, 0xa8a8a8);
+	lcd_draw_colored_string("S: Schaltpunkt +", 51, 230, 24, 0xa8a8a8);
+	lcd_draw_colored_string("S: Schaltpunkt -", 51, 270, 24, 0xa8a8a8);
+	lcd_draw_colored_string("M: Schaltpunkt +", 51, 310, 24, 0xa8a8a8);
+	lcd_draw_colored_string("M: Schaltpunkt -", 51, 350, 24, 0xa8a8a8);
+
+	lcd_draw_colored_string("3100", 248, 150, 24, 0xFFFFFF);
+	lcd_draw_colored_string("1400", 248, 190, 24, 0xFFFFFF);
+	lcd_draw_colored_string("4000", 248, 230, 24, 0xFFFFFF);
+	lcd_draw_colored_string("1900", 248, 270, 24, 0xFFFFFF);
+	lcd_draw_colored_string("4500", 248, 310, 24, 0xFFFFFF);
+	lcd_draw_colored_string("1600", 248, 350, 24, 0xFFFFFF);
+
+
+
+
+
 
 
 

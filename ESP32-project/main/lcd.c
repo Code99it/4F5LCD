@@ -257,6 +257,9 @@ uint16_t lcd_draw_char(char c, uint16_t x, uint16_t y, uint8_t px) {
     const FontGlyph *glyph;
 
     switch (px) {
+        case 13:
+            glyph = &outfit13_glyphs[(uint8_t)c];
+            break;
         case 29:
             glyph = &outfit29_glyphs[(uint8_t)c];
             break;
@@ -309,6 +312,9 @@ uint16_t scale_color_rgb565(uint16_t base_color, uint16_t brightness) {
 uint16_t lcd_draw_colored_char(char c, uint16_t x, uint16_t y, uint8_t px, uint32_t hex_rgb) {
     const FontGlyph *glyph;
     switch (px) {
+        case 13:
+            glyph = &outfit13_glyphs[(uint8_t)c];
+            break;
         case 24:
             glyph = &outfit24_glyphs[(uint8_t)c];
             break;
@@ -370,6 +376,9 @@ uint16_t lcd_draw_colored_string_centered(const char *str, uint16_t x_center, ui
 
     while (*ptr) {
         switch (px) {
+            case 13:
+                glyph = &outfit13_glyphs[(uint8_t)*ptr];
+                break;
             case 29:
                 glyph = &outfit29_glyphs[(uint8_t)*ptr];
                 break;
@@ -648,4 +657,316 @@ void lcd_blit_framebuffer(
     }
 }*/
 
+uint16_t lcd_draw_colored_string_to_frmbuf(
+    uint16_t *fb,
+    uint16_t fb_width,
+    const char *str,
+    uint16_t x,
+    uint16_t y,
+    uint8_t px,
+    uint32_t hex_rgb
+) {
+    const FontGlyph *glyph;
+    uint16_t base_color = hex_to_rgb565(hex_rgb);
+
+    while (*str) {
+        char c = *str;
+        switch (px) {
+            case 13:
+                glyph = &outfit13_glyphs[(uint8_t)c];
+                break;
+            case 24:
+                glyph = &outfit24_glyphs[(uint8_t)c];
+                break;
+            case 29:
+                glyph = &outfit29_glyphs[(uint8_t)c];
+                break;
+            case 36:
+                glyph = &outfit36_glyphs[(uint8_t)c];
+                break;
+            default:
+                return x;
+        }
+
+        if (glyph && glyph->data) {
+            for (uint16_t row = 0; row < glyph->height; row++) {
+                for (uint16_t col = 0; col < glyph->width; col++) {
+                    uint16_t brightness = glyph->data[row * glyph->width + col];
+                    uint16_t color = scale_color_rgb565(base_color, brightness);
+
+                    uint16_t px_x = x + col;
+                    uint16_t px_y = y + row;
+                    if (px_x < fb_width) { // einfache Bounds-Prüfung
+                        fb[px_y * fb_width + px_x] = color;
+                    }
+                }
+            }
+            x += glyph->width + FONT_LETTER_SPACING_PX;
+        }
+
+        str++;
+    }
+
+    return x; // neue Cursor-Position nach dem String
+}
+
+void lcd_draw_framebuffer(uint16_t *buffer, uint16_t width, uint16_t height, uint16_t x, uint16_t y) {
+    lcd_set_address_window(x, y, x + width - 1, y + height - 1);
+    for (uint32_t i = 0; i < width * height; i++) {
+        lcd_write_data(buffer[i] >> 8);       // High-Byte
+        lcd_write_data(buffer[i] & 0xFF);     // Low-Byte
+    }
+}
+
+void lcd_draw_framebuffer_region(uint16_t *fb, int fb_width, int x_offset, int y_offset, int width, int height, int lcd_x, int lcd_y) {
+    lcd_set_address_window(lcd_x, lcd_y, lcd_x + width - 1, lcd_y + height - 1);
+
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            uint16_t pixel = fb[(y_offset + y) * fb_width + (x_offset + x)];
+            lcd_write_data(pixel >> 8);
+            lcd_write_data(pixel & 0xFF);
+        }
+    }
+}
+
+uint16_t lcd_draw_colored_string_centered_at_x_to_frmbuf(
+    uint16_t *fb,              // Framebuffer-Pointer
+    uint16_t fb_width,         // Framebuffer-Breite in Pixeln
+    const char *str,           // Textstring
+    uint16_t center_x,         // Mittelpunkt für horizontale Zentrierung
+    uint16_t y,                // Y-Position im Framebuffer
+    uint8_t px,                // Schriftgröße in px
+    uint32_t hex_rgb           // RGB-Farbe in 0xRRGGBB
+) {
+    // Breite des gesamten Strings berechnen
+    uint16_t str_width = 0;
+    const FontGlyph *glyph;
+
+    for (const char *p = str; *p; p++) {
+        switch (px) {
+            case 13:
+                glyph = &outfit13_glyphs[(uint8_t)(*p)];
+                break;
+            case 24:
+                glyph = &outfit24_glyphs[(uint8_t)(*p)];
+                break;
+            case 29:
+                glyph = &outfit29_glyphs[(uint8_t)(*p)];
+                break;
+            case 36:
+                glyph = &outfit36_glyphs[(uint8_t)(*p)];
+                break;
+            default:
+                return center_x;
+        }
+
+        if (glyph && glyph->data)
+            str_width += glyph->width + FONT_LETTER_SPACING_PX;
+    }
+
+    if (str_width > fb_width) {
+        // Zu breit, abbrechen
+        return center_x;
+    }
+
+    // Linker Startpunkt für zentrierten Text um center_x
+    uint16_t start_x = (center_x > str_width / 2) ? (center_x - str_width / 2) : 0;
+
+    return lcd_draw_colored_string_to_frmbuf(fb, fb_width, str, start_x, y, px, hex_rgb);
+}
+
+uint16_t blend_rgb565_with_black(uint16_t color, float factor) {
+    uint8_t r = (color >> 11) & 0x1F;
+    uint8_t g = (color >> 5) & 0x3F;
+    uint8_t b = color & 0x1F;
+
+    r = (uint8_t)(r * factor);
+    g = (uint8_t)(g * factor);
+    b = (uint8_t)(b * factor);
+
+    return (r << 11) | (g << 5) | b;
+}
+
+void draw_circle_quarter_aa(int cx, int cy, int r, uint16_t color, uint8_t quadrant_mask) {
+    int x = 0, y = r;
+    int d = 3 - 2 * r;
+
+    while (x <= y) {
+        // Diese 8 Punkte werden optional gezeichnet – je nach Quadrant
+        struct { int dx, dy; uint8_t mask; } pts[] = {
+            {-x, -y, 0b0001}, {-y, -x, 0b0001},  // oben links
+            { x, -y, 0b0010}, { y, -x, 0b0010},  // oben rechts
+            {-x,  y, 0b0100}, {-y,  x, 0b0100},  // unten links
+            { x,  y, 0b1000}, { y,  x, 0b1000}   // unten rechts
+        };
+
+        for (int i = 0; i < 8; i++) {
+            if (quadrant_mask & pts[i].mask) {
+                int px = cx + pts[i].dx;
+                int py = cy + pts[i].dy;
+
+                // Approx. Abstand zur echten Kreislinie
+                float dist = fabsf(sqrtf((float)(pts[i].dx * pts[i].dx + pts[i].dy * pts[i].dy)) - (float)r);
+
+                // Maximaldistanz für AA-Effekt (z. B. 1.5 Pixel)
+                float max_dist = 1.5f;
+                float intensity = fmaxf(0.0f, 1.0f - (dist / max_dist));
+
+                uint16_t blended = blend_rgb565_with_black(color, intensity);
+                lcd_draw_pixel(px, py, blended);
+            }
+        }
+
+        if (d < 0) {
+            d += 4 * x + 6;
+        } else {
+            d += 4 * (x - y) + 10;
+            y--;
+        }
+        x++;
+    }
+}
+
+
+void draw_rounded_rect(
+    int x0, int y0, int x1, int y1,
+    int radius, int thickness, uint16_t color
+) {
+    // Linien oben/unten
+    for (int t = 0; t < thickness; t++) {
+        lcd_draw_hline(x0 + radius, x1 - radius, y0 + t, color);            // oben
+        lcd_draw_hline(x0 + radius, x1 - radius, y1 - 1 - t, color);        // unten
+    }
+
+    // Linien links/rechts
+    for (int t = 0; t < thickness; t++) {
+        lcd_draw_vline(x0 + t, y0 + radius, y1 - radius, color);            // links
+        lcd_draw_vline(x1 - 1 - t, y0 + radius, y1 - radius, color);        // rechts
+    }
+
+    // Ecken zeichnen
+    for (int t = 0; t < thickness; t++) {
+        draw_circle_quarter_aa(x0 + radius, y0 + radius, radius - t, color, 0b0001); // oben links
+        draw_circle_quarter_aa(x1 - radius - 1, y0 + radius, radius - t, color, 0b0010); // oben rechts
+        draw_circle_quarter_aa(x0 + radius, y1 - radius - 1, radius - t, color, 0b0100); // unten links
+        draw_circle_quarter_aa(x1 - radius - 1, y1 - radius - 1, radius - t, color, 0b1000); // unten rechts
+    }
+}
+
+
+void lcd_draw_centered_rounded_frame(
+    const char *text,
+    uint16_t center_x,
+    uint16_t top_y,
+    uint8_t px,
+    uint8_t padding,
+    uint8_t border_thickness,
+    uint8_t corner_radius,
+    uint32_t border_color_hex
+) {
+    const FontGlyph *glyphs = NULL;
+    uint8_t height = 0;
+
+    switch (px) {
+        case 13: glyphs = outfit13_glyphs; height = outfit13_glyphs['A'].height; break;
+        case 24: glyphs = outfit24_glyphs; height = outfit24_glyphs['A'].height; break;
+        case 29: glyphs = outfit29_glyphs; height = outfit29_glyphs['A'].height; break;
+        case 36: glyphs = outfit36_glyphs; height = outfit36_glyphs['A'].height; break;
+        default: return;
+    }
+
+    uint16_t total_width = 0;
+    for (const char *p = text; *p; p++) {
+        total_width += glyphs[(uint8_t)*p].width + FONT_LETTER_SPACING_PX;
+    }
+    if (total_width > 0) total_width -= FONT_LETTER_SPACING_PX;
+
+    int16_t x0 = center_x - (total_width / 2) - (padding * 2);  // links: 2x horizontaler Padding
+    int16_t x1 = center_x + (total_width / 2) + (padding * 2);  // rechts: 2x horizontaler Padding
+    int16_t y0 = top_y - padding;                               // oben: 1x vertikaler Padding
+    int16_t y1 = top_y + height + padding;                      // unten: 1x vertikaler Padding
+
+    uint16_t border_color = hex_to_rgb565(border_color_hex);
+
+    draw_rounded_rect(x0, y0, x1, y1, corner_radius, border_thickness, border_color);
+}
+
+void lcd_draw_pixel(uint16_t x, uint16_t y, uint16_t color) {
+    lcd_set_address_window(x, y, x, y);
+    lcd_write_data(color >> 8);
+    lcd_write_data(color & 0xFF);
+}
+
+void lcd_draw_hline(uint16_t x0, uint16_t x1, uint16_t y, uint16_t color) {
+    if (x1 < x0) { uint16_t tmp = x0; x0 = x1; x1 = tmp; }
+    lcd_set_address_window(x0, y, x1, y);
+    for (uint16_t x = x0; x <= x1; x++) {
+        lcd_write_data(color >> 8);
+        lcd_write_data(color & 0xFF);
+    }
+}
+
+void lcd_draw_vline(uint16_t x, uint16_t y0, uint16_t y1, uint16_t color) {
+    if (y1 < y0) { uint16_t tmp = y0; y0 = y1; y1 = tmp; }
+    lcd_set_address_window(x, y0, x, y1);
+    for (uint16_t y = y0; y <= y1; y++) {
+        lcd_write_data(color >> 8);
+        lcd_write_data(color & 0xFF);
+    }
+}
+
+
+void lcd_delete_centered_rounded_frame(
+    const char *text,
+    uint16_t center_x,
+    uint16_t top_y,
+    uint8_t px,
+    uint8_t padding,
+    uint8_t border_thickness,
+    uint8_t corner_radius,
+    uint32_t background_color_hex
+) {
+    const FontGlyph *glyphs = NULL;
+    uint8_t height = 0;
+
+    switch (px) {
+        case 13: glyphs = outfit13_glyphs; height = outfit13_glyphs['A'].height; break;
+        case 24: glyphs = outfit24_glyphs; height = outfit24_glyphs['A'].height; break;
+        case 29: glyphs = outfit29_glyphs; height = outfit29_glyphs['A'].height; break;
+        case 36: glyphs = outfit36_glyphs; height = outfit36_glyphs['A'].height; break;
+        default: return;
+    }
+
+    uint16_t total_width = 0;
+    for (const char *p = text; *p; p++) {
+        total_width += glyphs[(uint8_t)*p].width + FONT_LETTER_SPACING_PX;
+    }
+    if (total_width > 0) total_width -= FONT_LETTER_SPACING_PX;
+
+    uint8_t padding_x = padding * 2;
+
+    // Außenrahmen-Koordinaten (+1 px extra für Anti-Aliasing)
+    int16_t outer_x0 = center_x - (total_width / 2) - padding_x - 1;
+    int16_t outer_x1 = center_x + (total_width / 2) + padding_x + 1;
+    int16_t outer_y0 = top_y - padding - 1;
+    int16_t outer_y1 = top_y + height + padding + 1;
+
+    // Innenrahmen-Koordinaten (keinen Text übermalen!)
+    int16_t inner_x0 = center_x - (total_width / 2) - padding_x + border_thickness;
+    int16_t inner_x1 = center_x + (total_width / 2) + padding_x - border_thickness;
+    int16_t inner_y0 = top_y - padding + border_thickness;
+    int16_t inner_y1 = top_y + height + padding - border_thickness;
+
+    uint16_t bg = hex_to_rgb565(background_color_hex);
+
+    // Oben
+    lcd_fill_rect(outer_x0, outer_y0, outer_x1, inner_y0, bg);
+    // Unten
+    lcd_fill_rect(outer_x0, inner_y1, outer_x1, outer_y1, bg);
+    // Links
+    lcd_fill_rect(outer_x0, inner_y0, inner_x0, inner_y1, bg);
+    // Rechts
+    lcd_fill_rect(inner_x1, inner_y0, outer_x1, inner_y1, bg);
+}
 

@@ -4,6 +4,7 @@ SRCS
     "menu.c"
     "lcd.c"
     "color.c"
+    "font_outfit_13px.c"
     "font_outfit_24px.c"
     "font_outfit_29px.c"
     "font_outfit_36px.c"
