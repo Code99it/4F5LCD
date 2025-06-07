@@ -3,12 +3,6 @@
 
 #include <stdint.h>
 
-/**
- * @brief Wandelt eine 24-Bit-Hexfarbe (0xRRGGBB) in RGB565 (16 Bit) um.
- * 
- * @param hex_color 24-Bit-Farbwert (z. B. 0xFFAA33)
- * @return RGB565-Farbwert (z. B. 0bRRRRRGGGGGGBBBBB)
- */
-uint16_t hex_to_rgb565(uint32_t hex_color);
+uint16_t color_888_to_565(uint32_t color);
 
 #endif

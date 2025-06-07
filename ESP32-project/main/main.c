@@ -8,23 +8,16 @@
 #include "esp_task_wdt.h"
 
 #include "gpio.h"
-#include "lcd-drv-ILI9486.h"
+#include "color.h"
+#include "Code99-DRV-LCD-ILI9486-8-wire-parallel.h"
+#include "Code99-API-LCD-ILI9486.h"
 
 void app_main(void)
 {
 	
-    lcd_init();
-    lcd_read_id();
-    lcd_run_diagnose();
-    lcd_run_full_register_scan();
+	lcd_ili9486_init();
 
-	lcd_write_command(0x2C);  // Memory Write
-
-	for (uint8_t i = 0; i < 255; i++) {
-	    uint16_t color = ((i & 0xF8) << 8);  // R=i, G=0, B=0 → RGB565: R5G6B5
-	    lcd_write_rgb565(color);
-	    vTaskDelay(pdMS_TO_TICKS(10));
-	}
+	lcd_draw_rect(50, 50, 100, 100, color_888_to_565(0xFF0000));
 
 	printf("Starting main loop\n");
     while(1) vTaskDelay(pdMS_TO_TICKS(1000));
