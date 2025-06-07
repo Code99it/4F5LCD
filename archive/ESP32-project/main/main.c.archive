@@ -1,0 +1,237 @@
+/**
+ * @file lcd-shield-test.c
+ * 
+ * @brief Program for ESP32-S3 with 8-bit parallel LCD (I80 bus)
+ * 
+ * @author Christian Wilhelm (cw1@code99.it)
+ * @version 1.0
+ * @date 2025-06-01
+ *
+ * This program demonstrates the use of the I80 parallel interface to drive
+ * an LCD screen with an ESP32-S3. It includes a mutex-protected GUI rendering,
+ * a menu page flipper, a simulated radio UI, and several graphical elements
+ * such as separators and circular shapes.
+ * 
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/semphr.h"
+SemaphoreHandle_t lcd_mutex;
+#include "driver/gpio.h"
+#include "esp_rom_sys.h"
+#include "esp_system.h"
+#include "esp_random.h"
+#include "esp_private/esp_clk.h"
+#include "esp_heap_caps.h"
+#include "pins.h"
+#include "lcd_driver_i80.h"
+#include "lcd_driver_gpio.h"
+#include "font_PT_Sans_24px_white.h"
+#include "gui_config.h"
+#include "driver/uart.h"
+#include "menu.h"
+#include "esp_log.h"
+#include "esp_heap_caps.h"
+#include "esp_system.h"
+#include "esp_psram.h"
+
+/**
+ * USAGE
+ * 
+ * lcd_i80_write_string(x, y, "Text")
+ * lcd_i80_write_string_colored(x, y, "Text", color)
+ * lcd_i80_measure_string("Text")
+ */
+
+// Choose whether to use the high-speed I80 display driver or standard parallel write.
+// Comment out to fall back to slower standard GPIO write method.
+// -------------------------------------------------------------------------------------
+
+bool use_i80_bus = false;
+
+// Configure GPIO as input or output
+void gpioConf(gpio_num_t gpio, gpio_mode_t mode)
+{
+    gpio_config_t io_conf = {
+        .pin_bit_mask = 1ULL << gpio,
+        .mode = mode,
+        .pull_up_en = (mode == GPIO_MODE_INPUT) ? GPIO_PULLUP_ENABLE : GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE
+    };
+    gpio_config(&io_conf);
+}
+
+// Set GPIO output level
+void gpioSet(gpio_num_t gpio, bool level)
+{
+    gpio_set_level(gpio, level);
+}
+
+// Task: Display rotating menu page titles in footer
+void menu_task(void *pvParameters) {
+    int current_menu_page = 0;
+    while (1) {
+        if (xSemaphoreTake(lcd_mutex, pdMS_TO_TICKS(100))) {
+            lcd_flush_footer();
+            draw_footer_page_title(gui_menu_pages[current_menu_page]);
+            xSemaphoreGive(lcd_mutex);
+        }
+
+        current_menu_page++;
+        if (current_menu_page >= gui_menu_page_count) current_menu_page = 0;
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+// Source and station/song titles
+const char* sources[] = {
+    "Radio",
+    "CD 4",
+    "MR12V",
+    "CD 7"
+};
+
+const char* radio_stations[] = {
+    "Bayern 3", "Antenne Bayern", "Radio Galaxy", "Rock Antenne", "Radio Gong",
+    "Energy München", "Radio Charivari", "B5 aktuell", "BR Klassik", "Radio Arabella",
+    "egoFM", "Radio Trausnitz", "Radio Primavera", "Radio Gong 96.3", "Radio Top FM",
+    "Hit Radio N1", "Radio 7", "Radio IN", "Radio Plassenburg", "Radio Mainwelle",
+    "Radio Bamberg", "Radio ISW", "Radio Alpenwelle", "RT1 Nordschwaben", "Radio Fantasy"
+};
+
+const char* song_titles[] = {
+    "Dancing Queen", "Take a Chance on Me", "The Winner Takes It All", "Gimme! Gimme! Gimme!",
+    "Mamma Mia", "Waterloo", "Super Trouper", "Knowing Me, Knowing...", "Money, Money, Money",
+    "SOS", "Chiquitita", "Does Your Mother Know", "Voulez-Vous", "Fernando", "Ring Ring",
+    "Eagle", "I Do, I Do, I Do, I Do", "One of Us", "Lay All Your Love on...", "Head Over Heels",
+    "Summer Night City", "Honey, Honey", "Under Attack", "Thank You for the Music", "Angel Eyes"
+};
+
+// Task: Cycle through sources and display corresponding station or title
+void radio_task(void *pvParameters) {
+    int current_source = 0;
+    int current_station = 0;
+    int current_title = 0;
+
+    while (1) {
+        const char* source = sources[current_source];
+
+        if (xSemaphoreTake(lcd_mutex, pdMS_TO_TICKS(100))) {
+            lcd_flush_header();
+
+            // Line 1: Display source (Radio, CD, etc.)
+            lcd_write_string_colored(8, 8, source, hex_to_rgb565("#c72800"));
+
+            // Line 2: Display station or song title
+            if (strcmp(source, "Radio") == 0) {
+                lcd_write_string_colored(8, 32, radio_stations[current_station], hex_to_rgb565("#707070"));
+                current_station = (current_station + 1) % (sizeof(radio_stations) / sizeof(radio_stations[0]));
+            } else {
+                lcd_write_string_colored(8, 32, song_titles[current_title], hex_to_rgb565("#707070"));
+                current_title = (current_title + 1) % (sizeof(song_titles) / sizeof(song_titles[0]));
+            }
+
+            xSemaphoreGive(lcd_mutex);
+        }
+
+        current_source = (current_source + 1) % (sizeof(sources) / sizeof(sources[0]));
+
+        vTaskDelay(pdMS_TO_TICKS(3333));
+    }
+}
+
+// Main application entry point
+void app_main(void)
+{
+    // Configure output pins
+    printf("Configuring output pins\n");
+    gpioConf(LCD_DATA_0, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_1, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_2, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_3, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_4, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_5, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_6, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_DATA_7, GPIO_MODE_OUTPUT);
+
+    gpioConf(LCD_RD, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_WR, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_RS, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_CS, GPIO_MODE_OUTPUT);
+    gpioConf(LCD_RST, GPIO_MODE_OUTPUT);
+
+    printf("🔍 Available Heap (internal):    %lu Bytes\n", (unsigned long)heap_caps_get_free_size(MALLOC_CAP_INTERNAL));
+    printf("🔍 Available Heap (SPIRAM):      %lu Bytes\n", (unsigned long)heap_caps_get_free_size(MALLOC_CAP_SPIRAM));
+    printf("🔍 Total Heap (all caps):        %lu Bytes\n", (unsigned long)esp_get_free_heap_size());
+
+    lcd_i80_init();
+    lcd_i80_fill_screen(0x0000);
+
+    gpioSet(LCD_RD, HIGH);
+    gpioSet(LCD_WR, HIGH);
+    gpioSet(LCD_CS, HIGH);
+    gpioSet(LCD_RST, HIGH);
+
+    // Draw header separator line
+    printf("GUI: Drawing header separator line...\n");
+    lcd_i80_fill_rect(
+        GUI_BORDER_LEFT,
+        GUI_HEADER_HEIGHT + GUI_BORDER_TOP,
+        LCD_PX_WIDTH - GUI_BORDER_RIGHT,
+        GUI_HEADER_HEIGHT + GUI_BORDER_TOP + GUI_LINE_HEIGHT,
+        hex_to_rgb565("#c72800")
+    );
+
+    // Draw footer separator line
+    printf("GUI: Drawing footer separator line...\n");
+    lcd_i80_fill_rect(
+        GUI_BORDER_LEFT,
+        LCD_PX_HEIGHT - GUI_BORDER_TOP - GUI_BORDER_BOTTOM - GUI_FOOTER_HEIGHT,
+        LCD_PX_WIDTH - GUI_BORDER_RIGHT,
+        LCD_PX_HEIGHT - GUI_BORDER_TOP - GUI_BORDER_BOTTOM - GUI_FOOTER_HEIGHT + GUI_LINE_HEIGHT,
+        hex_to_rgb565("#ff0000")
+    );
+
+    // Draw sample ring indicators
+    draw_i80_circle_ring(40,  240, 30, 6, hex_to_rgb565("#00FFFF"));
+    draw_i80_circle_ring(80,  240, 30, 6, hex_to_rgb565("#00FF00"));
+    draw_i80_circle_ring(120, 240, 30, 6, hex_to_rgb565("#FF0000"));
+    draw_i80_circle_ring(160, 240, 30, 6, hex_to_rgb565("#0000FF"));
+    draw_i80_circle_ring(200, 240, 30, 6, hex_to_rgb565("#FF00FF"));
+    draw_i80_circle_ring(240, 240, 30, 6, hex_to_rgb565("#FFFFFF"));
+    draw_i80_circle_ring(280, 240, 30, 6, hex_to_rgb565("#808080"));
+
+    // Draw small arc in header
+    draw_i80_arc(
+        LCD_PX_WIDTH - GUI_HEADER_HEIGHT / 2 - GUI_HEADER_MARGIN_RIGHT - 2,
+        GUI_HEADER_HEIGHT / 2 + GUI_HEADER_MARGIN_TOP / 2 - 4,
+        GUI_HEADER_HEIGHT / 2 - 8,
+        6,
+        125.0f, 55.0f,
+        hex_to_rgb565("#161616")
+    );
+
+    printf("To quit monitor: press Control + Option + 6 (or Ctrl + ])\n");
+
+    // Create LCD mutex
+    lcd_mutex = xSemaphoreCreateMutex();
+    if (lcd_mutex == NULL) {
+        printf("Error: Failed to create LCD mutex\n");
+    }
+
+    // Launch menu and radio tasks
+    xTaskCreate(menu_task, "Menu Task", 8192, NULL, 5, NULL);
+    xTaskCreate(radio_task, "Radio Task", 8192, NULL, 5, NULL);
+
+    while (1) {
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
+
+    }
+
+}

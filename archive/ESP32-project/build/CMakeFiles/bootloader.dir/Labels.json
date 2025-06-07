@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

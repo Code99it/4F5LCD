@@ -1,0 +1,108 @@
+[0;32mI (252) heap_init: At 600FESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048839
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d98
+entry 0x403c9914
+[0;32mI (26) boot: ESP-IDF v5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun  6 2025 11:16:26[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (71) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot: End of partition table[0m
+[0;32mI (90) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0cf6ch ( 53100) map[0m
+[0;32mI (108) esp_image: segment 1: paddr=0001cf94 vaddr=3fc91d00 size=028c0h ( 10432) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f85c vaddr=40374000 size=007bch (  1980) load[0m
+[0;32mI (116) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=19028h (102440) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00039050 vaddr=403747bc size=0d510h ( 54544) load[0m
+[0;32mI (161) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (161) boot: Disabling RNG early entropy source...[0m
+[0;32mI (172) cpu_start: Multicore app[0m
+[0;32mI (182) cpu_start: Pro cpu start user code[0m
+[0;32mI (182) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (182) cpu_start: Application information:[0m
+[0;32mI (185) cpu_start: Project name:     ESP32-project[0m
+[0;32mI (190) cpu_start: App version:      7f15403-dirty[0m
+[0;32mI (196) cpu_start: Compile time:     Jun  6 2025 11:16:20[0m
+[0;32mI (202) cpu_start: ELF file SHA256:  613bb4e95...[0m
+[0;32mI (207) cpu_start: ESP-IDF:          v5.2[0m
+[0;32mI (212) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (217) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (221) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (226) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (233) heap_init: At 3FC94E90 len 00054880 (338 KiB): RAM[0m
+[0;32mI (239) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (246) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (259) spi_flash: detected chip: generic[0m
+[0;32mI (263) spi_flash: flash io: dio[0m
+[0;33mW (267) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (280) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (287) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (294) main_task: Started on CPU0[0m
+[0;32mI (304) main_task: Calling app_main()[0m
+Initializing LCD driver ILI9486
+LCD ID: 14 14 14
+
+Diagnose Start:
+Read Display ID (0x04): 14
+Get Status (0x09): 19
+Display Status (0x0A): 1A
+Read Power Mode (0x0D): 1D
+Read MADCTL (0x0E): 1E
+Read Pixel Format (0x0F): 1F
+Read Write Display Brightness (0x45): 15
+Manufacturer ID (0xDA): 1A
+Driver Version (0xDB): 3B
+Module ID (0xDC): 3C
+
+Vollständiger Register-Scan:
+0x00: 10  0x01: 11  0x02: 12  0x03: 13  0x04: 14  0x05: 15  0x06: 16  0x07: 17  
+0x08: 18  0x09: 19  0x0A: 1A  0x0B: 1B  0x0C: 1C  0x0D: 1D  0x0E: 1E  0x0F: 1F  
+0x10: 10  0x11: 11  0x12: 12  0x13: 13  0x14: 14  0x15: 15  0x16: 16  0x17: 17  
+0x18: 18  0x19: 19  0x1A: 1A  0x1B: 1B  0x1C: 1C  0x1D: 1D  0x1E: 1E  0x1F: 1F  
+0x20: 10  0x21: 11  0x22: 12  0x23: 13  0x24: 14  0x25: 15  0x26: 16  0x27: 17  
+0x28: 18  0x29: 19  0x2A: 1A  0x2B: 1B  0x2C: 1C  0x2D: 3D  0x2E: 3E  0x2F: 3F  
+0x30: 10  0x31: 11  0x32: 12  0x33: 13  0x34: 14  0x35: 15  0x36: 16  0x37: 17  
+0x38: 18  0x39: 19  0x3A: 1A  0x3B: 1B  0x3C: 1C  0x3D: 1D  0x3E: 1E  0x3F: 1F  
+0x40: 10  0x41: 11  0x42: 12  0x43: 13  0x44: 14  0x45: 15  0x46: 16  0x47: 17  
+0x48: 18  0x49: 19  0x4A: 1A  0x4B: 1B  0x4C: 1C  0x4D: 1D  0x4E: 1E  0x4F: 1F  
+0x50: 10  0x51: 11  0x52: 12  0x53: 13  0x54: 14  0x55: 15  0x56: 16  0x57: 17  
+0x58: 18  0x59: 19  0x5A: 1A  0x5B: 1B  0x5C: 1C  0x5D: 1D  0x5E: 1E  0x5F: 1F  
+0x60: 10  0x61: 11  0x62: 12  0x63: 13  0x64: 14  0x65: 15  0x66: 16  0x67: 17  
+0x68: 18  0x69: 19  0x6A: 1A  0x6B: 1B  0x6C: 1C  0x6D: 3D  0x6E: 3E  0x6F: 3F  
+0x70: 10  0x71: 11  0x72: 12  0x73: 13  0x74: 14  0x75: 15  0x76: 16  0x77: 17  
+0x78: 18  0x79: 19  0x7A: 1A  0x7B: 1B  0x7C: 1C  0x7D: 1D  0x7E: 1E  0x7F: 1F  
+0x80: 10  0x81: 11  0x82: 12  0x83: 13  0x84: 14  0x85: 15  0x86: 16  0x87: 17  
+0x88: 18  0x89: 19  0x8A: 1A  0x8B: 1B  0x8C: 1C  0x8D: 1D  0x8E: 1E  0x8F: 1F  
+0x90: 10  0x91: 11  0x92: 12  0x93: 13  0x94: 14  0x95: 15  0x96: 16  0x97: 17  
+0x98: 18  0x99: 19  0x9A: 1A  0x9B: 1B  0x9C: 1C  0x9D: 1D  0x9E: 1E  0x9F: 1F  
+0xA0: 10  0xA1: 11  0xA2: 12  0xA3: 13  0xA4: 14  0xA5: 15  0xA6: 16  0xA7: 17  
+0xA8: 18  0xA9: 19  0xAA: 1A  0xAB: 1B  0xAC: 1C  0xAD: 1D  0xAE: 1E  0xAF: 1F  
+0xB0: 10  0xB1: 11  0xB2: 12  0xB3: 13  0xB4: 14  0xB5: 15  0xB6: 16  0xB7: 17  
+0xB8: 18  0xB9: 19  0xBA: 1A  0xBB: 1B  0xBC: 1C  0xBD: 1D  0xBE: 1E  0xBF: 1F  
+0xC0: 10  0xC1: 11  0xC2: 12  0xC3: 13  0xC4: 14  0xC5: 15  0xC6: 16  0xC7: 17  
+0xC8: 18  0xC9: 19  0xCA: 1A  0xCB: 1B  0xCC: 1C  0xCD: 1D  0xCE: 1E  0xCF: 1F  
+0xD0: 10  0xD1: 11  0xD2: 12  0xD3: 13  0xD4: 14  0xD5: 15  0xD6: 16  0xD7: 17  
+0xD8: 18  0xD9: 19  0xDA: 1A  0xDB: 1B  0xDC: 1C  0xDD: 1D  0xDE: 1E  0xDF: 1F  
+0xE0: 10  0xE1: 11  0xE2: 12  0xE3: 13  0xE4: 14  0xE5: 15  0xE6: 16  0xE7: 17  
+0xE8: 18  0xE9: 19  0xEA: 1A  0xEB: 1B  0xEC: 1C  0xED: 1D  0xEE: 1E  0xEF: 1F  
+0xF0: 10  0xF1: 11  0xF2: 12  0xF3: 13  0xF4: 14  0xF5: 15  0xF6: 16  0xF7: 17  
+0xF8: 18  0xF9: 19  0xFA: 1A  0xFB: 1B  0xFC: 1C  0xFD: 1D  0xFE: 1E  0xFF: 1F  
+
+Scan abgeschlossen.
+
+Starting main loop

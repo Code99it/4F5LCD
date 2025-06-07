@@ -8,15 +8,28 @@
 #include "esp_task_wdt.h"
 
 #include "gpio.h"
-#include "lcd.h"
-#include "color.h"
-#include "menu.h"
+#include "lcd-drv-ILI9486.h"
 
 void app_main(void)
 {
-
-    printf("Initializing LCD...\n");
+	
     lcd_init();
+    lcd_read_id();
+    lcd_run_diagnose();
+    lcd_run_full_register_scan();
+
+	lcd_write_command(0x2C);  // Memory Write
+
+	for (uint8_t i = 0; i < 255; i++) {
+	    uint16_t color = ((i & 0xF8) << 8);  // R=i, G=0, B=0 → RGB565: R5G6B5
+	    lcd_write_rgb565(color);
+	    vTaskDelay(pdMS_TO_TICKS(10));
+	}
+
+	printf("Starting main loop\n");
+    while(1) vTaskDelay(pdMS_TO_TICKS(1000));
+
+    /*
 
     printf("Initializing LCD driver (ILI9486)\n");
     lcd_driver_init();
@@ -57,11 +70,12 @@ void app_main(void)
 		"BC1",
 		"BC2",
 		"BC3",
-		"Luftfahrwerk",
-		"Automatikgetriebe",
-		"Kontakte",
+		"Suspension",
+		"Automatic Transmission",
+		"Contacts",
 		"Radio",
-		"Check"
+		"Check",
+		"Battery"
 	};
 
 
@@ -185,7 +199,7 @@ void app_main(void)
 
 	// in einer schleife zum nächsten menüpunkt gehen
 	// framebuffer immer wieder neu zeichnen
-	for (uint8_t left_cut=0; left_cut<180; left_cut++) {
+	for (uint8_t left_cut=0; left_cut<189; left_cut++) {
 		lcd_draw_framebuffer_region(   
 		    frmbuf_menubar,        // Zeiger auf den vollständigen Framebuffer (doppelte LCD-Breite)  
 		    framebuffer_width,     // Tatsächliche Breite des Framebuffers in Pixeln (z. B. LCD_PIXEL_WIDTH * 2)  
@@ -212,12 +226,12 @@ void app_main(void)
 
 
 	printf("Drawing some keys and values\n");
-	lcd_draw_colored_string("D: Schaltpunkt +", 51, 150, 24, 0xa8a8a8);
-	lcd_draw_colored_string("D: Schaltpunkt -", 51, 190, 24, 0xa8a8a8);
-	lcd_draw_colored_string("S: Schaltpunkt +", 51, 230, 24, 0xa8a8a8);
-	lcd_draw_colored_string("S: Schaltpunkt -", 51, 270, 24, 0xa8a8a8);
-	lcd_draw_colored_string("M: Schaltpunkt +", 51, 310, 24, 0xa8a8a8);
-	lcd_draw_colored_string("M: Schaltpunkt -", 51, 350, 24, 0xa8a8a8);
+	lcd_draw_colored_string("D: shift up +", 51, 150, 24, 0xa8a8a8);
+	lcd_draw_colored_string("D: shift dn -", 51, 190, 24, 0xa8a8a8);
+	lcd_draw_colored_string("S: shift up +", 51, 230, 24, 0xa8a8a8);
+	lcd_draw_colored_string("S: shift dn -", 51, 270, 24, 0xa8a8a8);
+	lcd_draw_colored_string("M: shift up +", 51, 310, 24, 0xa8a8a8);
+	lcd_draw_colored_string("M: shift dn -", 51, 350, 24, 0xa8a8a8);
 
 	lcd_draw_colored_string("3100", 248, 150, 24, 0xFFFFFF);
 	lcd_draw_colored_string("1400", 248, 190, 24, 0xFFFFFF);
@@ -298,5 +312,5 @@ void app_main(void)
 
     // Speicher freigeben
 	free(select_fb);
-
+	*/
 }

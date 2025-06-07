@@ -1,0 +1,11 @@
+[0;33m--- esp-idf-monitor 1.6.2 on /dev/cu.usbmodem1101 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40048839: uart_tx_one_char_uart in ROM
+[0m
+[0;33m--- 0x40381ba1: _xt_context_save at /Users/christianwilhelm/esp/esp-idf/components/xtensa/xtensa_context.S:214
+[0m
+[0;33m--- 0x40381af2: xthal_save_extra_nw at ??:?
+[0m
+[0;33m--- 0x40381b46: _xt_context_save at /Users/christianwilhelm/esp/esp-idf/components/xtensa/xtensa_context.S:159
+[0m
+[0m

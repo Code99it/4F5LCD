@@ -17,24 +17,25 @@
 #ifndef GPIO_H
 #define GPIO_H
 
+#include <stdint.h>
 #include "driver/gpio.h"
 
-// LCD Data wires (safe GPIOs for 8-bit parallel interface)
-#define LCD_DATA_0 GPIO_NUM_1
-#define LCD_DATA_1 GPIO_NUM_3
-#define LCD_DATA_2 GPIO_NUM_4
-#define LCD_DATA_3 GPIO_NUM_5
-#define LCD_DATA_4 GPIO_NUM_6
-#define LCD_DATA_5 GPIO_NUM_7
-#define LCD_DATA_6 GPIO_NUM_15
-#define LCD_DATA_7 GPIO_NUM_16
+// LCD Data wires (should be in a continous row)
+#define LCD_DATA_0 GPIO_NUM_35
+#define LCD_DATA_1 GPIO_NUM_36
+#define LCD_DATA_2 GPIO_NUM_37
+#define LCD_DATA_3 GPIO_NUM_38
+#define LCD_DATA_4 GPIO_NUM_39
+#define LCD_DATA_5 GPIO_NUM_40
+#define LCD_DATA_6 GPIO_NUM_41
+#define LCD_DATA_7 GPIO_NUM_42
 
-// LCD Command wires (safe GPIOs for control signals)
-#define LCD_RD   GPIO_NUM_13   // Optional, set to -1 if unused
-#define LCD_WR   GPIO_NUM_17
-#define LCD_RS   GPIO_NUM_9    // Also called D/C or A0
-#define LCD_CS   GPIO_NUM_10   // Can be tied to GND if not shared
-#define LCD_RST  GPIO_NUM_11
+// LCD Command wires
+#define LCD_RD   GPIO_NUM_14   
+#define LCD_WR   GPIO_NUM_15
+#define LCD_RS   GPIO_NUM_16   
+#define LCD_CS   GPIO_NUM_17  
+#define LCD_RST  GPIO_NUM_18
 
 #define HIGH true
 #define LOW false
