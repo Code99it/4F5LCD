@@ -12,63 +12,53 @@
 #include "Code99-DRV-LCD-ILI9486-8-wire-parallel.h"
 #include "Code99-API-LCD-ILI9486.h"
 
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
+
+#define DEFAULT_VREF    1100    // eFuse Vref (mV), kann angepasst werden
+#define ADC_WIDTH       ADC_WIDTH_BIT_12
+#define ADC_ATTEN       ADC_ATTEN_DB_11
+#define ADC_RESOLUTION  4095.0
+#define ADC_VREF        3.3     // interne Referenzspannung in Volt
+
+// ADC-Kanäle (ADC1-GPIOs)
+#define ADC_BUTTON_CHANNEL ADC1_CHANNEL_0  // GPIO36
+#define ADC_DIAL_CHANNEL   ADC1_CHANNEL_7  // GPIO35
+
 void app_main(void)
 {
+    // ADC1 initialisieren
+    adc1_config_width(ADC_WIDTH);
+    adc1_config_channel_atten(ADC_BUTTON_CHANNEL, ADC_ATTEN);
+    adc1_config_channel_atten(ADC_DIAL_CHANNEL, ADC_ATTEN);
 
-	typedef struct {
-	    gpio_num_t gpio;
-	    const char *name;
-	} lcd_pin_info_t;
+    float last_button_voltage = -1.0f;
+    float last_dial_voltage = -1.0f;
 
-	static const lcd_pin_info_t lcd_pins[] = {
-	    { GPIO_NUM_4,  "LCD_DATA_0" },
-	    { GPIO_NUM_5,  "LCD_DATA_1" },
-	    { GPIO_NUM_6,  "LCD_DATA_2" },
-	    { GPIO_NUM_7,  "LCD_DATA_3" },
-	    { GPIO_NUM_8,  "LCD_DATA_4" },
-	    { GPIO_NUM_9,  "LCD_DATA_5" },
-	    { GPIO_NUM_10, "LCD_DATA_6" },
-	    { GPIO_NUM_11, "LCD_DATA_7" },
-	    { GPIO_NUM_14, "LCD_RD"     },
-	    { GPIO_NUM_15, "LCD_WR"     },
-	    { GPIO_NUM_16, "LCD_RS"     },
-	    { GPIO_NUM_17, "LCD_CS"     },
-	    { GPIO_NUM_18, "LCD_RST"    }
-	};
+    while (1) {
+        int raw_button = adc1_get_raw(ADC_BUTTON_CHANNEL);
+        int raw_dial   = adc1_get_raw(ADC_DIAL_CHANNEL);
 
-	void lcd_test_pin_cycle() {
-	    const size_t num_pins = sizeof(lcd_pins) / sizeof(lcd_pins[0]);
+        float voltage_button = (raw_button / ADC_RESOLUTION) * ADC_VREF;
+        float voltage_dial   = (raw_dial   / ADC_RESOLUTION) * ADC_VREF;
 
-	    // Konfiguriere alle Pins als Ausgang
-	    for (size_t i = 0; i < num_pins; i++) {
-	        gpio_reset_pin(lcd_pins[i].gpio);
-	        gpio_set_direction(lcd_pins[i].gpio, GPIO_MODE_OUTPUT);
-	        gpio_set_level(lcd_pins[i].gpio, 0); // Start mit LOW
-	    }
+        bool button_changed = (last_button_voltage < 0) ||
+            (fabs(voltage_button - last_button_voltage) > 0.1f * last_button_voltage);
 
-	    while (1) {
-	        for (size_t i = 0; i < num_pins; i++) {
-	            printf("Aktiviere %s (GPIO%d) für 2 Sekunden...\n", lcd_pins[i].name, lcd_pins[i].gpio);
-	            gpio_set_level(lcd_pins[i].gpio, 1);
-	            vTaskDelay(pdMS_TO_TICKS(5000));
-	            gpio_set_level(lcd_pins[i].gpio, 0);
-	        }
-	    }
-	}
+        bool dial_changed = (last_dial_voltage < 0) ||
+            (fabs(voltage_dial - last_dial_voltage) > 0.1f * last_dial_voltage);
 
+        if (button_changed || dial_changed) {
+            printf("Button: %4d → %.3f V\tDial: %4d → %.3f V\n",
+                   raw_button, voltage_button,
+                   raw_dial, voltage_dial);
 
-	lcd_test_pin_cycle();
+            last_button_voltage = voltage_button;
+            last_dial_voltage   = voltage_dial;
+        }
 
-	
-	// 14 bis 18 und 35 bis 42
-
-	lcd_ili9486_init();
-
-	lcd_draw_rect(50, 50, 100, 100, color_888_to_565(0xFF0000));
-	lcd_draw_test_pattern();
-
-	printf("Starting main loop\n");
-    while(1) vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
 
     /*
 
