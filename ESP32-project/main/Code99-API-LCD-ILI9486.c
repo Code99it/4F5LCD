@@ -18,3 +18,10 @@ void lcd_draw_rect(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t 
     printf("LCD drawing %ld pixels from %d,%d to %d,%d in color %#06x\n", total_pixels, x1, y1, x2, y2, color);
     lcd_ili9486_memory_write(color, total_pixels);
 }
+
+void lcd_draw_test_pattern() {
+	printf("LCD drawing test pattern\n");
+    lcd_ili9486_column_address_set(0, 0, 0, 10);
+    lcd_ili9486_page_address_set(0, 0, 0, 10);
+    lcd_ili9486_memory_write(0xF800, 121); 
+}

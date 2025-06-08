@@ -14,10 +14,58 @@
 
 void app_main(void)
 {
+
+	typedef struct {
+	    gpio_num_t gpio;
+	    const char *name;
+	} lcd_pin_info_t;
+
+	static const lcd_pin_info_t lcd_pins[] = {
+	    { GPIO_NUM_4,  "LCD_DATA_0" },
+	    { GPIO_NUM_5,  "LCD_DATA_1" },
+	    { GPIO_NUM_6,  "LCD_DATA_2" },
+	    { GPIO_NUM_7,  "LCD_DATA_3" },
+	    { GPIO_NUM_8,  "LCD_DATA_4" },
+	    { GPIO_NUM_9,  "LCD_DATA_5" },
+	    { GPIO_NUM_10, "LCD_DATA_6" },
+	    { GPIO_NUM_11, "LCD_DATA_7" },
+	    { GPIO_NUM_14, "LCD_RD"     },
+	    { GPIO_NUM_15, "LCD_WR"     },
+	    { GPIO_NUM_16, "LCD_RS"     },
+	    { GPIO_NUM_17, "LCD_CS"     },
+	    { GPIO_NUM_18, "LCD_RST"    }
+	};
+
+	void lcd_test_pin_cycle() {
+	    const size_t num_pins = sizeof(lcd_pins) / sizeof(lcd_pins[0]);
+
+	    // Konfiguriere alle Pins als Ausgang
+	    for (size_t i = 0; i < num_pins; i++) {
+	        gpio_reset_pin(lcd_pins[i].gpio);
+	        gpio_set_direction(lcd_pins[i].gpio, GPIO_MODE_OUTPUT);
+	        gpio_set_level(lcd_pins[i].gpio, 0); // Start mit LOW
+	    }
+
+	    while (1) {
+	        for (size_t i = 0; i < num_pins; i++) {
+	            printf("Aktiviere %s (GPIO%d) für 2 Sekunden...\n", lcd_pins[i].name, lcd_pins[i].gpio);
+	            gpio_set_level(lcd_pins[i].gpio, 1);
+	            vTaskDelay(pdMS_TO_TICKS(5000));
+	            gpio_set_level(lcd_pins[i].gpio, 0);
+	        }
+	    }
+	}
+
+
+	lcd_test_pin_cycle();
+
 	
+	// 14 bis 18 und 35 bis 42
+
 	lcd_ili9486_init();
 
 	lcd_draw_rect(50, 50, 100, 100, color_888_to_565(0xFF0000));
+	lcd_draw_test_pattern();
 
 	printf("Starting main loop\n");
     while(1) vTaskDelay(pdMS_TO_TICKS(1000));

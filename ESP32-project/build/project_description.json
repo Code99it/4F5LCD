@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "ESP32-project",
-    "project_version":    "0580fe3-dirty",
+    "project_version":    "c8e4abe-dirty",
     "project_path":       "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project",
     "idf_path":           "/Users/christianwilhelm/esp/esp-idf",
     "build_dir":          "/Users/christianwilhelm/nextcloud-ninetynine/ESP32/4F5LCD-C6/ESP32-project/build",

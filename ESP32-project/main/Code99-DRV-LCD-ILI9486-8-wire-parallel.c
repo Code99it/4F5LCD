@@ -77,13 +77,16 @@ void lcd_ili9486_write_strobe () {
 // Hard reset
 //
 void lcd_ili9486_hard_reset () {
-    printf("LCD hard reset 20ms\n");
-    lcd_ili9486_pin_rst(LOW);
-    vTaskDelay(pdMS_TO_TICKS(20));  
+    printf("LCD hard reset\n");
+    gpio_set_direction(LCD_RST, GPIO_MODE_OUTPUT);
     lcd_ili9486_pin_rst(HIGH);
-    vTaskDelay(pdMS_TO_TICKS(120)); 
-    printf("LCD wait 120ms after hard reset\n");
+    vTaskDelay(pdMS_TO_TICKS(10));
+    lcd_ili9486_pin_rst(LOW);
+    vTaskDelay(pdMS_TO_TICKS(50));
+    lcd_ili9486_pin_rst(HIGH);
+    vTaskDelay(pdMS_TO_TICKS(120));
 }
+
 
 // Soft Reset 01h
 //
